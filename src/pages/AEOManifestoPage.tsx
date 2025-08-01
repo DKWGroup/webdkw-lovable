@@ -67,18 +67,6 @@ const AEOManifestoPage = () => {
   };
 
 
-  const handlePackageClick = (packageType: 'geo' | 'aeo') => {
-    const subject = packageType === 'geo' 
-      ? 'Zapytanie o pakiet GEO Launchpad' 
-      : 'Zapytanie o pakiet AEO Dominator';
-    const body = `Dzień dobry,
-
-Jestem zainteresowany pakietem ${packageType === 'geo' ? 'GEO Launchpad' : 'AEO Dominator'}. Proszę o kontakt w celu omówienia szczegółów.
-
-Pozdrawiam`;
-    
-    window.location.href = `mailto:kontakt@webdkw.net?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  };
 
   const handleDownloadGuide = () => {
     // Tu można dodać logikę pobierania przewodnika
@@ -261,7 +249,7 @@ Pozdrawiam`;
                 </div>
 
                 <button 
-                  onClick={() => handlePackageClick('geo')}
+                  onClick={scrollToContact}
                   className="w-full bg-primary-500 text-white py-4 rounded-lg font-semibold hover:bg-primary-600 transition-colors duration-300"
                 >
                   Chcę zdominować rynek lokalny
@@ -331,7 +319,7 @@ Pozdrawiam`;
                 </div>
 
                 <button 
-                  onClick={() => handlePackageClick('aeo')}
+                  onClick={scrollToContact}
                   className="w-full bg-primary-500 text-white py-4 rounded-lg font-semibold hover:bg-primary-600 transition-colors duration-300"
                 >
                   Chcę być liderem w branży
