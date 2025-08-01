@@ -46,7 +46,7 @@ function App() {
         <Route path="/faq" element={<FAQPage />} />
         <Route path="/kontakt" element={<ContactPage />} />
         <Route path="/polityka-prywatnosci" element={<PrivacyPolicyPage />} />
-        <Route path="/pozycjonowanie-ai" element={<AEOManifestoPage />} />
+        <Route path="/uslugi/pozycjonowanie-ai" element={<AEOManifestoPage />} />
         <Route path="/admin/login" element={<AdminLoginPage />} />
         <Route path="/admin" element={<AdminPage />} />
         <Route path="/admin/reset-password" element={<PasswordResetPage />} />

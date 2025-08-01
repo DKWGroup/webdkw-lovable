@@ -34,7 +34,7 @@ const ServicesPage = () => {
         "Answer Share™ Dashboard",
         "Gwarancja wyników",
       ],
-      link: "/pozycjonowanie-ai",
+      link: "/uslugi/pozycjonowanie-ai",
       featured: true,
     },
     {
