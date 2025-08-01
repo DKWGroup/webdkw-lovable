@@ -26,7 +26,7 @@ const ServicesPage = () => {
       subtitle: "AI Overviews & Lokalne wyszukiwanie",
       description:
         "Pierwsza w Polsce usługa pozycjonowania pod AI Overviews i odpowiedzi Google AI. Zdominuj nową erę wyszukiwania.",
-      priceRange: "od 4 500 zł/mies",
+      priceRange: "od 2 500 zł/mies",
       timeframe: "wyniki po 3 miesiącach",
       features: [
         "Optymalizacja pod AI",
