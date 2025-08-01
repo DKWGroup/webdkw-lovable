@@ -747,8 +747,8 @@ const AEOManifestoPage = () => {
                 </button>
               </div>
               <div className="text-center">
-                <a href="tel:+48123456789" className="text-white/90 hover:text-white transition-colors underline">
-                  Lub zadzwoń: +48 123 456 789
+                <a href="tel:+48881046689" className="text-white/90 hover:text-white transition-colors underline">
+                  Lub zadzwoń: +48 881 046 689
                 </a>
               </div>
             </div>
