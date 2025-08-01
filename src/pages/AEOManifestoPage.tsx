@@ -49,9 +49,10 @@ const AEOManifestoPage = () => {
   };
 
   const handleMouseLeave = () => {
-    if (!showExitPopup) {
-      setShowExitPopup(true);
-    }
+    // Popup temporarily disabled
+    // if (!showExitPopup) {
+    //   setShowExitPopup(true);
+    // }
   };
 
   const scrollToContact = () => {
