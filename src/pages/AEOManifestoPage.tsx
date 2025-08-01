@@ -6,6 +6,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import SEOHead from '../components/SEOHead';
 import FAQSection from '../components/FAQSection';
+import ContactSection from '../components/ContactSection';
 import { BlogPost, supabase } from '../lib/supabase';
 
 const AEOManifestoPage = () => {
@@ -546,6 +547,8 @@ const AEOManifestoPage = () => {
         </section>
 
         <FAQSection />
+
+        <ContactSection />
 
         {/* Final CTA Section */}
         <section className="py-20 bg-gradient-to-r from-primary-500 to-primary-600">
