@@ -126,19 +126,19 @@ const ArticleForm: React.FC<ArticleFormProps> = ({ article, isOpen, onClose, onS
 
   // Auto-generate meta description from content
   useEffect(() => {
-    if (formData.content && !formData.meta_description) {
+    if (formData.content && !formData.meta_description && !article) {
       const metaDesc = FormValidator.generateMetaDescription(formData.content)
       setFormData(prev => ({ ...prev, meta_description: metaDesc }))
     }
-  }, [formData.content])
+  }, [formData.content, article])
 
   // Auto-generate excerpt from content
   useEffect(() => {
-    if (formData.content && !formData.excerpt) {
+    if (formData.content && !formData.excerpt && !article) {
       const excerpt = FormValidator.generateExcerpt(formData.content)
       setFormData(prev => ({ ...prev, excerpt }))
     }
-  }, [formData.content])
+  }, [formData.content, article])
 
   const validateForm = (): boolean => {
     const validator = new FormValidator({
