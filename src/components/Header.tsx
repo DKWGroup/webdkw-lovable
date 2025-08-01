@@ -105,6 +105,12 @@ const Header = () => {
               FAQ
             </Link>
             <Link
+              to="/pozycjonowanie-aeo-geo"
+              className="text-gray-700 hover:text-orange-500 transition-colors"
+            >
+              Pozycjonowanie AEO/GEO
+            </Link>
+            <Link
               to="/kontakt"
               className="bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600 transition-colors"
             >
@@ -175,6 +181,13 @@ const Header = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 FAQ
+              </Link>
+              <Link
+                to="/pozycjonowanie-aeo-geo"
+                className="text-left text-gray-700 hover:text-orange-500 transition-all duration-200 transform hover:translate-x-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Pozycjonowanie AEO/GEO
               </Link>
               <Link
                 to="/kontakt"

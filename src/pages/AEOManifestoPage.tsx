@@ -92,7 +92,7 @@ Pozdrawiam`;
           title="Pozycjonowanie AEO i GEO - Pierwsza Agencja AI w Polsce | WebDKW"
           description="Specjalizujemy się w pozycjonowaniu pod AI Overviews. Pakiety GEO (lokalne) i AEO (krajowe). Gwarancja wyników. Audyt potencjału za 950 zł."
           keywords="pozycjonowanie AEO, pozycjonowanie GEO, AI Overviews, pozycjonowanie pod sztuczną inteligencję, optymalizacja odpowiedzi AI"
-          url="https://webdkw.net/aeo-manifesto"
+          url="https://webdkw.net/pozycjonowanie-aeo-geo"
         />
 
         <Header />
