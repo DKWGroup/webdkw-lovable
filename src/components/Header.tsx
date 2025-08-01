@@ -20,7 +20,7 @@ const Header = () => {
   // }
 
   const services = [
-    { name: 'Pozycjonowanie AEO/GEO', path: '/pozycjonowanie-aeo-geo', featured: true },
+    { name: 'Pozycjonowanie AEO/GEO', path: '/pozycjonowanie-ai', featured: true },
     { name: 'Tworzenie stron', path: '/uslugi/tworzenie-stron' },
     { name: 'Platformy internetowe', path: '/uslugi/platformy-internetowe' },
     { name: 'Sklepy internetowe', path: '/uslugi/sklepy-internetowe' },

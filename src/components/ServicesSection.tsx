@@ -7,7 +7,7 @@ const ServicesSection = () => {
       icon: <Target className="h-12 w-12 text-primary-500" />,
       title: "Pozycjonowanie AEO/GEO",
       description: "Pierwsza w Polsce usługa pozycjonowania pod AI Overviews i odpowiedzi Google AI. Zdominuj nową erę wyszukiwania zanim zrobi to konkurencja.",
-      link: "/pozycjonowanie-aeo-geo",
+      link: "/pozycjonowanie-ai",
       features: ["AI Overviews", "Answer Share™", "Gwarancja wyników"],
       featured: true
     },
