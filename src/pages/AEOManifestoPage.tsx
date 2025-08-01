@@ -59,44 +59,97 @@ const AEOManifestoPage = () => {
         <Header />
 
         {/* Hero Section */}
-        <section className="pt-20 pb-16 bg-gradient-to-b from-gray-50 to-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-4xl mx-auto">
-              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Nie pozwól, by AI ukryło Twoją firmę przed klientami
-              </h1>
-              <h2 className="text-xl md:text-2xl text-gray-700 mb-8 font-medium">
-                Jako pierwsi w Polsce oferujemy pozycjonowanie pod nową erę wyszukiwania. 
-                Gdy Google odpowiada za Ciebie – Twoi konkurenci tracą klientów.
-              </h2>
-              <p className="text-lg md:text-xl text-gray-600 mb-12 leading-relaxed">
-                Rewolucja już się dzieje. AI Overviews zmieniają sposób, w jaki ludzie szukają usług. 
-                99% firm nie ma strategii na to, co nadchodzi. Czy Twoja ma?
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                <button className="bg-primary-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-2">
-                  <Target className="h-5 w-5" />
-                  Sprawdź swój potencjał AEO - Audyt za 950 zł
-                </button>
-                <button className="border-2 border-primary-500 text-primary-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-50 transition-all duration-300 flex items-center justify-center gap-2">
-                  <Phone className="h-5 w-5" />
-                  Umów bezpłatną konsultację
-                </button>
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+          {/* Animated Background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-primary-50/30 to-blue-50/50"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(255,139,0,0.1),rgba(255,255,255,0))]"></div>
+          
+          {/* Floating Elements */}
+          <div className="absolute top-20 left-20 w-32 h-32 bg-primary-200/20 rounded-full blur-xl animate-pulse hidden lg:block"></div>
+          <div className="absolute bottom-20 right-20 w-48 h-48 bg-blue-200/20 rounded-full blur-xl animate-pulse hidden lg:block" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-1/2 left-10 w-24 h-24 bg-purple-200/20 rounded-full blur-lg animate-pulse hidden md:block" style={{animationDelay: '2s'}}></div>
+          
+          <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center z-10">
+            <div className="mb-8 animate-fade-in">
+              {/* Badge with improved styling */}
+              <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-100 to-primary-50 border border-primary-200 text-primary-700 rounded-full text-sm font-semibold mb-8 shadow-lg backdrop-blur-sm">
+                <span className="w-2 h-2 bg-primary-500 rounded-full mr-3 animate-pulse"></span>
+                🚀 Pierwsza agencja AEO/GEO w Polsce
               </div>
+              
+              {/* Main Headline with improved typography */}
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+                Nie pozwól, by AI ukryło{' '}
+                <span className="relative">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-primary-600">
+                    Twoją firmę
+                  </span>
+                  <div className="absolute -inset-1 bg-gradient-to-r from-primary-500/20 to-primary-600/20 blur-lg -z-10"></div>
+                </span>{' '}
+                przed klientami
+              </h1>
+              
+              {/* Subtitle with enhanced styling */}
+              <div className="relative mb-8">
+                <h2 className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed font-medium">
+                  Jako pierwsi w Polsce oferujemy pozycjonowanie pod nową erę wyszukiwania. 
+                  <br className="hidden md:block" />
+                  Gdy Google odpowiada za Ciebie – <span className="text-primary-600 font-semibold">Twoi konkurenci tracą klientów.</span>
+                </h2>
+              </div>
+              
+              {/* Lead paragraph with icon */}
+              <div className="flex flex-col items-center mb-12">
+                <div className="mb-4 p-3 bg-gradient-to-br from-primary-100 to-primary-50 rounded-full">
+                  <svg className="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                  Rewolucja już się dzieje. AI Overviews zmieniają sposób, w jaki ludzie szukają usług. 
+                  <br className="hidden md:block" />
+                  <span className="font-semibold text-gray-700">99% firm nie ma strategii na to, co nadchodzi.</span> Czy Twoja ma?
+                </p>
+              </div>
+            </div>
+            
+            {/* Enhanced CTAs with gradient backgrounds */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+              <button className="relative group bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 flex items-center justify-center gap-2 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-primary-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <Target className="h-5 w-5 relative z-10" />
+                <span className="relative z-10">Sprawdź swój potencjał AEO - Audyt za 950 zł</span>
+              </button>
+              <button className="relative group border-2 border-primary-500 text-primary-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-50 transition-all duration-300 flex items-center justify-center gap-2 backdrop-blur-sm">
+                <Phone className="h-5 w-5" />
+                Umów bezpłatną konsultację
+              </button>
+            </div>
 
-              <div className="grid md:grid-cols-3 gap-6 text-center">
-                <div className="flex items-center justify-center gap-2 text-gray-700">
-                  <Shield className="h-5 w-5 text-primary-500" />
-                  <span className="font-semibold">Pierwsza agencja AEO/GEO w Polsce</span>
+            {/* Trust indicators with improved design */}
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="group bg-white/60 backdrop-blur-sm border border-white/20 rounded-xl p-6 hover:bg-white/80 transition-all duration-300 hover:shadow-lg">
+                <div className="flex flex-col items-center text-center">
+                  <div className="mb-3 p-2 bg-primary-100 rounded-full group-hover:bg-primary-200 transition-colors duration-300">
+                    <Shield className="h-6 w-6 text-primary-500" />
+                  </div>
+                  <span className="font-semibold text-gray-700">Pierwsza agencja AEO/GEO w Polsce</span>
                 </div>
-                <div className="flex items-center justify-center gap-2 text-gray-700">
-                  <Brain className="h-5 w-5 text-primary-500" />
-                  <span className="font-semibold">Autorska metodologia AI-Growth Framework™</span>
+              </div>
+              <div className="group bg-white/60 backdrop-blur-sm border border-white/20 rounded-xl p-6 hover:bg-white/80 transition-all duration-300 hover:shadow-lg">
+                <div className="flex flex-col items-center text-center">
+                  <div className="mb-3 p-2 bg-primary-100 rounded-full group-hover:bg-primary-200 transition-colors duration-300">
+                    <Brain className="h-6 w-6 text-primary-500" />
+                  </div>
+                  <span className="font-semibold text-gray-700">Autorska metodologia AI-Growth Framework™</span>
                 </div>
-                <div className="flex items-center justify-center gap-2 text-gray-700">
-                  <CheckCircle className="h-5 w-5 text-primary-500" />
-                  <span className="font-semibold">Gwarancja wyników w umowie</span>
+              </div>
+              <div className="group bg-white/60 backdrop-blur-sm border border-white/20 rounded-xl p-6 hover:bg-white/80 transition-all duration-300 hover:shadow-lg">
+                <div className="flex flex-col items-center text-center">
+                  <div className="mb-3 p-2 bg-primary-100 rounded-full group-hover:bg-primary-200 transition-colors duration-300">
+                    <CheckCircle className="h-6 w-6 text-primary-500" />
+                  </div>
+                  <span className="font-semibold text-gray-700">Gwarancja wyników w umowie</span>
                 </div>
               </div>
             </div>
