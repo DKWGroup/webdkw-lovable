@@ -23,12 +23,9 @@ import AdminPage from './pages/AdminPage'
 import PasswordResetPage from './pages/PasswordResetPage'
 import AEOManifestoPage from './pages/AEOManifestoPage'
 import NotFoundPage from './pages/NotFoundPage'
-import ScrollToTop from './components/ScrollToTop'
-
 function App() {
   return (
     <Router>
-      <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/blog" element={<BlogPage />} />
