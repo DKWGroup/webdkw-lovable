@@ -21,6 +21,7 @@ import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
 import AdminLoginPage from './pages/AdminLoginPage'
 import AdminPage from './pages/AdminPage'
 import PasswordResetPage from './pages/PasswordResetPage'
+import AEOManifestoPage from './pages/AEOManifestoPage'
 import NotFoundPage from './pages/NotFoundPage'
 import ScrollToTop from './components/ScrollToTop'
 
@@ -48,6 +49,7 @@ function App() {
         <Route path="/faq" element={<FAQPage />} />
         <Route path="/kontakt" element={<ContactPage />} />
         <Route path="/polityka-prywatnosci" element={<PrivacyPolicyPage />} />
+        <Route path="/aeo-manifesto" element={<AEOManifestoPage />} />
         <Route path="/admin/login" element={<AdminLoginPage />} />
         <Route path="/admin" element={<AdminPage />} />
         <Route path="/admin/reset-password" element={<PasswordResetPage />} />
