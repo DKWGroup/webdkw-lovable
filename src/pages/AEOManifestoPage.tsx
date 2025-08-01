@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
-import { CheckCircle, Star, Shield, Target, BarChart3, Search, Brain, Zap, Download, Calendar, Clock, ArrowRight, Users, FileText, Award } from 'lucide-react';
+import { CheckCircle, Shield, Target, BarChart3, Search, Brain, Zap, Download, Calendar, Clock, ArrowRight, Users, FileText, Award } from 'lucide-react';
 import { HelmetProvider } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import SEOHead from '../components/SEOHead';
-import FAQSection from '../components/FAQSection';
+import AEOFAQSection from '../components/AEOFAQSection';
 import ContactSection from '../components/ContactSection';
 import { BlogPost, supabase } from '../lib/supabase';
 
@@ -93,7 +93,7 @@ Pozdrawiam`;
           title="Pozycjonowanie AEO i GEO - Pierwsza Agencja AI w Polsce | WebDKW"
           description="Specjalizujemy się w pozycjonowaniu pod AI Overviews. Pakiety GEO (lokalne) i AEO (krajowe). Gwarancja wyników. Audyt potencjału za 800 zł."
           keywords="pozycjonowanie AEO, pozycjonowanie GEO, AI Overviews, pozycjonowanie pod sztuczną inteligencję, optymalizacja odpowiedzi AI"
-          url="https://webdkw.net/pozycjonowanie-aeo-geo"
+          url="https://webdkw.net/pozycjonowanie-ai"
         />
 
         <Header />
@@ -731,7 +731,7 @@ Pozdrawiam`;
           </div>
         </section>
 
-        <FAQSection />
+        <AEOFAQSection />
 
         <div data-contact-section>
           <ContactSection />
