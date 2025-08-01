@@ -1,50 +1,19 @@
 import { useState } from 'react';
-import { ChevronDown, CheckCircle, Star, Shield, Target, BarChart3, Search, Brain, Zap, Phone, Download } from 'lucide-react';
+import { CheckCircle, Star, Shield, Target, BarChart3, Search, Brain, Zap, Phone, Download } from 'lucide-react';
 import { HelmetProvider } from 'react-helmet-async';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import SEOHead from '../components/SEOHead';
+import FAQSection from '../components/FAQSection';
 
 const AEOManifestoPage = () => {
-  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
   const [showExitPopup, setShowExitPopup] = useState(false);
-
-  const toggleFAQ = (index: number) => {
-    setOpenFAQ(openFAQ === index ? null : index);
-  };
 
   const handleMouseLeave = () => {
     if (!showExitPopup) {
       setShowExitPopup(true);
     }
   };
-
-  const faqData = [
-    {
-      question: "Czym dokładnie różni się AEO/GEO od tradycyjnego SEO?",
-      answer: "Tradycyjne SEO koncentruje się na rankingu w wynikach wyszukiwania. AEO (Answer Engine Optimization) i GEO (Generative Engine Optimization) optymalizują pod AI Overviews - gdy Google AI odpowiada bezpośrednio na pytania użytkowników. To oznacza, że Twoja firma może być polecana przez AI bez konieczności klikania przez użytkownika."
-    },
-    {
-      question: "Po jakim czasie zobaczę pierwsze rezultaty?",
-      answer: "Pierwsze sygnały widoczności w AI Overviews możesz zobaczyć już po 2-4 tygodniach. Znaczące wyniki - po 2-3 miesiącach. Pełny potencjał pakietu rozwija się w ciągu 6 miesięcy, dlatego nasze umowy są zawierane na minimum 6 miesięcy."
-    },
-    {
-      question: "Na czym polega wasza gwarancja wyników?",
-      answer: "Dla pakietu AEO Dominator gwarantujemy, że Twoja strona pojawi się w co najmniej 30% odpowiedzi AI dla top 10 zapytań w Twojej branży w ciągu 6 miesięcy. Jeśli tego nie osiągniemy, zwracamy 100% kosztów lub kontynuujemy pracę bezpłatnie do osiągnięcia celu."
-    },
-    {
-      question: "Co to jest ten wskaźnik 'Answer Share™' i jak go mierzycie?",
-      answer: "Answer Share™ to nasz autorski wskaźnik pokazujący, jaki procent odpowiedzi AI w Twojej branży zawiera informacje o Twojej firmie. Mierzymy go poprzez systematyczne testowanie zapytań związanych z Twoją działalnością i analizę, czy AI poleca Twoją firmę jako rozwiązanie."
-    },
-    {
-      question: "Czy te usługi są dla mojej firmy, jeśli jestem małym przedsiębiorcą?",
-      answer: "Pakiet GEO Launchpad jest idealny dla małych firm lokalnych - prawników, lekarzy, restauratorów. Koszt 4500 zł/mies. to inwestycja, która szybko się zwraca dzięki lepszej widoczności lokalnej i pozyskiwaniu klientów przez AI."
-    },
-    {
-      question: "Czy współpracujecie z firmami spoza Katowic?",
-      answer: "Tak! Pracujemy z firmami z całej Polski. Pakiet GEO Launchpad działa dla każdego miasta w Polsce, a AEO Dominator dla firm krajowych. Większość współpracy odbywa się zdalnie, z regularnymi spotkaniami online."
-    }
-  ];
 
   return (
     <HelmetProvider>
@@ -439,37 +408,7 @@ const AEOManifestoPage = () => {
           </div>
         </section>
 
-        {/* FAQ Section */}
-        <section className="py-20 bg-gray-50">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16">
-              Masz pytania? Mamy odpowiedzi.
-            </h2>
-            
-            <div className="space-y-4">
-              {faqData.map((item, index) => (
-                <div key={index} className="bg-white border border-gray-200 rounded-lg overflow-hidden">
-                  <button
-                    className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
-                    onClick={() => toggleFAQ(index)}
-                  >
-                    <span className="font-semibold text-gray-900">{item.question}</span>
-                    <ChevronDown 
-                      className={`h-5 w-5 text-gray-500 transition-transform duration-200 ${
-                        openFAQ === index ? 'transform rotate-180' : ''
-                      }`}
-                    />
-                  </button>
-                  {openFAQ === index && (
-                    <div className="px-6 pb-4 text-gray-600 animate-fade-in">
-                      {item.answer}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <FAQSection />
 
         {/* Final CTA Section */}
         <section className="py-20 bg-gradient-to-r from-primary-500 to-primary-600">
