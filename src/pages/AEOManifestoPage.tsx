@@ -209,7 +209,7 @@ Pozdrawiam`;
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-4">
                     <Search className="h-8 w-8 text-primary-600" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">GEO Launchpad</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Lokalny Lider</h3>
                   <h4 className="text-xl text-primary-600 font-semibold mb-4">Zdominuj lokalny rynek</h4>
                   <p className="text-gray-600">
                     Idealny dla firm usługowych takich jak prawnicy, lekarze czy restauratorzy, 
@@ -278,7 +278,7 @@ Pozdrawiam`;
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-500 rounded-full mb-4">
                     <Zap className="h-8 w-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">AEO Dominator</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Lider Branży</h3>
                   <h4 className="text-xl text-primary-600 font-semibold mb-4">Zostań krajowym liderem myśli</h4>
                   <p className="text-gray-600">
                     Stworzony dla e-commerce, firm B2B i SaaS, które chcą osiągnąć status głównego źródła odpowiedzi dla AI w całej Polsce.
