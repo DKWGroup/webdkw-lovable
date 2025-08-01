@@ -54,6 +54,40 @@ const AEOManifestoPage = () => {
     }
   };
 
+  const scrollToContact = () => {
+    const contactSection = document.querySelector('[data-contact-section]');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleAuditClick = () => {
+    window.open('https://calendly.com/webdkw/audyt-aeo', '_blank');
+  };
+
+  const handleConsultationClick = () => {
+    scrollToContact();
+  };
+
+  const handlePackageClick = (packageType: 'geo' | 'aeo') => {
+    const subject = packageType === 'geo' 
+      ? 'Zapytanie o pakiet GEO Launchpad' 
+      : 'Zapytanie o pakiet AEO Dominator';
+    const body = `Dzień dobry,
+
+Jestem zainteresowany pakietem ${packageType === 'geo' ? 'GEO Launchpad' : 'AEO Dominator'}. Proszę o kontakt w celu omówienia szczegółów.
+
+Pozdrawiam`;
+    
+    window.location.href = `mailto:kontakt@webdkw.net?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
+
+  const handleDownloadGuide = () => {
+    // Tu można dodać logikę pobierania przewodnika
+    window.open('/contact', '_blank');
+    setShowExitPopup(false);
+  };
+
   return (
     <HelmetProvider>
       <div className="min-h-screen bg-white" onMouseLeave={handleMouseLeave}>
@@ -123,12 +157,18 @@ const AEOManifestoPage = () => {
             
             {/* Enhanced CTAs with gradient backgrounds */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-              <button className="relative group bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 flex items-center justify-center gap-2 overflow-hidden">
+              <button 
+                onClick={handleAuditClick}
+                className="relative group bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 flex items-center justify-center gap-2 overflow-hidden"
+              >
                 <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-primary-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <Target className="h-5 w-5 relative z-10" />
                 <span className="relative z-10">Sprawdź swój potencjał AEO - Audyt za 950 zł</span>
               </button>
-              <button className="relative group border-2 border-primary-500 text-primary-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-50 transition-all duration-300 flex items-center justify-center gap-2 backdrop-blur-sm">
+              <button 
+                onClick={handleConsultationClick}
+                className="relative group border-2 border-primary-500 text-primary-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-50 transition-all duration-300 flex items-center justify-center gap-2 backdrop-blur-sm"
+              >
                 <Phone className="h-5 w-5" />
                 Umów bezpłatną konsultację
               </button>
@@ -229,7 +269,10 @@ const AEOManifestoPage = () => {
                   </div>
                 </div>
 
-                <button className="w-full bg-primary-500 text-white py-4 rounded-lg font-semibold hover:bg-primary-600 transition-colors duration-300">
+                <button 
+                  onClick={() => handlePackageClick('geo')}
+                  className="w-full bg-primary-500 text-white py-4 rounded-lg font-semibold hover:bg-primary-600 transition-colors duration-300"
+                >
                   Chcę zdominować rynek lokalny
                 </button>
               </div>
@@ -296,7 +339,10 @@ const AEOManifestoPage = () => {
                   </div>
                 </div>
 
-                <button className="w-full bg-primary-500 text-white py-4 rounded-lg font-semibold hover:bg-primary-600 transition-colors duration-300">
+                <button 
+                  onClick={() => handlePackageClick('aeo')}
+                  className="w-full bg-primary-500 text-white py-4 rounded-lg font-semibold hover:bg-primary-600 transition-colors duration-300"
+                >
                   Chcę być liderem w branży
                 </button>
               </div>
@@ -548,7 +594,9 @@ const AEOManifestoPage = () => {
 
         <FAQSection />
 
-        <ContactSection />
+        <div data-contact-section>
+          <ContactSection />
+        </div>
 
         {/* Final CTA Section */}
         <section className="py-20 bg-gradient-to-r from-primary-500 to-primary-600">
@@ -595,7 +643,10 @@ const AEOManifestoPage = () => {
               <p className="text-gray-600 mb-6">
                 Pobierz BEZPŁATNY przewodnik "5 sposobów na przygotowanie firmy na erę AI"
               </p>
-              <button className="w-full bg-primary-500 text-white py-3 rounded-lg font-semibold hover:bg-primary-600 transition-colors mb-4 flex items-center justify-center gap-2">
+              <button 
+                onClick={handleDownloadGuide}
+                className="w-full bg-primary-500 text-white py-3 rounded-lg font-semibold hover:bg-primary-600 transition-colors mb-4 flex items-center justify-center gap-2"
+              >
                 <Download className="h-5 w-5" />
                 Pobierz przewodnik za darmo
               </button>
