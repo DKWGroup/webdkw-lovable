@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { CheckCircle, Star, Shield, Target, BarChart3, Search, Brain, Zap, Download, Calendar, Clock, ArrowRight } from 'lucide-react';
+import { CheckCircle, Star, Shield, Target, BarChart3, Search, Brain, Zap, Download, Calendar, Clock, ArrowRight, Users, FileText, Award } from 'lucide-react';
 import { HelmetProvider } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
@@ -335,6 +335,154 @@ Pozdrawiam`;
                 >
                   Chcę być liderem w branży
                 </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Audit Section */}
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Main Header */}
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                Zanim zainwestujesz tysiące, <br className="hidden md:block" />
+                zainwestuj w pewność. <br className="hidden md:block" />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-primary-600">
+                  Poznaj swój potencjał w erze AI.
+                </span>
+              </h2>
+              <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                Zastanawiasz się, czy rewolucja AI to dla Ciebie szansa, czy zagrożenie? Czy Twoi klienci już teraz zadają pytania sztucznej inteligencji, na które odpowiada Twoja konkurencja? 
+                <br className="hidden md:block" />
+                <strong className="text-gray-800">Nasz Audyt Potencjału AEO nie jest zwykłym raportem. To Twoja osobista mapa drogowa, która da Ci konkretne odpowiedzi i przewagę na starcie.</strong>
+              </p>
+            </div>
+
+            {/* Value Proposition */}
+            <div className="mb-16">
+              <h3 className="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-12">
+                Otrzymasz nie tylko raport, ale konkretne odpowiedzi i plan działania
+              </h3>
+              
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="bg-gradient-to-br from-primary-50 to-white border border-primary-200 rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300">
+                  <div className="w-16 h-16 bg-primary-500 text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                    <BarChart3 className="h-8 w-8" />
+                  </div>
+                  <h4 className="text-lg font-bold text-gray-900 mb-3">Analiza Twojej Obecnej Pozycji</h4>
+                  <p className="text-gray-600 text-sm">
+                    Sprawdzimy Twój startowy wskaźnik Answer Share™ i ocenimy, jak często AI poleca Twoją firmę.
+                  </p>
+                </div>
+
+                <div className="bg-gradient-to-br from-orange-50 to-white border border-orange-200 rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300">
+                  <div className="w-16 h-16 bg-orange-500 text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Users className="h-8 w-8" />
+                  </div>
+                  <h4 className="text-lg font-bold text-gray-900 mb-3">Identyfikacja "Złotych Pytań" Twoich Klientów</h4>
+                  <p className="text-gray-600 text-sm">
+                    Otrzymasz listę najważniejszych pytań, na które Twoja firma musi odpowiedzieć, by dominować w AI.
+                  </p>
+                </div>
+
+                <div className="bg-gradient-to-br from-green-50 to-white border border-green-200 rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300">
+                  <div className="w-16 h-16 bg-green-500 text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Award className="h-8 w-8" />
+                  </div>
+                  <h4 className="text-lg font-bold text-gray-900 mb-3">Ocena Potencjału i Szans</h4>
+                  <p className="text-gray-600 text-sm">
+                    Ocena potencjału Twojej firmy w skali 1-10 oraz określenie szans na dominację w Twojej branży.
+                  </p>
+                </div>
+
+                <div className="bg-gradient-to-br from-blue-50 to-white border border-blue-200 rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300">
+                  <div className="w-16 h-16 bg-blue-500 text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                    <FileText className="h-8 w-8" />
+                  </div>
+                  <h4 className="text-lg font-bold text-gray-900 mb-3">Konkretna Mapa Drogowa na Pierwsze 90 Dni</h4>
+                  <p className="text-gray-600 text-sm">
+                    Lista 3-5 priorytetowych działań do wdrożenia od zaraz, z jasnym harmonogramem i oczekiwanymi efektami.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Objections Handling */}
+            <div className="grid lg:grid-cols-2 gap-12 mb-16">
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                  Dlaczego nasz audyt jest płatny?
+                </h3>
+                <div className="bg-gray-50 border-l-4 border-primary-500 p-6 rounded-lg">
+                  <p className="text-gray-700 leading-relaxed">
+                    To nie jest automatyczny raport wygenerowany przez AI. To <strong>100% ręcznej pracy eksperta</strong>, który analizuje Twoją branżę, konkurencję i możliwości. 
+                    <br /><br />
+                    Każdy audyt to kilka godzin szczegółowych badań i przygotowania strategii dopasowanej do Twoich potrzeb. Darmowe raporty to szablony - my dostarczamy konkretną wartość.
+                  </p>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                  Jak wygląda proces audytu?
+                </h3>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-4">
+                    <div className="w-8 h-8 bg-primary-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
+                      1
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Zamawiasz i opłacasz audyt</h4>
+                      <p className="text-gray-600 text-sm">Kliknij przycisk poniżej i uzupełnij krótki formularz z podstawowymi informacjami o Twojej firmie.</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-4">
+                    <div className="w-8 h-8 bg-primary-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
+                      2
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Nasz ekspert pracuje nad analizą</h4>
+                      <p className="text-gray-600 text-sm">Do 5 dni roboczych szczegółowej analizy Twojej branży, konkurencji i potencjału AEO.</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-4">
+                    <div className="w-8 h-8 bg-primary-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
+                      3
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Otrzymujesz gotowy raport</h4>
+                      <p className="text-gray-600 text-sm">Profesjonalny raport w PDF z konkretnym planem działania na pierwsze 90 dni.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* CTA Box */}
+            <div className="bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-2xl p-8 text-center">
+              <div className="max-w-2xl mx-auto">
+                <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                  Twoja najważniejsza inwestycja w 2025 roku
+                </h3>
+                <p className="text-lg text-primary-100 mb-8">
+                  Nie czekaj, aż konkurencja zajmie Twoje miejsce w odpowiedziach AI. Zainwestuj w strategię, która da Ci przewagę na lata.
+                </p>
+                
+                <button 
+                  onClick={handleAuditClick}
+                  className="bg-white text-primary-600 px-8 py-4 rounded-lg text-xl font-bold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 mb-4"
+                >
+                  Zamawiam Audyt i Zyskuję Przewagę - 950 zł
+                </button>
+                
+                <div className="border-t border-primary-400 pt-4 mt-6">
+                  <p className="text-primary-100 text-sm">
+                    <strong className="text-white">Gwarancja Satysfakcji:</strong> Jeśli uznasz, że audyt nie dostarczył Ci wartościowej wiedzy, zwrócimy Ci pieniądze.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
