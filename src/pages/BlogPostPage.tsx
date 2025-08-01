@@ -27,7 +27,8 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import SEOHead from "../components/SEOHead";
 import StructuredData from "../components/StructuredData";
-import { BlogPost, supabase } from "../lib/supabase";
+import { supabase } from "../integrations/supabase/client";
+import { BlogPost } from "../lib/supabase";
 
 const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -50,7 +51,7 @@ const BlogPostPage = () => {
       const { data, error } = await supabase
         .from("blog_posts")
         .select("*")
-        .eq("slug", slug)
+        .eq("slug", slug || "")
         .eq("published", true)
         .single();
 
@@ -538,11 +539,11 @@ const BlogPostPage = () => {
           }
           url={`https://webdkw.net/blog/${post.slug}`}
           type="article"
-          author={post.author}
-          publishedTime={post.created_at}
-          modifiedTime={post.updated_at}
-          tags={post.tags}
-          categories={post.categories}
+          author={post.author || undefined}
+          publishedTime={post.created_at || undefined}
+          modifiedTime={post.updated_at || undefined}
+          tags={post.tags || undefined}
+          categories={post.categories || undefined}
         />
         <StructuredData type="breadcrumb" data={breadcrumbData} />
         <StructuredData type="article" data={articleData} />
@@ -581,7 +582,7 @@ const BlogPostPage = () => {
                   <div className="flex items-center space-x-4 text-sm text-gray-500 mb-6">
                     <div className="flex items-center space-x-1">
                       <Calendar className="h-4 w-4" />
-                      <span>{formatDate(post.created_at)}</span>
+                      <span>{post.created_at ? formatDate(post.created_at) : 'Brak daty'}</span>
                     </div>
                     <div className="flex items-center space-x-1">
                       <User className="h-4 w-4" />
@@ -698,7 +699,7 @@ const BlogPostPage = () => {
                 {post.download_materials &&
                   post.download_materials.length > 0 && (
                     <div className="mb-10">
-                      {post.download_materials.map((material, index) => (
+                      {post.download_materials.map((material: any, index: number) => (
                         <DownloadMaterial
                           key={index}
                           material={material}
@@ -846,7 +847,7 @@ const BlogPostPage = () => {
                 <div className="flex items-start space-x-6">
                   <img
                     src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=200"
-                    alt={post.author}
+                    alt={post.author || 'Autor'}
                     className="w-20 h-20 rounded-full object-cover"
                   />
                   <div>
@@ -897,7 +898,7 @@ const BlogPostPage = () => {
                         </p>
                       </div>
                       <div className="px-5 pb-5 pt-2 border-t border-gray-100 text-sm text-gray-500 flex justify-between">
-                        <span>{formatDate(relatedPost.created_at)}</span>
+                        <span>{relatedPost.created_at ? formatDate(relatedPost.created_at) : 'Brak daty'}</span>
                         <span className="text-orange-500">Czytaj więcej</span>
                       </div>
                     </Link>

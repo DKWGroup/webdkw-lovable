@@ -9,23 +9,23 @@ export interface BlogPost {
   id: string
   title: string
   slug: string
-  excerpt: string
+  excerpt: string | null
   content: string
-  published: boolean
-  created_at: string
-  updated_at: string
-  author: string
-  image_url?: string
-  tags?: string[]
-  meta_description?: string
-  categories?: string[]
-  tldr_summary?: string
-  tldr_takeaways?: string[]
-  faqs?: Array<{ question: string; answer: string }>
-  ctas?: Array<{ title: string; url: string; color: string }>
-  seo_score?: number
- sources?: string[]
-  download_materials?: DownloadMaterial[]
+  published: boolean | null
+  created_at: string | null
+  updated_at: string | null
+  author: string | null
+  image_url?: string | null
+  tags?: string[] | null
+  meta_description?: string | null
+  categories?: string[] | null
+  tldr_summary?: string | null
+  tldr_takeaways?: string[] | null
+  faqs?: any
+  ctas?: any
+  seo_score?: number | null
+  sources?: string[] | null
+  download_materials?: any
 }
 
 export interface DownloadMaterial {
@@ -44,11 +44,11 @@ export interface ContactSubmission {
   id: string
   name: string
   email: string
-  company?: string
-  phone?: string
+  company?: string | null
+  phone?: string | null
   message: string
-  lead_magnet?: boolean
-  created_at: string
+  lead_magnet?: boolean | null
+  created_at: string | null
 }
 
 export interface Project {
@@ -59,22 +59,19 @@ export interface Project {
   industry: string
   description: string
   image_url: string
-  technologies: string[]
-  results: {
-    metric: string
-    value: string
-  }[]
-  completion_date: string
-  project_url?: string
-  featured: boolean
-  created_at: string
-  updated_at: string
-  case_study?: boolean
-  case_study_header?: string
-  case_study_introduction?: string
-  case_study_goals?: string
-  case_study_implementation?: string
-  case_study_results?: string
-  case_study_summary?: string
-  case_study_cta?: string
+  technologies: string[] | null
+  results: any
+  completion_date: string | null
+  project_url?: string | null
+  featured: boolean | null
+  created_at: string | null
+  updated_at: string | null
+  case_study?: boolean | null
+  case_study_header?: string | null
+  case_study_introduction?: string | null
+  case_study_goals?: string | null
+  case_study_implementation?: string | null
+  case_study_results?: string | null
+  case_study_summary?: string | null
+  case_study_cta?: string | null
 }

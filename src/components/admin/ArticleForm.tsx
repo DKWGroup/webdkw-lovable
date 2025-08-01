@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { X, Save, Eye, Tag, AlertCircle } from 'lucide-react'
-import { supabase, BlogPost } from '../../lib/supabase'
+import { supabase } from '../../integrations/supabase/client';
+import { BlogPost } from '../../lib/supabase';
 import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css'
 import DatePicker from 'react-datepicker'

@@ -7,7 +7,8 @@ import Footer from '../components/Footer';
 import SEOHead from '../components/SEOHead';
 import AEOFAQSection from '../components/AEOFAQSection';
 import ContactSection from '../components/ContactSection';
-import { BlogPost, supabase } from '../lib/supabase';
+import { supabase } from '../integrations/supabase/client';
+import { BlogPost } from '../lib/supabase';
 
 const AEOManifestoPage = () => {
   const [showExitPopup, setShowExitPopup] = useState(false);
@@ -660,7 +661,7 @@ const AEOManifestoPage = () => {
                         <div className="flex items-center space-x-4 text-sm text-gray-500 mb-4">
                           <div className="flex items-center space-x-1">
                             <Calendar className="h-4 w-4" />
-                            <span>{formatDate(post.created_at)}</span>
+                            <span>{post.created_at ? formatDate(post.created_at) : 'Brak daty'}</span>
                           </div>
                           <div className="flex items-center space-x-1">
                             <Clock className="h-4 w-4" />
