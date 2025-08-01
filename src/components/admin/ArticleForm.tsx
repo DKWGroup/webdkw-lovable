@@ -340,6 +340,7 @@ const ArticleForm: React.FC<ArticleFormProps> = ({ article, isOpen, onClose, onS
                       formats={formats}
                       placeholder="Napisz treść artykułu..."
                       className="h-64"
+                      readOnly={false}
                     />
                   </div>
                   {errors.content && (
