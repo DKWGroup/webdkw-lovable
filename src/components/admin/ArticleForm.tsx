@@ -116,27 +116,35 @@ const ArticleForm: React.FC<ArticleFormProps> = ({ article, isOpen, onClose, onS
     setImageFile(null)
   }, [article, isOpen])
 
-  // Auto-generate slug from title
+  // Auto-generate slug from title (only once when title changes and not editing)
   useEffect(() => {
-    if (formData.title && !article) {
+    if (formData.title && !article && !formData.slug) {
       const slug = FormValidator.generateSlug(formData.title)
       setFormData(prev => ({ ...prev, slug }))
     }
   }, [formData.title, article])
 
-  // Auto-generate meta description from content
+  // Auto-generate meta description from content (debounced)
   useEffect(() => {
     if (formData.content && !formData.meta_description && !article) {
-      const metaDesc = FormValidator.generateMetaDescription(formData.content)
-      setFormData(prev => ({ ...prev, meta_description: metaDesc }))
+      const timer = setTimeout(() => {
+        const metaDesc = FormValidator.generateMetaDescription(formData.content)
+        setFormData(prev => ({ ...prev, meta_description: metaDesc }))
+      }, 1000) // 1 second delay
+      
+      return () => clearTimeout(timer)
     }
   }, [formData.content, article])
 
-  // Auto-generate excerpt from content
+  // Auto-generate excerpt from content (debounced)
   useEffect(() => {
     if (formData.content && !formData.excerpt && !article) {
-      const excerpt = FormValidator.generateExcerpt(formData.content)
-      setFormData(prev => ({ ...prev, excerpt }))
+      const timer = setTimeout(() => {
+        const excerpt = FormValidator.generateExcerpt(formData.content)
+        setFormData(prev => ({ ...prev, excerpt }))
+      }, 1000) // 1 second delay
+      
+      return () => clearTimeout(timer)
     }
   }, [formData.content, article])
 
