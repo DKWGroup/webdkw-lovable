@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { CheckCircle, Star, Shield, Target, BarChart3, Search, Brain, Zap, Phone, Download, Calendar, Clock, ArrowRight } from 'lucide-react';
+import { CheckCircle, Star, Shield, Target, BarChart3, Search, Brain, Zap, Download, Calendar, Clock, ArrowRight } from 'lucide-react';
 import { HelmetProvider } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
@@ -62,12 +62,9 @@ const AEOManifestoPage = () => {
   };
 
   const handleAuditClick = () => {
-    window.open('https://calendly.com/webdkw/audyt-aeo', '_blank');
-  };
-
-  const handleConsultationClick = () => {
     scrollToContact();
   };
+
 
   const handlePackageClick = (packageType: 'geo' | 'aeo') => {
     const subject = packageType === 'geo' 
@@ -155,8 +152,8 @@ Pozdrawiam`;
               </div>
             </div>
             
-            {/* Enhanced CTAs with gradient backgrounds */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+            {/* Enhanced CTA with gradient background */}
+            <div className="flex justify-center mb-16">
               <button 
                 onClick={handleAuditClick}
                 className="relative group bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 flex items-center justify-center gap-2 overflow-hidden"
@@ -164,13 +161,6 @@ Pozdrawiam`;
                 <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-primary-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <Target className="h-5 w-5 relative z-10" />
                 <span className="relative z-10">Sprawdź swój potencjał AEO - Audyt za 950 zł</span>
-              </button>
-              <button 
-                onClick={handleConsultationClick}
-                className="relative group border-2 border-primary-500 text-primary-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-50 transition-all duration-300 flex items-center justify-center gap-2 backdrop-blur-sm"
-              >
-                <Phone className="h-5 w-5" />
-                Umów bezpłatną konsultację
               </button>
             </div>
 
@@ -610,14 +600,13 @@ Pozdrawiam`;
             </p>
             
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-                <button className="bg-white text-primary-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-2">
+              <div className="flex justify-center mb-6">
+                <button 
+                  onClick={handleAuditClick}
+                  className="bg-white text-primary-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-2"
+                >
                   <Target className="h-5 w-5" />
                   Audyt Potencjału AEO - 950 zł
-                </button>
-                <button className="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-2">
-                  <Phone className="h-5 w-5" />
-                  Bezpłatna konsultacja - 30 min
                 </button>
               </div>
               <div className="text-center">
