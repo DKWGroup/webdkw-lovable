@@ -6,8 +6,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import SEOHead from "../components/SEOHead";
 import StructuredData from "../components/StructuredData";
-import { supabase } from "../integrations/supabase/client";
-import { BlogPost } from "../lib/supabase";
+import { BlogPost, supabase } from "../lib/supabase";
 
 const BlogPage = () => {
   const [posts, setPosts] = useState<BlogPost[]>([]);
@@ -212,7 +211,7 @@ const BlogPage = () => {
                         <div className="flex items-center space-x-4 text-sm text-gray-500 mb-4">
                           <div className="flex items-center space-x-1">
                             <Calendar className="h-4 w-4" />
-                            <span>{post.created_at ? formatDate(post.created_at) : 'Brak daty'}</span>
+                            <span>{formatDate(post.created_at)}</span>
                           </div>
                           <div className="flex items-center space-x-1">
                             <User className="h-4 w-4" />

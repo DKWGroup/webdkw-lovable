@@ -5,8 +5,7 @@ import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import SEOHead from "../components/SEOHead";
-import { supabase } from "../integrations/supabase/client";
-import { Project } from "../lib/supabase";
+import { Project, supabase } from "../lib/supabase";
 
 const PortfolioPage = () => {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -183,10 +182,9 @@ const PortfolioPage = () => {
                             <div className="flex items-center space-x-2 text-gray-500 text-sm">
                               <Calendar className="h-4 w-4" />
                               <span>
-                                {project.completion_date ? 
-                                  new Date(project.completion_date).getFullYear() :
-                                  'Brak daty'
-                                }
+                                {new Date(
+                                  project.completion_date
+                                ).getFullYear()}
                               </span>
                             </div>
                           </div>
@@ -204,7 +202,7 @@ const PortfolioPage = () => {
                               </span>
                             </div>
                             <div className="flex flex-wrap gap-2">
-                              {project.technologies?.map((tech, idx) => (
+                              {project.technologies.map((tech, idx) => (
                                 <span
                                   key={idx}
                                   className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm"
@@ -225,7 +223,7 @@ const PortfolioPage = () => {
                                 project.featured ? "grid-cols-3" : "grid-cols-1"
                               } gap-4`}
                             >
-                              {project.results?.map((result: any, idx: number) => (
+                              {project.results.map((result, idx) => (
                                 <div
                                   key={idx}
                                   className="text-center p-4 bg-gray-50 rounded-lg"

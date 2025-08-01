@@ -18,8 +18,7 @@ import {
   Bell,
   User
 } from 'lucide-react'
-import { supabase } from '../integrations/supabase/client';
-import { BlogPost, ContactSubmission, Project } from '../lib/supabase';
+import { supabase, BlogPost, ContactSubmission, Project } from '../lib/supabase'
 import { authSecurity } from '../lib/auth'
 import ArticleForm from '../components/admin/ArticleForm'
 import ProjectForm from '../components/admin/ProjectForm'
@@ -105,7 +104,7 @@ const AdminPage = () => {
       const recentDate = new Date()
       recentDate.setDate(recentDate.getDate() - 7)
       const recentContacts = contactsData?.filter(
-        contact => contact.created_at && new Date(contact.created_at) > recentDate
+        contact => new Date(contact.created_at) > recentDate
       ).length || 0
 
       setStats({
@@ -515,7 +514,7 @@ const PostsContent = ({ posts, searchTerm, setSearchTerm, onAddArticle, onEditAr
                       </span>
                     </td>
                     <td className="hidden lg:table-cell px-4 lg:px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      {post.created_at ? new Date(post.created_at).toLocaleDateString('pl-PL') : 'Brak daty'}
+                      {new Date(post.created_at).toLocaleDateString('pl-PL')}
                     </td>
                     <td className="px-4 lg:px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                       <div className="flex items-center justify-end space-x-2">
@@ -711,7 +710,7 @@ const ContactsContent = ({ contacts, searchTerm, setSearchTerm }: any) => (
                   {contact.company || '-'}
                 </td>
                 <td className="hidden lg:table-cell px-4 lg:px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  {contact.created_at ? new Date(contact.created_at).toLocaleDateString('pl-PL') : 'Brak daty'}
+                  {new Date(contact.created_at).toLocaleDateString('pl-PL')}
                 </td>
                 <td className="px-4 lg:px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                   <div className="flex items-center justify-end space-x-2">
