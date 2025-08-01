@@ -1,13 +1,51 @@
-import { useState } from 'react';
-import { CheckCircle, Star, Shield, Target, BarChart3, Search, Brain, Zap, Phone, Download } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { CheckCircle, Star, Shield, Target, BarChart3, Search, Brain, Zap, Phone, Download, Calendar, Clock, ArrowRight } from 'lucide-react';
 import { HelmetProvider } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import SEOHead from '../components/SEOHead';
 import FAQSection from '../components/FAQSection';
+import { BlogPost, supabase } from '../lib/supabase';
 
 const AEOManifestoPage = () => {
   const [showExitPopup, setShowExitPopup] = useState(false);
+  const [featuredPosts, setFeaturedPosts] = useState<BlogPost[]>([]);
+
+  useEffect(() => {
+    fetchFeaturedPosts();
+  }, []);
+
+  const fetchFeaturedPosts = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('blog_posts')
+        .select('*')
+        .eq('published', true)
+        .order('created_at', { ascending: false })
+        .limit(3);
+
+      if (error) throw error;
+      setFeaturedPosts(data || []);
+    } catch (error) {
+      console.error('Error fetching posts:', error);
+    }
+  };
+
+  const formatDate = (dateString: string) => {
+    return new Date(dateString).toLocaleDateString('pl-PL', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
+  };
+
+  const getReadingTime = (content: string) => {
+    const wordsPerMinute = 200;
+    const wordCount = content.split(' ').length;
+    const minutes = Math.ceil(wordCount / wordsPerMinute);
+    return `${minutes} min czytania`;
+  };
 
   const handleMouseLeave = () => {
     if (!showExitPopup) {
@@ -405,6 +443,105 @@ const AEOManifestoPage = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Featured Blog Articles Section */}
+        <section className="py-20 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Pogłęb swoją wiedzę o AEO/GEO
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Odkryj nasze najlepsze artykuły o pozycjonowaniu pod AI i przygotuj swoją firmę na przyszłość wyszukiwania
+              </p>
+            </div>
+
+            {featuredPosts.length > 0 ? (
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {featuredPosts.map((post) => (
+                  <Link 
+                    key={post.id}
+                    to={`/blog/${post.slug}`}
+                    className="group"
+                  >
+                    <article className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden h-full">
+                      <div className="relative">
+                        <img
+                          src={post.image_url || "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800"}
+                          alt={post.title}
+                          className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                        <div className="absolute top-4 left-4">
+                          {post.tags && post.tags.length > 0 && (
+                            <span className="bg-primary-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                              {post.tags[0]}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+
+                      <div className="p-6">
+                        <div className="flex items-center space-x-4 text-sm text-gray-500 mb-4">
+                          <div className="flex items-center space-x-1">
+                            <Calendar className="h-4 w-4" />
+                            <span>{formatDate(post.created_at)}</span>
+                          </div>
+                          <div className="flex items-center space-x-1">
+                            <Clock className="h-4 w-4" />
+                            <span>{getReadingTime(post.content)}</span>
+                          </div>
+                        </div>
+
+                        <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-primary-600 transition-colors duration-300">
+                          {post.title}
+                        </h3>
+
+                        <p className="text-gray-600 leading-relaxed mb-4 line-clamp-3">
+                          {post.excerpt}
+                        </p>
+
+                        <div className="flex items-center space-x-2 text-primary-500 group-hover:text-primary-600 font-semibold transition-colors">
+                          <span>Czytaj dalej</span>
+                          <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                        </div>
+                      </div>
+                    </article>
+                  </Link>
+                ))}
+              </div>
+            ) : (
+              <div className="text-center py-16 bg-white rounded-2xl shadow-lg">
+                <div className="max-w-2xl mx-auto px-4">
+                  <div className="text-6xl mb-6">📖</div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    Artykuły wkrótce dostępne
+                  </h3>
+                  <p className="text-gray-600 mb-8">
+                    Pracujemy nad wartościowymi artykułami o AEO/GEO, które pomogą Ci zrozumieć przyszłość pozycjonowania.
+                  </p>
+                  <Link
+                    to="/blog"
+                    className="inline-flex items-center px-6 py-3 bg-primary-500 text-white rounded-lg font-semibold hover:bg-primary-600 transition-colors"
+                  >
+                    Przejdź do bloga
+                  </Link>
+                </div>
+              </div>
+            )}
+
+            {featuredPosts.length > 0 && (
+              <div className="text-center mt-12">
+                <Link
+                  to="/blog"
+                  className="inline-flex items-center px-8 py-4 bg-primary-500 text-white rounded-lg font-semibold hover:bg-primary-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 gap-2"
+                >
+                  <span>Zobacz wszystkie artykuły</span>
+                  <ArrowRight className="h-5 w-5" />
+                </Link>
+              </div>
+            )}
           </div>
         </section>
 
