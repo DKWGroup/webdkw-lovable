@@ -91,7 +91,7 @@ Pozdrawiam`;
       <div className="min-h-screen bg-white" onMouseLeave={handleMouseLeave}>
         <SEOHead
           title="Pozycjonowanie AEO i GEO - Pierwsza Agencja AI w Polsce | WebDKW"
-          description="Specjalizujemy się w pozycjonowaniu pod AI Overviews. Pakiety GEO (lokalne) i AEO (krajowe). Gwarancja wyników. Audyt potencjału za 950 zł."
+          description="Specjalizujemy się w pozycjonowaniu pod AI Overviews. Pakiety GEO (lokalne) i AEO (krajowe). Gwarancja wyników. Audyt potencjału za 800 zł."
           keywords="pozycjonowanie AEO, pozycjonowanie GEO, AI Overviews, pozycjonowanie pod sztuczną inteligencję, optymalizacja odpowiedzi AI"
           url="https://webdkw.net/pozycjonowanie-aeo-geo"
         />
@@ -161,7 +161,7 @@ Pozdrawiam`;
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-primary-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <Target className="h-5 w-5 relative z-10" />
-                <span className="relative z-10">Sprawdź swój potencjał AEO - Audyt za 950 zł</span>
+                <span className="relative z-10">Sprawdź swój potencjał AEO - Audyt za 800 zł</span>
               </button>
             </div>
 
@@ -253,10 +253,10 @@ Pozdrawiam`;
 
                 <div className="bg-gray-50 p-6 rounded-xl mb-6">
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-gray-900 mb-1">4 500 zł</div>
+                    <div className="text-3xl font-bold text-gray-900 mb-1">2 500 zł</div>
                     <div className="text-gray-600 mb-2">miesięcznie</div>
-                    <div className="text-sm text-gray-500">+ 2 500 zł opłata startowa</div>
-                    <div className="text-sm text-gray-500">minimum 6 miesięcy</div>
+                    <div className="text-sm text-gray-500">+ 2 000 zł opłata startowa</div>
+                    <div className="text-sm text-gray-500">minimum 3 miesięcy</div>
                   </div>
                 </div>
 
@@ -323,10 +323,10 @@ Pozdrawiam`;
 
                 <div className="bg-primary-600 text-white p-6 rounded-xl mb-6">
                   <div className="text-center">
-                    <div className="text-3xl font-bold mb-1">8 500 zł</div>
+                    <div className="text-3xl font-bold mb-1">4 500 zł</div>
                     <div className="text-primary-100 mb-2">miesięcznie</div>
-                    <div className="text-sm text-primary-200">+ 4 500 zł opłata startowa</div>
-                    <div className="text-sm text-primary-200">minimum 6 miesięcy</div>
+                    <div className="text-sm text-primary-200">+ 3 500 zł opłata startowa</div>
+                    <div className="text-sm text-primary-200">minimum 3 miesięcy</div>
                   </div>
                 </div>
 
@@ -476,7 +476,7 @@ Pozdrawiam`;
                   onClick={handleAuditClick}
                   className="bg-white text-primary-600 px-8 py-4 rounded-lg text-xl font-bold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 mb-4"
                 >
-                  Zamawiam Audyt i Zyskuję Przewagę - 950 zł
+                  Zamawiam Audyt i Zyskuję Przewagę - 800 zł
                 </button>
                 
                 <div className="border-t border-primary-400 pt-4 mt-6">
@@ -755,7 +755,7 @@ Pozdrawiam`;
                   className="bg-white text-primary-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-2"
                 >
                   <Target className="h-5 w-5" />
-                  Audyt Potencjału AEO - 950 zł
+                  Audyt Potencjału AEO - 800 zł
                 </button>
               </div>
               <div className="text-center">
