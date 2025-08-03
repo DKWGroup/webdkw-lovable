@@ -78,9 +78,9 @@ const AEOManifestoPage = () => {
     <HelmetProvider>
       <div className="min-h-screen bg-white" onMouseLeave={handleMouseLeave}>
         <SEOHead
-          title="Pozycjonowanie AEO i GEO - Pierwsza Agencja AI w Polsce | WebDKW"
+          title="Pozycjonowanie AI - Pierwsza Agencja AI w Polsce | WebDKW"
           description="Specjalizujemy się w pozycjonowaniu pod AI Overviews. Pakiety GEO (lokalne) i AEO (krajowe). Gwarancja wyników. Audyt potencjału za 800 zł."
-          keywords="pozycjonowanie AEO, pozycjonowanie GEO, AI Overviews, pozycjonowanie pod sztuczną inteligencję, optymalizacja odpowiedzi AI"
+          keywords="pozycjonowanie AI, AI Overviews, pozycjonowanie pod sztuczną inteligencję, optymalizacja odpowiedzi AI"
           url="https://webdkw.net/pozycjonowanie-ai"
         />
 
@@ -102,7 +102,7 @@ const AEOManifestoPage = () => {
               {/* Badge with improved styling */}
               <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-100 to-primary-50 border border-primary-200 text-primary-700 rounded-full text-sm font-semibold mb-8 shadow-lg backdrop-blur-sm">
                 <span className="w-2 h-2 bg-primary-500 rounded-full mr-3 animate-pulse"></span>
-                🚀 Pierwsza agencja AEO/GEO w Polsce
+                🚀 Pierwsza agencja pozycjonowania AI w Polsce
               </div>
               
               {/* Main Headline with improved typography */}
@@ -160,7 +160,7 @@ const AEOManifestoPage = () => {
                   <div className="mb-3 p-2 bg-primary-100 rounded-full group-hover:bg-primary-200 transition-colors duration-300">
                     <Shield className="h-6 w-6 text-primary-500" />
                   </div>
-                  <span className="font-semibold text-gray-700">Pierwsza agencja AEO/GEO w Polsce</span>
+                  <span className="font-semibold text-gray-700">Pierwsza agencja pozycjonowania AI w Polsce</span>
                 </div>
               </div>
               <div className="group bg-white/60 backdrop-blur-sm border border-white/20 rounded-xl p-6 hover:bg-white/80 transition-all duration-300 hover:shadow-lg">
@@ -625,7 +625,7 @@ const AEOManifestoPage = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Pogłęb swoją wiedzę o AEO/GEO
+                Pogłęb swoją wiedzę o pozycjonowaniu AI
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Odkryj nasze najlepsze artykuły o pozycjonowaniu pod AI i przygotuj swoją firmę na przyszłość wyszukiwania
@@ -693,7 +693,7 @@ const AEOManifestoPage = () => {
                     Artykuły wkrótce dostępne
                   </h3>
                   <p className="text-gray-600 mb-8">
-                    Pracujemy nad wartościowymi artykułami o AEO/GEO, które pomogą Ci zrozumieć przyszłość pozycjonowania.
+                    Pracujemy nad wartościowymi artykułami o pozycjonowaniu AI, które pomogą Ci zrozumieć przyszłość pozycjonowania.
                   </p>
                   <Link
                     to="/blog"
