@@ -484,7 +484,7 @@ const AEOManifestoPage = () => {
               AI-Growth Framework™ - Nasz autorski proces w 4 krokach do dominacji
             </h2>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
               <div className="relative text-center">
                 <div className="w-16 h-16 sm:w-20 sm:h-20 bg-primary-500 text-white rounded-full flex items-center justify-center text-xl sm:text-2xl font-bold mx-auto mb-4 sm:mb-6 relative z-10">
                   1
