@@ -489,7 +489,7 @@ const AEOManifestoPage = () => {
                 <div className="w-16 h-16 sm:w-20 sm:h-20 bg-primary-500 text-white rounded-full flex items-center justify-center text-xl sm:text-2xl font-bold mx-auto mb-4 sm:mb-6 relative z-10">
                   1
                 </div>
-                <div className="bg-white p-4 sm:p-6 rounded-xl shadow-lg h-full pt-6 sm:pt-8">
+                <div className="bg-white p-4 sm:p-6 rounded-xl shadow-lg h-auto pt-6 sm:pt-8">
                   <Search className="h-8 w-8 text-primary-500 mx-auto mb-4" />
                   <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3">Discovery</h3>
                   <p className="text-gray-600 text-sm">
@@ -502,7 +502,7 @@ const AEOManifestoPage = () => {
                 <div className="w-16 h-16 sm:w-20 sm:h-20 bg-primary-500 text-white rounded-full flex items-center justify-center text-xl sm:text-2xl font-bold mx-auto mb-4 sm:mb-6 relative z-10">
                   2
                 </div>
-                <div className="bg-white p-4 sm:p-6 rounded-xl shadow-lg h-full pt-6 sm:pt-8">
+                <div className="bg-white p-4 sm:p-6 rounded-xl shadow-lg h-auto pt-6 sm:pt-8">
                   <Target className="h-8 w-8 text-primary-500 mx-auto mb-4" />
                   <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3">Strategy</h3>
                   <p className="text-gray-600 text-sm">
@@ -515,7 +515,7 @@ const AEOManifestoPage = () => {
                 <div className="w-16 h-16 sm:w-20 sm:h-20 bg-primary-500 text-white rounded-full flex items-center justify-center text-xl sm:text-2xl font-bold mx-auto mb-4 sm:mb-6 relative z-10">
                   3
                 </div>
-                <div className="bg-white p-4 sm:p-6 rounded-xl shadow-lg h-full pt-6 sm:pt-8">
+                <div className="bg-white p-4 sm:p-6 rounded-xl shadow-lg h-auto pt-6 sm:pt-8">
                   <Zap className="h-8 w-8 text-primary-500 mx-auto mb-4" />
                   <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3">Implementation</h3>
                   <p className="text-gray-600 text-sm">
@@ -528,7 +528,7 @@ const AEOManifestoPage = () => {
                 <div className="w-16 h-16 sm:w-20 sm:h-20 bg-primary-500 text-white rounded-full flex items-center justify-center text-xl sm:text-2xl font-bold mx-auto mb-4 sm:mb-6 relative z-10">
                   4
                 </div>
-                <div className="bg-white p-4 sm:p-6 rounded-xl shadow-lg h-full pt-6 sm:pt-8">
+                <div className="bg-white p-4 sm:p-6 rounded-xl shadow-lg h-auto pt-6 sm:pt-8">
                   <BarChart3 className="h-8 w-8 text-primary-500 mx-auto mb-4" />
                   <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3">Monitoring & Optimization</h3>
                   <p className="text-gray-600 text-sm">
