@@ -511,7 +511,7 @@ const AEOManifestoPage = () => {
                 </div>
               </div>
 
-              <div className="relative text-center">
+              <div className="relative text-center mt-12 lg:mt-0">
                 <div className="w-16 h-16 sm:w-20 sm:h-20 bg-primary-500 text-white rounded-full flex items-center justify-center text-xl sm:text-2xl font-bold mx-auto mb-4 sm:mb-6 relative z-10">
                   3
                 </div>
@@ -524,7 +524,7 @@ const AEOManifestoPage = () => {
                 </div>
               </div>
 
-              <div className="relative text-center">
+              <div className="relative text-center mt-12 lg:mt-0">
                 <div className="w-16 h-16 sm:w-20 sm:h-20 bg-primary-500 text-white rounded-full flex items-center justify-center text-xl sm:text-2xl font-bold mx-auto mb-4 sm:mb-6 relative z-10">
                   4
                 </div>
