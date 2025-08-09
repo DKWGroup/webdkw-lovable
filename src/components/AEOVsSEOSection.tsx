@@ -1,5 +1,5 @@
 import React from "react";
-import { Brain, MapPin, Search, ListChecks, BarChart3, ExternalLink, Sparkles } from "lucide-react";
+import { Brain, MapPin, Search, ListChecks, BarChart3, ExternalLink, Sparkles, Rocket } from "lucide-react";
 
 const differences = [
   {
@@ -53,51 +53,48 @@ const AEOVsSEOSection: React.FC = () => {
         </div>
 
         {/* Content */}
-        <div className="grid lg:grid-cols-5 gap-8 items-stretch">
-          {/* Left: differences as elegant cards */}
-          <article className="lg:col-span-3 grid sm:grid-cols-2 gap-6">
-            {differences.map((item, idx) => (
-              <div
-                key={idx}
-                className="group bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center flex-shrink-0">
-                    <item.icon className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <h3 className="text-base font-semibold text-gray-900 mb-1">{item.title}</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
-                  </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+          {differences.map((item, idx) => (
+            <div
+              key={idx}
+              className="group bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300"
+            >
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center flex-shrink-0">
+                  <item.icon className="h-5 w-5" />
+                </div>
+                <div>
+                  <h3 className="text-base font-semibold text-gray-900 mb-1">{item.title}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
                 </div>
               </div>
-            ))}
-          </article>
-
-          {/* Right: persuasive aside */}
-          <aside className="lg:col-span-2 bg-gradient-to-br from-orange-50 to-white border border-orange-200 rounded-2xl p-7 flex flex-col justify-between">
-            <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">To nie alternatywa dla SEO – to jego turbo‑doładowanie</h3>
-              <p className="text-gray-700 mb-4">
-                Zaczynamy od solidnych podstaw SEO, a następnie dokładamy warstwę AEO/GEO: intencje, encje, dane
-                strukturalne i reputację, by <strong className="text-gray-900">zwiększyć szanse na rekomendacje</strong> w odpowiedziach AI.
-              </p>
-              <p className="text-gray-700">
-                Chcesz checklisty i przykłady?
-                {" "}
-                <a
-                  href="https://webdkw.net/blog/seo-ai-jak-zoptymalizowac-strone-pod-aeo-i-zamienic-odpowiedzi-ai-w-realnych-klientow"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center font-semibold text-orange-600 hover:text-orange-700 underline underline-offset-4"
-                >
-                  Przeczytaj przewodnik SEO + AI
-                  <ExternalLink className="h-4 w-4 ml-1" />
-                </a>
-                .
-              </p>
             </div>
-          </aside>
+          ))}
+        </div>
+
+        {/* Sales CTA below cards */}
+        <div className="mt-10">
+          <div className="bg-gradient-to-r from-primary-500/10 to-orange-500/10 border border-orange-200 rounded-2xl p-8 text-center">
+            <div className="flex items-center justify-center mb-4">
+              <div className="w-12 h-12 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center">
+                <Rocket className="h-6 w-6" />
+              </div>
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-3">To nie alternatywa dla SEO – to jego turbo‑doładowanie</h3>
+            <p className="text-gray-700 max-w-3xl mx-auto mb-5">
+              Zadbamy o fundamenty SEO, a następnie dołożymy warstwę AEO/GEO, aby zwiększyć Twój <strong className="text-gray-900">udział w odpowiedziach AI</strong>
+              i szybciej doprowadzać realnych klientów – zanim klikną w wyniki.
+            </p>
+            <a
+              href="https://webdkw.net/blog/seo-ai-jak-zoptymalizowac-strone-pod-aeo-i-zamienic-odpowiedzi-ai-w-realnych-klientow"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center font-semibold text-orange-600 hover:text-orange-700 underline underline-offset-4"
+            >
+              Przeczytaj przewodnik SEO + AI
+              <ExternalLink className="h-4 w-4 ml-1" />
+            </a>
+          </div>
         </div>
       </div>
     </section>
