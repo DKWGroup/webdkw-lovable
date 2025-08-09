@@ -7,6 +7,7 @@ import Footer from '../components/Footer';
 import SEOHead from '../components/SEOHead';
 import AEOFAQSection from '../components/AEOFAQSection';
 import ContactSection from '../components/ContactSection';
+import AEOVsSEOSection from '../components/AEOVsSEOSection';
 import { BlogPost, supabase } from '../lib/supabase';
 
 const AEOManifestoPage = () => {
@@ -194,6 +195,7 @@ const AEOManifestoPage = () => {
           </div>
         </section>
 
+        <AEOVsSEOSection />
 
         {/* Audit Section */}
         <section className="py-20 bg-white">
