@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { CheckCircle, Shield, Target, BarChart3, Search, Brain, Zap, Download, Calendar, Clock, ArrowRight, Users, FileText, Award } from 'lucide-react';
-import { HelmetProvider } from 'react-helmet-async';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -537,6 +537,101 @@ const AEOManifestoPage = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Case Study Section */}
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">
+              Case Study: Jak MK Helicopters zwiększyło liczbę zapytań o 40% dzięki SEO i AEO
+            </h2>
+            <p className="text-center text-gray-600 max-w-3xl mx-auto mb-12">
+              Firma MK Helicopters, lider w branży ekskluzywnego transportu helikopterem, walczyła z niską widocznością w Google. 
+              Wdrożyliśmy precyzyjną strategię SEO i AEO, skoncentrowaną na intencjach użytkowników i odpowiedziach AI.
+            </p>
+
+            <article className="grid md:grid-cols-2 gap-10 items-start">
+              <figure className="bg-gray-50 rounded-2xl overflow-hidden border border-gray-200">
+                <img
+                  src="/images/clients/mkhelicopters.webp"
+                  alt="MK Helicopters - case study SEO i AEO, wzrost zapytań o 40%"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+                <figcaption className="px-4 py-3 text-sm text-gray-500">Klient: MK Helicopters</figcaption>
+              </figure>
+
+              <div>
+                <div className="inline-flex items-center gap-2 bg-primary-50 text-primary-700 border border-primary-200 rounded-full px-4 py-2 mb-6">
+                  <span className="w-2 h-2 bg-primary-500 rounded-full"></span>
+                  40% więcej zapytań ofertowych w 3 miesiące
+                </div>
+
+                <div className="space-y-8">
+                  <section>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">Nasze działania</h3>
+                    <ul className="space-y-3">
+                      <li className="flex items-start gap-3">
+                        <span className="mt-1 w-2 h-2 bg-primary-500 rounded-full flex-shrink-0"></span>
+                        <p className="text-gray-700">Tworzenie treści Q&A: przygotowaliśmy artykuły odpowiadające na konkretne pytania osób szukających transportu helikopterem.</p>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="mt-1 w-2 h-2 bg-primary-500 rounded-full flex-shrink-0"></span>
+                        <p className="text-gray-700">Rozbudowa sekcji FAQ: zbudowaliśmy wyczerpującą bazę wiedzy, która rozwiewa kluczowe wątpliwości klientów.</p>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="mt-1 w-2 h-2 bg-primary-500 rounded-full flex-shrink-0"></span>
+                        <p className="text-gray-700">Implementacja danych strukturalnych: wdrożyliśmy FAQPage (schema.org), aby odpowiedzi wyróżniały się w wynikach wyszukiwania.</p>
+                      </li>
+                    </ul>
+                  </section>
+
+                  <section>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">Rezultaty w 3 miesiące</h3>
+                    <ul className="space-y-3">
+                      <li className="flex items-start gap-3">
+                        <span className="mt-1 w-2 h-2 bg-green-500 rounded-full flex-shrink-0"></span>
+                        <p className="text-gray-700">Znaczący wzrost ruchu organicznego.</p>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="mt-1 w-2 h-2 bg-green-500 rounded-full flex-shrink-0"></span>
+                        <p className="text-gray-700">Widoczność w AI Overviews i odpowiedziach ChatGPT – wzmocnienie autorytetu marki.</p>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="mt-1 w-2 h-2 bg-green-500 rounded-full flex-shrink-0"></span>
+                        <p className="text-gray-700">Wzrost liczby zapytań ofertowych o <strong>40%</strong>.</p>
+                      </li>
+                    </ul>
+                  </section>
+
+                  <div className="pt-4">
+                    <Link to="/kontakt" className="inline-block bg-primary-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-600">
+                      Chcę podobne wyniki
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            {/* Structured Data for Case Study */}
+            <Helmet>
+              <script type="application/ld+json">
+                {JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "CaseStudy",
+                  "headline": "Jak MK Helicopters zwiększyło liczbę zapytań o 40% dzięki SEO i AEO",
+                  "description": "Strategia Q&A, rozbudowana sekcja FAQ i wdrożenie danych strukturalnych FAQPage przyniosły 40% wzrost zapytań w 3 miesiące.",
+                  "image": "https://webdkw.net/images/clients/mkhelicopters.webp",
+                  "author": { "@type": "Organization", "name": "WebDKW" },
+                  "publisher": { "@type": "Organization", "name": "WebDKW", "logo": { "@type": "ImageObject", "url": "https://webdkw.net/images/webdkw-logo.svg" } },
+                  "about": "MK Helicopters",
+                  "mainEntityOfPage": "https://webdkw.net/uslugi/pozycjonowanie-ai",
+                  "keywords": ["case study SEO", "AEO", "pozycjonowanie AI", "MK Helicopters", "FAQPage", "Q&A content"],
+                  "inLanguage": "pl-PL"
+                })}
+              </script>
+            </Helmet>
           </div>
         </section>
 
