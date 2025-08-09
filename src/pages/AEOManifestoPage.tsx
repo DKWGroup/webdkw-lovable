@@ -614,6 +614,29 @@ const AEOManifestoPage = () => {
               </div>
             </article>
 
+            <div className="mt-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <figure className="bg-gray-50 rounded-2xl overflow-hidden border border-gray-200">
+                  <img
+                    src="https://obeabrdrtlxhucegkkiq.supabase.co/storage/v1/object/public/files/blog/mkheli-w-gpt2.png"
+                    alt="MK Helicopters - zrzut z odpowiedzi AI/ChatGPT (przykład 1)"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </figure>
+                <figure className="bg-gray-50 rounded-2xl overflow-hidden border border-gray-200">
+                  <img
+                    src="https://obeabrdrtlxhucegkkiq.supabase.co/storage/v1/object/public/files/blog/mkheli-w-gpt.png"
+                    alt="MK Helicopters - zrzut z odpowiedzi AI/ChatGPT (przykład 2)"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </figure>
+              </div>
+            </div>
+
             {/* Structured Data for Case Study */}
             <Helmet>
               <script type="application/ld+json">
