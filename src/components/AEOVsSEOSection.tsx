@@ -1,67 +1,102 @@
 import React from "react";
+import { Brain, MapPin, Search, ListChecks, BarChart3, ExternalLink, Sparkles } from "lucide-react";
+
+const differences = [
+  {
+    icon: MapPin,
+    title: "Zasięg i kontekst",
+    desc: "GEO – lokalne odpowiedzi AI (miasto/region). AEO – zapytania ogólnopolskie i tematyczne.",
+  },
+  {
+    icon: Search,
+    title: "Cel optymalizacji",
+    desc: "SEO – pozycje w SERP. AEO/GEO – udział w odpowiedziach AI (Answer Share).",
+  },
+  {
+    icon: Brain,
+    title: "Sygnały rankingowe",
+    desc: "SEO – technikalia, content, linki. AEO/GEO – intencja, encje, dane strukturalne, E‑E‑A‑T.",
+  },
+  {
+    icon: ListChecks,
+    title: "Format treści",
+    desc: "SEO – artykuły i landing pages. AEO/GEO – treści Q&A, poradniki, cytowalne źródła dla AI.",
+  },
+  {
+    icon: BarChart3,
+    title: "Pomiar efektów",
+    desc: "SEO – pozycje i ruch. AEO/GEO – widoczność w AI Overviews i Answer Share.",
+  },
+];
 
 const AEOVsSEOSection: React.FC = () => {
   return (
-    <section aria-labelledby="aeo-vs-seo-title" className="py-16 bg-white">
+    <section id="aeo-vs-seo" aria-labelledby="aeo-vs-seo-title" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center mb-10">
+        {/* Eyebrow */}
+        <div className="text-center mb-4">
+          <span className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-primary-100 to-primary-50 border border-primary-200 text-primary-700 rounded-full text-xs md:text-sm font-semibold">
+            <Sparkles className="h-4 w-4 mr-2" /> Nowość: AEO/GEO w praktyce
+          </span>
+        </div>
+
+        {/* Heading */}
+        <div className="max-w-4xl mx-auto text-center mb-12">
           <h2 id="aeo-vs-seo-title" className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            AEO/GEO vs SEO – krótko i konkretnie
+            AEO/GEO a SEO – to samo, tylko dalej
           </h2>
           <p className="text-lg text-gray-600">
-            SEO to fundament. AEO (Answer Engine Optimization) i GEO to jego nowoczesne rozszerzenie –
-            dostosowane do sposobu, w jaki dziś odpowiadają wyszukiwarki i asystenci AI.
-            Dzięki niemu nie tylko „pojawiasz się w wynikach”, ale jesteś <strong className="text-gray-800">polecany w odpowiedziach AI</strong>.
+            SEO to fundament. AEO (Answer Engine Optimization) i GEO <strong className="text-gray-800">rozszerzają SEO</strong>
+            {" "}o sygnały, które sprawiają, że <strong className="text-gray-800">AI poleca Twoją firmę</strong> w odpowiedziach.
+            Nie walczysz tylko o pozycję – walczysz o bycie rekomendowanym.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          <article className="bg-gray-50 rounded-xl p-6 h-full">
-            <h3 className="text-xl font-bold text-gray-900 mb-3">Najważniejsze różnice w praktyce</h3>
-            <ul className="space-y-4 text-gray-700">
-              <li>
-                <span className="font-semibold">Zasięg i kontekst:</span> GEO – lokalne odpowiedzi AI (miasto/region, „w pobliżu”);
-                AEO – zapytania ogólnopolskie i tematyczne.
-              </li>
-              <li>
-                <span className="font-semibold">Cel optymalizacji:</span> SEO – pozycje w SERP; AEO/GEO – udział w odpowiedziach AI
-                (Answer Share), tak by asystent <em>polecał Twoją ofertę</em>.
-              </li>
-              <li>
-                <span className="font-semibold">Sygnały rankingowe:</span> SEO – technikalia, content, linki; AEO/GEO – intencja pytań,
-                encje (entity), dane strukturalne, reputacja i opinie (E‑E‑A‑T).
-              </li>
-              <li>
-                <span className="font-semibold">Format treści:</span> SEO – artykuły i landing pages; AEO/GEO – treści Q&A,
-                poradniki, streszczenia, cytowalne źródła gotowe do użycia przez AI.
-              </li>
-              <li>
-                <span className="font-semibold">Pomiar efektów:</span> SEO – pozycje i ruch; AEO/GEO – widoczność w AI Overviews,
-                Answer Share, zapytania długiego ogona.
-              </li>
-            </ul>
+        {/* Content */}
+        <div className="grid lg:grid-cols-5 gap-8 items-stretch">
+          {/* Left: differences as elegant cards */}
+          <article className="lg:col-span-3 grid sm:grid-cols-2 gap-6">
+            {differences.map((item, idx) => (
+              <div
+                key={idx}
+                className="group bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center flex-shrink-0">
+                    <item.icon className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h3 className="text-base font-semibold text-gray-900 mb-1">{item.title}</h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </article>
 
-          <aside className="bg-gradient-to-br from-orange-50 to-white border border-orange-200 rounded-xl p-6 h-full">
-            <h3 className="text-xl font-bold text-gray-900 mb-3">Najważniejsze: to nie „coś innego” niż SEO</h3>
-            <p className="text-gray-700 mb-4">
-              AEO/GEO <strong className="text-gray-900">nie zastępuje</strong> SEO – ono je <strong className="text-gray-900">wzmacnia</strong> tam,
-              gdzie dziś decyduje AI. Dlatego zaczynamy od solidnych podstaw SEO, a następnie
-              rozszerzamy strategię o sygnały, które zwiększają szansę na rekomendacje w odpowiedziach AI.
-            </p>
-            <p className="text-gray-700">
-              Chcesz zobaczyć gotowe checklisty i przykłady?
-              {" "}
-              <a
-                href="https://webdkw.net/blog/seo-ai-jak-zoptymalizowac-strone-pod-aeo-i-zamienic-odpowiedzi-ai-w-realnych-klientow"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-orange-600 hover:text-orange-700 underline underline-offset-4"
-              >
-                Przeczytaj nasz przewodnik SEO + AI
-              </a>
-              .
-            </p>
+          {/* Right: persuasive aside */}
+          <aside className="lg:col-span-2 bg-gradient-to-br from-orange-50 to-white border border-orange-200 rounded-2xl p-7 flex flex-col justify-between">
+            <div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">To nie alternatywa dla SEO – to jego turbo‑doładowanie</h3>
+              <p className="text-gray-700 mb-4">
+                Zaczynamy od solidnych podstaw SEO, a następnie dokładamy warstwę AEO/GEO: intencje, encje, dane
+                strukturalne i reputację, by <strong className="text-gray-900">zwiększyć szanse na rekomendacje</strong> w odpowiedziach AI.
+              </p>
+              <p className="text-gray-700">
+                Chcesz checklisty i przykłady?
+                {" "}
+                <a
+                  href="https://webdkw.net/blog/seo-ai-jak-zoptymalizowac-strone-pod-aeo-i-zamienic-odpowiedzi-ai-w-realnych-klientow"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center font-semibold text-orange-600 hover:text-orange-700 underline underline-offset-4"
+                >
+                  Przeczytaj przewodnik SEO + AI
+                  <ExternalLink className="h-4 w-4 ml-1" />
+                </a>
+                .
+              </p>
+            </div>
           </aside>
         </div>
       </div>
@@ -70,3 +105,4 @@ const AEOVsSEOSection: React.FC = () => {
 };
 
 export default AEOVsSEOSection;
+
