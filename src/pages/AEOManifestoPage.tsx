@@ -12,6 +12,17 @@ import { BlogPost, supabase } from '../lib/supabase';
 const AEOManifestoPage = () => {
   const [showExitPopup, setShowExitPopup] = useState(false);
   const [featuredPosts, setFeaturedPosts] = useState<BlogPost[]>([]);
+  const [csIndex, setCsIndex] = useState(0);
+  const csImages = [
+    {
+      src: 'https://obeabrdrtlxhucegkkiq.supabase.co/storage/v1/object/public/files/blog/mkheli-w-gpt2.png',
+      alt: 'MK Helicopters - zrzut z odpowiedzi AI/ChatGPT (przykład 1)'
+    },
+    {
+      src: 'https://obeabrdrtlxhucegkkiq.supabase.co/storage/v1/object/public/files/blog/mkheli-w-gpt.png',
+      alt: 'MK Helicopters - zrzut z odpowiedzi AI/ChatGPT (przykład 2)'
+    }
+  ];
 
   useEffect(() => {
     fetchFeaturedPosts();
@@ -552,13 +563,47 @@ const AEOManifestoPage = () => {
             </p>
 
             <article className="grid md:grid-cols-2 gap-10 items-start">
-              <figure className="bg-gray-50 rounded-2xl overflow-hidden border border-gray-200">
-                <img
-                  src="/images/clients/mkhelicopters.webp"
-                  alt="MK Helicopters - case study SEO i AEO, wzrost zapytań o 40%"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
+              <figure className="relative bg-gray-50 rounded-2xl overflow-hidden border border-gray-200">
+                <div className="relative aspect-[16/10]">
+                  {csImages.map((img, idx) => (
+                    <img
+                      key={idx}
+                      src={img.src}
+                      alt={img.alt}
+                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${idx === csIndex ? 'opacity-100' : 'opacity-0'}`}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ))}
+
+                  <button
+                    type="button"
+                    onClick={() => setCsIndex((csIndex - 1 + csImages.length) % csImages.length)}
+                    aria-label="Poprzednie zdjęcie"
+                    className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-700 border border-gray-200 rounded-full p-2 shadow-sm hover-scale"
+                  >
+                    <ArrowRight className="h-5 w-5 -scale-x-100" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setCsIndex((csIndex + 1) % csImages.length)}
+                    aria-label="Następne zdjęcie"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-700 border border-gray-200 rounded-full p-2 shadow-sm hover-scale"
+                  >
+                    <ArrowRight className="h-5 w-5" />
+                  </button>
+
+                  <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-2">
+                    {csImages.map((_, i) => (
+                      <button
+                        key={i}
+                        onClick={() => setCsIndex(i)}
+                        aria-label={`Pokaż slajd ${i + 1}`}
+                        className={`h-2.5 w-2.5 rounded-full border border-white/60 ${i === csIndex ? 'bg-primary-500' : 'bg-white/70'}`}
+                      />
+                    ))}
+                  </div>
+                </div>
                 <figcaption className="px-4 py-3 text-sm text-gray-500">Klient: MK Helicopters</figcaption>
               </figure>
 
@@ -613,29 +658,6 @@ const AEOManifestoPage = () => {
                 </div>
               </div>
             </article>
-
-            <div className="mt-12">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <figure className="bg-gray-50 rounded-2xl overflow-hidden border border-gray-200">
-                  <img
-                    src="https://obeabrdrtlxhucegkkiq.supabase.co/storage/v1/object/public/files/blog/mkheli-w-gpt2.png"
-                    alt="MK Helicopters - zrzut z odpowiedzi AI/ChatGPT (przykład 1)"
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </figure>
-                <figure className="bg-gray-50 rounded-2xl overflow-hidden border border-gray-200">
-                  <img
-                    src="https://obeabrdrtlxhucegkkiq.supabase.co/storage/v1/object/public/files/blog/mkheli-w-gpt.png"
-                    alt="MK Helicopters - zrzut z odpowiedzi AI/ChatGPT (przykład 2)"
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </figure>
-              </div>
-            </div>
 
             {/* Structured Data for Case Study */}
             <Helmet>
