@@ -15,11 +15,11 @@ const AEOManifestoPage = () => {
   const [csIndex, setCsIndex] = useState(0);
   const csImages = [
     {
-      src: 'https://obeabrdrtlxhucegkkiq.supabase.co/storage/v1/object/public/files/blog/mkheli-w-gpt2.png',
+      src: 'https://obeabrdrtlxhucegkkiq.supabase.co/storage/v1/object/public/files/blog/mkheli-w-gpt3.png',
       alt: 'MK Helicopters - zrzut z odpowiedzi AI/ChatGPT (przykład 1)'
     },
     {
-      src: 'https://obeabrdrtlxhucegkkiq.supabase.co/storage/v1/object/public/files/blog/mkheli-w-gpt.png',
+      src: 'https://obeabrdrtlxhucegkkiq.supabase.co/storage/v1/object/public/files/blog/mkheli-w-gpt2.png',
       alt: 'MK Helicopters - zrzut z odpowiedzi AI/ChatGPT (przykład 2)'
     }
   ];
@@ -564,13 +564,13 @@ const AEOManifestoPage = () => {
 
             <article className="grid md:grid-cols-2 gap-10 items-start">
               <figure className="relative bg-gray-50 rounded-2xl overflow-hidden border border-gray-200">
-                <div className="relative aspect-[16/10]">
+                <div className="relative aspect-[819/662]">
                   {csImages.map((img, idx) => (
                     <img
                       key={idx}
                       src={img.src}
                       alt={img.alt}
-                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${idx === csIndex ? 'opacity-100' : 'opacity-0'}`}
+                      className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ${idx === csIndex ? 'opacity-100' : 'opacity-0'}`}
                       loading="lazy"
                       decoding="async"
                     />
