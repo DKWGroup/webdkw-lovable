@@ -194,151 +194,6 @@ const AEOManifestoPage = () => {
           </div>
         </section>
 
-        {/* Packages Section */}
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16">
-              Wybierz swój pakiet dominacji w erze AI
-            </h2>
-            
-            <div className="grid lg:grid-cols-2 gap-12">
-              {/* GEO Launchpad Package */}
-              <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-primary-500 transition-all duration-300 hover:shadow-lg">
-                <div className="text-center mb-8">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-4">
-                    <Search className="h-8 w-8 text-primary-600" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Lokalny Lider</h3>
-                  <h4 className="text-xl text-primary-600 font-semibold mb-4">Zdominuj lokalny rynek</h4>
-                  <p className="text-gray-600">
-                    Idealny dla firm usługowych takich jak prawnicy, lekarze czy restauratorzy, 
-                    które chcą być pierwszym wyborem AI dla klientów w swoim mieście.
-                  </p>
-                </div>
-
-                <div className="bg-primary-50 p-6 rounded-xl mb-8">
-                  <h5 className="font-bold text-gray-900 mb-2">Główna obietnica:</h5>
-                  <p className="text-gray-700">
-                    Sprawimy, że AI będzie polecać Twoją firmę lokalnym klientom gotowym do zakupu.
-                  </p>
-                </div>
-
-                <ul className="space-y-4 mb-8">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700"><strong>Mistrzowska optymalizacja Google Business Profile</strong> - pełna konfiguracja i optymalizacja wizytówki</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700"><strong>10-15 "Knowledge Assets" miesięcznie</strong> - tworzenie i optymalizacja treści odpowiadających na kluczowe pytania klientów</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700"><strong>Wdrożenie danych strukturalnych schema.org</strong> - LocalBusiness, FAQPage i Review</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700"><strong>Strategia zarządzania reputacją</strong> - aktywne monitorowanie i pozyskiwanie opinii</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700"><strong>Answer Share™ Dashboard</strong> - widzi swój procentowy udział w odpowiedziach AI</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700"><strong>Monitoring pozycji w Local Pack</strong> na mapach Google</span>
-                  </li>
-                </ul>
-
-                <div className="bg-gray-50 p-6 rounded-xl mb-6">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-gray-900 mb-1">2 500 zł</div>
-                    <div className="text-gray-600 mb-2">miesięcznie</div>
-                    <div className="text-sm text-gray-500">+ 2 000 zł opłata startowa</div>
-                    <div className="text-sm text-gray-500">minimum 3 miesięcy</div>
-                  </div>
-                </div>
-
-                <button 
-                  onClick={scrollToContact}
-                  className="w-full bg-primary-500 text-white py-4 rounded-lg font-semibold hover:bg-primary-600 transition-colors duration-300"
-                >
-                  Chcę zdominować rynek lokalny
-                </button>
-              </div>
-
-              {/* AEO Dominator Package */}
-              <div className="bg-gradient-to-b from-primary-50 to-white border-2 border-primary-300 rounded-2xl p-8 relative overflow-hidden">
-                <div className="absolute top-4 right-4 bg-primary-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                  NAJPOPULARNIEJSZY
-                </div>
-                
-                <div className="text-center mb-8">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-500 rounded-full mb-4">
-                    <Zap className="h-8 w-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Lider Branży</h3>
-                  <h4 className="text-xl text-primary-600 font-semibold mb-4">Zostań krajowym liderem myśli</h4>
-                  <p className="text-gray-600">
-                    Stworzony dla e-commerce, firm B2B i SaaS, które chcą osiągnąć status głównego źródła odpowiedzi dla AI w całej Polsce.
-                  </p>
-                </div>
-
-                <div className="bg-primary-100 p-6 rounded-xl mb-8">
-                  <h5 className="font-bold text-gray-900 mb-2">Główna obietnica:</h5>
-                  <p className="text-gray-700">
-                    Osiągnij status autorytetu, którego AI cytuje jako pierwsze i najważniejsze źródło w Twojej branży.
-                  </p>
-                </div>
-
-                <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-lg mb-6">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Shield className="h-5 w-5 text-yellow-600" />
-                    <span className="font-semibold text-yellow-800">Gwarancja wyników:</span>
-                  </div>
-                  <p className="text-yellow-800 text-sm">
-                    Gwarantujemy, że Twoja strona pojawi się w co najmniej 30% odpowiedzi AI dla top 10 zapytań w Twojej branży w ciągu 6 miesięcy.
-                  </p>
-                </div>
-
-                <ul className="space-y-4 mb-8">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700"><strong>Wszystko z pakietu Lokalny Lider</strong></span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700"><strong>Zaawansowany content marketing oparty na AI</strong> - projektowanie i wdrażanie strategii pillar page i klastrów tematycznych</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700"><strong>Strategiczne budowanie autorytetu E-E-A-T</strong> - wykraczające poza stronę</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700"><strong>Optymalizacja pod wyszukiwanie komercyjne</strong> - frazy prowadzące do sprzedaży</span>
-                  </li>
-                </ul>
-
-                <div className="bg-primary-600 text-white p-6 rounded-xl mb-6">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold mb-1">4 500 zł</div>
-                    <div className="text-primary-100 mb-2">miesięcznie</div>
-                    <div className="text-sm text-primary-200">+ 3 500 zł opłata startowa</div>
-                    <div className="text-sm text-primary-200">minimum 3 miesięcy</div>
-                  </div>
-                </div>
-
-                <button 
-                  onClick={scrollToContact}
-                  className="w-full bg-primary-500 text-white py-4 rounded-lg font-semibold hover:bg-primary-600 transition-colors duration-300"
-                >
-                  Chcę być liderem w branży
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* Audit Section */}
         <section className="py-20 bg-white">
@@ -859,6 +714,151 @@ const AEOManifestoPage = () => {
           </div>
         </section>
 
+        {/* Packages Section */}
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16">
+              Wybierz swój pakiet dominacji w erze AI
+            </h2>
+            
+            <div className="grid lg:grid-cols-2 gap-12">
+              {/* GEO Launchpad Package */}
+              <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-primary-500 transition-all duration-300 hover:shadow-lg">
+                <div className="text-center mb-8">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-4">
+                    <Search className="h-8 w-8 text-primary-600" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Lokalny Lider</h3>
+                  <h4 className="text-xl text-primary-600 font-semibold mb-4">Zdominuj lokalny rynek</h4>
+                  <p className="text-gray-600">
+                    Idealny dla firm usługowych takich jak prawnicy, lekarze czy restauratorzy, 
+                    które chcą być pierwszym wyborem AI dla klientów w swoim mieście.
+                  </p>
+                </div>
+
+                <div className="bg-primary-50 p-6 rounded-xl mb-8">
+                  <h5 className="font-bold text-gray-900 mb-2">Główna obietnica:</h5>
+                  <p className="text-gray-700">
+                    Sprawimy, że AI będzie polecać Twoją firmę lokalnym klientom gotowym do zakupu.
+                  </p>
+                </div>
+
+                <ul className="space-y-4 mb-8">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-700"><strong>Mistrzowska optymalizacja Google Business Profile</strong> - pełna konfiguracja i optymalizacja wizytówki</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-700"><strong>10-15 "Knowledge Assets" miesięcznie</strong> - tworzenie i optymalizacja treści odpowiadających na kluczowe pytania klientów</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-700"><strong>Wdrożenie danych strukturalnych schema.org</strong> - LocalBusiness, FAQPage i Review</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-700"><strong>Strategia zarządzania reputacją</strong> - aktywne monitorowanie i pozyskiwanie opinii</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-700"><strong>Answer Share™ Dashboard</strong> - widzi swój procentowy udział w odpowiedziach AI</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-700"><strong>Monitoring pozycji w Local Pack</strong> na mapach Google</span>
+                  </li>
+                </ul>
+
+                <div className="bg-gray-50 p-6 rounded-xl mb-6">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-gray-900 mb-1">2 500 zł</div>
+                    <div className="text-gray-600 mb-2">miesięcznie</div>
+                    <div className="text-sm text-gray-500">+ 2 000 zł opłata startowa</div>
+                    <div className="text-sm text-gray-500">minimum 3 miesięcy</div>
+                  </div>
+                </div>
+
+                <button 
+                  onClick={scrollToContact}
+                  className="w-full bg-primary-500 text-white py-4 rounded-lg font-semibold hover:bg-primary-600 transition-colors duration-300"
+                >
+                  Chcę zdominować rynek lokalny
+                </button>
+              </div>
+
+              {/* AEO Dominator Package */}
+              <div className="bg-gradient-to-b from-primary-50 to-white border-2 border-primary-300 rounded-2xl p-8 relative overflow-hidden">
+                <div className="absolute top-4 right-4 bg-primary-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  NAJPOPULARNIEJSZY
+                </div>
+                
+                <div className="text-center mb-8">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-500 rounded-full mb-4">
+                    <Zap className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Lider Branży</h3>
+                  <h4 className="text-xl text-primary-600 font-semibold mb-4">Zostań krajowym liderem myśli</h4>
+                  <p className="text-gray-600">
+                    Stworzony dla e-commerce, firm B2B i SaaS, które chcą osiągnąć status głównego źródła odpowiedzi dla AI w całej Polsce.
+                  </p>
+                </div>
+
+                <div className="bg-primary-100 p-6 rounded-xl mb-8">
+                  <h5 className="font-bold text-gray-900 mb-2">Główna obietnica:</h5>
+                  <p className="text-gray-700">
+                    Osiągnij status autorytetu, którego AI cytuje jako pierwsze i najważniejsze źródło w Twojej branży.
+                  </p>
+                </div>
+
+                <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-lg mb-6">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Shield className="h-5 w-5 text-yellow-600" />
+                    <span className="font-semibold text-yellow-800">Gwarancja wyników:</span>
+                  </div>
+                  <p className="text-yellow-800 text-sm">
+                    Gwarantujemy, że Twoja strona pojawi się w co najmniej 30% odpowiedzi AI dla top 10 zapytań w Twojej branży w ciągu 6 miesięcy.
+                  </p>
+                </div>
+
+                <ul className="space-y-4 mb-8">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-700"><strong>Wszystko z pakietu Lokalny Lider</strong></span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-700"><strong>Zaawansowany content marketing oparty na AI</strong> - projektowanie i wdrażanie strategii pillar page i klastrów tematycznych</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-700"><strong>Strategiczne budowanie autorytetu E-E-A-T</strong> - wykraczające poza stronę</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-700"><strong>Optymalizacja pod wyszukiwanie komercyjne</strong> - frazy prowadzące do sprzedaży</span>
+                  </li>
+                </ul>
+
+                <div className="bg-primary-600 text-white p-6 rounded-xl mb-6">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold mb-1">4 500 zł</div>
+                    <div className="text-primary-100 mb-2">miesięcznie</div>
+                    <div className="text-sm text-primary-200">+ 3 500 zł opłata startowa</div>
+                  </div>
+                </div>
+
+                <button 
+                  onClick={scrollToContact}
+                  className="w-full bg-primary-500 text-white py-4 rounded-lg font-semibold hover:bg-primary-600 transition-colors duration-300"
+                >
+                  Chcę być liderem w branży
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+        
         <AEOFAQSection />
 
         <div data-contact-section>
