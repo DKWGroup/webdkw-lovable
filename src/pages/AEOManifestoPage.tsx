@@ -6,10 +6,10 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import SEOHead from '../components/SEOHead';
 import AEOFAQSection from '../components/AEOFAQSection';
-import ContactSection from '../components/ContactSection';
 import AEOVsSEOSection from '../components/AEOVsSEOSection';
 import { BlogPost, supabase } from '../lib/supabase';
 import { track } from '../lib/analytics';
+import SEOContactForm from '../components/SEOContactForm';
 
 const AEOManifestoPage = () => {
   const [showExitPopup, setShowExitPopup] = useState(false);
@@ -1140,7 +1140,7 @@ const AEOManifestoPage = () => {
         <div id="faq-aeo-geo"><AEOFAQSection /></div>
 
         <div data-contact-section>
-          <ContactSection />
+          <SEOContactForm />
         </div>
 
         {/* Final CTA Section */}
