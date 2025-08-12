@@ -202,6 +202,112 @@ const AEOManifestoPage = () => {
           </div>
         </section>
 
+        {/* QuickScan Lead Magnet Section */}
+        <section id="quickscan" className="py-20 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Eyebrow */}
+            <div className="text-center mb-4 animate-fade-in">
+              <span className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-primary-100 to-primary-50 border border-primary-200 text-primary-700 rounded-full text-xs md:text-sm font-semibold">
+                🎁 Darmowy audyt SEO „QuickScan”
+              </span>
+            </div>
+
+            {/* Heading + lead */}
+            <div className="text-center mb-8 animate-fade-in">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Zgarnij szybki QuickScan – pierwszy krok do dominacji w AI</h2>
+              <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+                10–15 min pracy + automatyzacje → 1‑stronicowy PDF i 15‑min call. Szybka wartość, niska bariera wejścia i jasna ścieżka do płatnego Audytu AEO (800 zł) i abonamentu.
+              </p>
+            </div>
+
+            {/* CTA */}
+            <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10 animate-fade-in">
+              <button
+                id="cta-quickscan-primary"
+                data-gtm="cta_quickscan_primary"
+                data-gtm-location="quickscan_section"
+                onClick={() => { track({ event: 'cta_click', category: 'engagement', label: 'quickscan_primary', location: 'quickscan_section' }); scrollToContact(); }}
+                className="relative group bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5"
+              >
+                Zamów darmowy QuickScan
+              </button>
+              <button
+                id="cta-quickscan-paid"
+                data-gtm="cta_quickscan_paid"
+                data-gtm-location="quickscan_section"
+                onClick={() => { track({ event: 'cta_click', category: 'engagement', label: 'quickscan_to_paid_audit', location: 'quickscan_section' }); handleAuditClick(); }}
+                className="inline-flex items-center px-6 py-3 rounded-lg border border-gray-300 text-gray-700 bg-white hover:bg-gray-50 hover-scale font-semibold"
+              >
+                Płatny Audyt AEO (800 zł)
+              </button>
+            </div>
+
+            {/* Content cards */}
+            <div className="grid lg:grid-cols-3 gap-6">
+              {/* Co zawiera */}
+              <article className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm animate-fade-in">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center">
+                    <FileText className="h-5 w-5" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900">Co zawiera QuickScan</h3>
+                </div>
+                <ul className="text-sm text-gray-700 space-y-2 list-disc pl-5">
+                  <li>Snapshot indeksacji (indeksacja, robots, sitemap)</li>
+                  <li>SSL i meta podstawowe (title/description/H1) – strona główna</li>
+                  <li>Mobile‑friendly screenshot + PageSpeed (mobile)</li>
+                  <li>Core Web Vitals skrót: LCP/FID/CLS (bez GSC)</li>
+                  <li>Responsywność i waga strony głównej</li>
+                  <li>Obecność i podstawowa kompletność GBP</li>
+                  <li>3 frazy klienta: czy jest AI Overview i kto jest źródłem</li>
+                  <li>2–3 „quick wins” (CTA, title length, FAQ schema)</li>
+                </ul>
+              </article>
+
+              {/* Czego nie ma */}
+              <article className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm animate-fade-in">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center">
+                    <Shield className="h-5 w-5" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900">Czego celowo nie ma</h3>
+                </div>
+                <ul className="text-sm text-gray-700 space-y-2 list-disc pl-5">
+                  <li>Brak crawl całej strony i analizy konkurencji</li>
+                  <li>Bez content gap, szczegółowych schema i encji</li>
+                  <li>Bez backlogu z priorytetami, ROI i estymacji</li>
+                  <li>Bez dostępów do GSC/GA4</li>
+                </ul>
+              </article>
+
+              {/* Rezultat */}
+              <article className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm animate-fade-in">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center">
+                    <Download className="h-5 w-5" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900">Konkretny rezultat</h3>
+                </div>
+                <ul className="text-sm text-gray-700 space-y-2 list-disc pl-5">
+                  <li>1‑stronicowy raport PDF</li>
+                  <li>AI Readiness Score Lite (0–100 w 5 kategoriach)</li>
+                  <li>Mini‑nagranie Loom 2–3 min</li>
+                  <li>15‑min rozmowa omówkowa</li>
+                  <li>Jasne zaproszenie do płatnego Audytu AEO</li>
+                </ul>
+                <div className="mt-4 p-4 rounded-lg bg-primary-50 border border-primary-200">
+                  <p className="text-sm text-primary-800"><strong>AI Readiness Score Lite</strong>: technika, treść/answerability, CWV, GBP/lokalność, podstawowe SEO (po 20 pkt).</p>
+                </div>
+              </article>
+            </div>
+
+            {/* Note */}
+            <p className="mt-8 text-sm text-gray-600 text-center">
+              QuickScan = lead magnet. Ma obniżyć barierę wejścia, dostarczyć szybką wartość i zbudować zaufanie. Następny krok: płatny audyt + abonament.
+            </p>
+          </div>
+        </section>
+
         <AEOVsSEOSection />
 
         {/* Benefits Section for SEO AI (AEO/GEO) */}
