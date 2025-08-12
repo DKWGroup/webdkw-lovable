@@ -157,7 +157,7 @@ const AEOManifestoPage = () => {
             </div>
             
             {/* Enhanced CTA with gradient background */}
-            <div className="flex justify-center mb-16">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center mb-16">
               <button
                 id="cta-hero-audit"
                 data-gtm="cta_hero_audit"
@@ -169,6 +169,17 @@ const AEOManifestoPage = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-primary-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <Target className="h-5 w-5 relative z-10" />
                 <span className="relative z-10">Sprawdź swój potencjał AEO - Audyt za 800 zł</span>
+              </button>
+
+              <button
+                id="cta-hero-audyt-seo-ai"
+                data-gtm="cta_hero_audyt_seo_ai"
+                data-gtm-location="hero"
+                aria-label="CTA: Darmowy Audyt SEO AI"
+                onClick={() => { track({ event: 'cta_click', category: 'engagement', label: 'audyt_seo_ai_free', location: 'hero' }); scrollToContact(); }}
+                className="inline-flex items-center px-8 py-4 rounded-lg border border-gray-300 text-gray-700 bg-white hover:bg-gray-50 transition-all duration-300 shadow-md hover:shadow-lg gap-2"
+              >
+                Darmowy Audyt SEO AI
               </button>
             </div>
 
@@ -208,13 +219,13 @@ const AEOManifestoPage = () => {
             {/* Eyebrow */}
             <div className="text-center mb-4 animate-fade-in">
               <span className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-primary-100 to-primary-50 border border-primary-200 text-primary-700 rounded-full text-xs md:text-sm font-semibold">
-                🎁 Darmowy audyt SEO „QuickScan”
+                🎁 Darmowy Audyt SEO AI
               </span>
             </div>
 
             {/* Heading + lead */}
             <div className="text-center mb-8 animate-fade-in">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Zgarnij szybki QuickScan – pierwszy krok do dominacji w AI</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Zgarnij szybki Audyt SEO AI – pierwszy krok do dominacji w AI</h2>
               <p className="text-lg text-gray-700 max-w-3xl mx-auto">
                 10–15 min pracy + automatyzacje → 1‑stronicowy PDF i 15‑min call. Szybka wartość, niska bariera wejścia i jasna ścieżka do płatnego Audytu AEO (800 zł) i abonamentu.
               </p>
@@ -229,7 +240,7 @@ const AEOManifestoPage = () => {
                 onClick={() => { track({ event: 'cta_click', category: 'engagement', label: 'quickscan_primary', location: 'quickscan_section' }); scrollToContact(); }}
                 className="relative group bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5"
               >
-                Zamów darmowy QuickScan
+                Zamów darmowy Audyt SEO AI
               </button>
               <button
                 id="cta-quickscan-paid"
@@ -250,7 +261,7 @@ const AEOManifestoPage = () => {
                   <div className="w-10 h-10 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center">
                     <FileText className="h-5 w-5" />
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900">Co zawiera QuickScan</h3>
+                  <h3 className="text-lg font-semibold text-gray-900">Co zawiera Audyt SEO AI</h3>
                 </div>
                 <ul className="text-sm text-gray-700 space-y-2 list-disc pl-5">
                   <li>Snapshot indeksacji (indeksacja, robots, sitemap)</li>
@@ -264,21 +275,6 @@ const AEOManifestoPage = () => {
                 </ul>
               </article>
 
-              {/* Czego nie ma */}
-              <article className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm animate-fade-in">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center">
-                    <Shield className="h-5 w-5" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900">Czego celowo nie ma</h3>
-                </div>
-                <ul className="text-sm text-gray-700 space-y-2 list-disc pl-5">
-                  <li>Brak crawl całej strony i analizy konkurencji</li>
-                  <li>Bez content gap, szczegółowych schema i encji</li>
-                  <li>Bez backlogu z priorytetami, ROI i estymacji</li>
-                  <li>Bez dostępów do GSC/GA4</li>
-                </ul>
-              </article>
 
               {/* Rezultat */}
               <article className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm animate-fade-in">
@@ -303,7 +299,7 @@ const AEOManifestoPage = () => {
 
             {/* Note */}
             <p className="mt-8 text-sm text-gray-600 text-center">
-              QuickScan = lead magnet. Ma obniżyć barierę wejścia, dostarczyć szybką wartość i zbudować zaufanie. Następny krok: płatny audyt + abonament.
+              Audyt SEO AI = lead magnet. Ma obniżyć barierę wejścia, dostarczyć szybką wartość i zbudować zaufanie. Następny krok: płatny audyt + abonament.
             </p>
           </div>
         </section>
