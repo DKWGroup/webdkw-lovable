@@ -205,51 +205,128 @@ const AEOManifestoPage = () => {
         {/* Benefits Section for SEO AI (AEO/GEO) */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Eyebrow */}
+            <div className="text-center mb-4">
+              <span className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-primary-100 to-primary-50 border border-primary-200 text-primary-700 rounded-full text-xs md:text-sm font-semibold">
+                ✨ SEO AI • AEO • GEO
+              </span>
+            </div>
+
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Co Twoja firma zyska dzięki SEO AI (AEO/GEO)
             </h2>
-            <p className="text-lg text-gray-700 mb-8">
-              SEO AI to nie tylko „pozycje” w Google. To dominacja w odpowiedziach generowanych przez AI — od Google AI Overviews, przez ChatGPT i Gemini, po Perplexity i Bing Copilot. Efekt? Więcej zapytań od klientów gotowych do zakupu i rosnący udział Twojej marki w odpowiedziach — Answer Share™.
+            <p className="text-lg text-gray-700 mb-10 max-w-4xl mx-auto text-center">
+              🤖 SEO AI to nie tylko „pozycje” w Google. To dominacja w odpowiedziach generowanych przez AI — od <strong>AI Overviews</strong> w Google, przez <strong>ChatGPT</strong> i <strong>Gemini</strong>, po <strong>Perplexity</strong> i <strong>Bing Copilot</strong>. 📈 Efekt? Więcej zapytań od klientów gotowych do zakupu i rosnący <strong>Answer Share™</strong> Twojej marki.
             </p>
-            <ul className="space-y-4 text-gray-700">
-              <li>
-                <strong>Widoczność tam, gdzie dziś decydują klienci:</strong> Twoja marka pojawia się w odpowiedziach AI (AI Overviews w Google, ChatGPT, Gemini, Perplexity, Bing Copilot). Zwiększasz Answer Share™ — udział w odpowiedziach na kluczowe zapytania.
-              </li>
-              <li>
-                <strong>Więcej zapytań bez klikania:</strong> Gdy 60% zapytań kończy się bez kliknięcia, wygrywa ten, kogo AI wskaże jako odpowiedź. My sprawiamy, że to będziesz Ty.
-              </li>
-              <li>
-                <strong>Krótszy cykl sprzedaży:</strong> Jasne, eksperckie odpowiedzi (AEO) + optymalizacja intencji zakupowych (GEO/AEO) skracają drogę od pytania do kontaktu.
-              </li>
-              <li>
-                <strong>Mierzalne KPI zamiast „próżnych metryk”:</strong> Raportujemy Answer Share™, Zero‑Click Wins, wzrost zapytań i telefonów — liczby, które czuje sprzedaż.
-              </li>
-              <li>
-                <strong>Odporność na zmiany algorytmów:</strong> Budujemy autorytet encji (E‑E‑A‑T), dane strukturalne i „knowledge assets”, które AI chętnie cytuje — to fundament na lata.
-              </li>
-              <li>
-                <strong>Lokalna i krajowa dominacja:</strong> GEO — mapa i Local Pack w Twoim mieście. AEO — „główne źródło odpowiedzi” w skali kraju.
-              </li>
-              <li>
-                <strong>Szybkie wygrane + strategia:</strong> Quick wins w 30–45 dni oraz roadmapa AI‑ready na kwartał do przodu.
-              </li>
-            </ul>
-            <div className="mt-8 bg-orange-50 border border-orange-200 text-orange-900 rounded-xl p-6">
-              <p className="italic">
-                „Średnio po 3–4 miesiącach współpracy klienci odnotowują 20–35% udziału w odpowiedziach AI dla kluczowych zapytań i wzrost liczby kontaktów z GBP o 18–40%.”
+
+            {/* Benefits grid */}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="group bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center flex-shrink-0">
+                    <CheckCircle className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">🚀 Widoczność tam, gdzie dziś decydują klienci</h3>
+                    <p className="text-sm text-gray-600">Twoja marka pojawia się w odpowiedziach AI (AI Overviews, ChatGPT, Gemini, Perplexity, Bing Copilot). Zwiększasz <strong>Answer Share™</strong> na kluczowe zapytania.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="group bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center flex-shrink-0">
+                    <CheckCircle className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">🖱️ Więcej zapytań bez klikania</h3>
+                    <p className="text-sm text-gray-600">Gdy ~60% zapytań kończy się bez kliknięcia, wygrywa ten, kogo AI wskaże jako odpowiedź. My sprawiamy, że to będziesz <strong>Ty</strong>.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="group bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center flex-shrink-0">
+                    <CheckCircle className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">⏱️ Krótszy cykl sprzedaży</h3>
+                    <p className="text-sm text-gray-600">Eksperckie odpowiedzi (AEO) + optymalizacja intencji zakupowych (GEO/AEO) skracają drogę od pytania do kontaktu.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="group bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center flex-shrink-0">
+                    <CheckCircle className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">📊 Mierzalne KPI zamiast „próżnych metryk”</h3>
+                    <p className="text-sm text-gray-600">Raportujemy <strong>Answer Share™</strong>, <strong>Zero‑Click Wins</strong>, wzrost zapytań i telefonów — liczby, które czuje sprzedaż.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="group bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center flex-shrink-0">
+                    <CheckCircle className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">🛡️ Odporność na zmiany algorytmów</h3>
+                    <p className="text-sm text-gray-600">Budujemy autorytet encji (<strong>E‑E‑A‑T</strong>), dane strukturalne i <em>knowledge assets</em>, które AI chętnie cytuje.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="group bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center flex-shrink-0">
+                    <CheckCircle className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">🗺️ Lokalna i krajowa dominacja</h3>
+                    <p className="text-sm text-gray-600"><strong>GEO</strong> — mapa i Local Pack w Twoim mieście. <strong>AEO</strong> — „główne źródło odpowiedzi” w skali kraju.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="group bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center flex-shrink-0">
+                    <CheckCircle className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">⚡ Szybkie wygrane + strategia</h3>
+                    <p className="text-sm text-gray-600"><strong>Quick wins</strong> w 30–45 dni oraz <strong>roadmapa AI‑ready</strong> na kwartał do przodu.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Micro social proof */}
+            <div className="mt-10 bg-orange-50 border border-orange-200 text-orange-900 rounded-2xl p-6">
+              <p className="text-sm md:text-base leading-relaxed">
+                “Średnio po <strong>3–4 miesiącach</strong> współpracy klienci odnotowują <strong>20–35%</strong> udziału w odpowiedziach AI dla kluczowych zapytań i <strong>+18–40%</strong> kontaktów z GBP.”
               </p>
             </div>
-            <p className="mt-6 text-sm text-gray-600">
-              Przeczytaj także: <a href="#process-ai-growth" className="font-semibold text-primary-600 hover:text-primary-700 underline underline-offset-4">Proces (AI‑Growth Framework™)</a>
-              <span className="px-2">•</span>
-              <a href="#pakiety-geo-aeo" className="font-semibold text-primary-600 hover:text-primary-700 underline underline-offset-4">Pakiety GEO/AEO</a>
-              <span className="px-2">•</span>
-              <a href="#faq-aeo-geo" className="font-semibold text-primary-600 hover:text-primary-700 underline underline-offset-4">FAQ AEO/GEO</a>
-            </p>
+
+            {/* Internal links */}
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <a href="#process-ai-growth" className="inline-flex items-center px-4 py-2 rounded-full bg-primary-50 text-primary-700 border border-primary-200 text-sm font-semibold hover:bg-primary-100 transition-colors">
+                Proces (AI‑Growth Framework™) <ArrowRight className="h-4 w-4 ml-2" />
+              </a>
+              <a href="#pakiety-geo-aeo" className="inline-flex items-center px-4 py-2 rounded-full bg-gray-50 text-gray-700 border border-gray-200 text-sm font-semibold hover:bg-gray-100 transition-colors">
+                Pakiety GEO/AEO <ArrowRight className="h-4 w-4 ml-2" />
+              </a>
+              <a href="#faq-aeo-geo" className="inline-flex items-center px-4 py-2 rounded-full bg-gray-50 text-gray-700 border border-gray-200 text-sm font-semibold hover:bg-gray-100 transition-colors">
+                FAQ AEO/GEO <ArrowRight className="h-4 w-4 ml-2" />
+              </a>
+            </div>
           </div>
         </section>
-
-        {/* Audit Section */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Main Header */}
