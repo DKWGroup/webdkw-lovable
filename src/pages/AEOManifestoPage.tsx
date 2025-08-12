@@ -26,6 +26,8 @@ const AEOManifestoPage = () => {
     }
   ];
 
+  const [showMoreBenefits, setShowMoreBenefits] = useState(false);
+
   useEffect(() => {
     fetchFeaturedPosts();
   }, []);
@@ -220,8 +222,9 @@ const AEOManifestoPage = () => {
             </p>
 
             {/* Benefits grid */}
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="group bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in">
+              {/* 1 */}
+              <div className="group bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all hover-scale">
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center flex-shrink-0">
                     <CheckCircle className="h-5 w-5" />
@@ -233,7 +236,8 @@ const AEOManifestoPage = () => {
                 </div>
               </div>
 
-              <div className="group bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all">
+              {/* 2 */}
+              <div className="group bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all hover-scale">
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center flex-shrink-0">
                     <CheckCircle className="h-5 w-5" />
@@ -245,7 +249,8 @@ const AEOManifestoPage = () => {
                 </div>
               </div>
 
-              <div className="group bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all">
+              {/* 3 */}
+              <div className="group bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all hover-scale">
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center flex-shrink-0">
                     <CheckCircle className="h-5 w-5" />
@@ -257,53 +262,73 @@ const AEOManifestoPage = () => {
                 </div>
               </div>
 
-              <div className="group bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center flex-shrink-0">
-                    <CheckCircle className="h-5 w-5" />
+              {showMoreBenefits && (
+                <>
+                  {/* 4 */}
+                  <div className="group bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all hover-scale animate-fade-in">
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center flex-shrink-0">
+                        <CheckCircle className="h-5 w-5" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-gray-900 mb-1">📊 Mierzalne KPI zamiast „próżnych metryk”</h3>
+                        <p className="text-sm text-gray-600">Raportujemy <strong>Answer Share™</strong>, <strong>Zero‑Click Wins</strong>, wzrost zapytań i telefonów — liczby, które czuje sprzedaż.</p>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">📊 Mierzalne KPI zamiast „próżnych metryk”</h3>
-                    <p className="text-sm text-gray-600">Raportujemy <strong>Answer Share™</strong>, <strong>Zero‑Click Wins</strong>, wzrost zapytań i telefonów — liczby, które czuje sprzedaż.</p>
-                  </div>
-                </div>
-              </div>
 
-              <div className="group bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center flex-shrink-0">
-                    <CheckCircle className="h-5 w-5" />
+                  {/* 5 */}
+                  <div className="group bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all hover-scale animate-fade-in">
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center flex-shrink-0">
+                        <CheckCircle className="h-5 w-5" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-gray-900 mb-1">🛡️ Odporność na zmiany algorytmów</h3>
+                        <p className="text-sm text-gray-600">Budujemy autorytet encji (<strong>E‑E‑A‑T</strong>), dane strukturalne i <em>knowledge assets</em>, które AI chętnie cytuje.</p>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">🛡️ Odporność na zmiany algorytmów</h3>
-                    <p className="text-sm text-gray-600">Budujemy autorytet encji (<strong>E‑E‑A‑T</strong>), dane strukturalne i <em>knowledge assets</em>, które AI chętnie cytuje.</p>
-                  </div>
-                </div>
-              </div>
 
-              <div className="group bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center flex-shrink-0">
-                    <CheckCircle className="h-5 w-5" />
+                  {/* 6 */}
+                  <div className="group bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all hover-scale animate-fade-in">
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center flex-shrink-0">
+                        <CheckCircle className="h-5 w-5" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-gray-900 mb-1">🗺️ Lokalna i krajowa dominacja</h3>
+                        <p className="text-sm text-gray-600"><strong>GEO</strong> — mapa i Local Pack w Twoim mieście. <strong>AEO</strong> — „główne źródło odpowiedzi” w skali kraju.</p>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">🗺️ Lokalna i krajowa dominacja</h3>
-                    <p className="text-sm text-gray-600"><strong>GEO</strong> — mapa i Local Pack w Twoim mieście. <strong>AEO</strong> — „główne źródło odpowiedzi” w skali kraju.</p>
-                  </div>
-                </div>
-              </div>
 
-              <div className="group bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center flex-shrink-0">
-                    <CheckCircle className="h-5 w-5" />
+                  {/* 7 */}
+                  <div className="group bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all hover-scale animate-fade-in">
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center flex-shrink-0">
+                        <CheckCircle className="h-5 w-5" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-gray-900 mb-1">⚡ Szybkie wygrane + strategia</h3>
+                        <p className="text-sm text-gray-600"><strong>Quick wins</strong> w 30–45 dni oraz <strong>roadmapa AI‑ready</strong> na kwartał do przodu.</p>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">⚡ Szybkie wygrane + strategia</h3>
-                    <p className="text-sm text-gray-600"><strong>Quick wins</strong> w 30–45 dni oraz <strong>roadmapa AI‑ready</strong> na kwartał do przodu.</p>
-                  </div>
-                </div>
-              </div>
+                </>
+              )}
+            </div>
+
+            {/* Toggle */}
+            <div className="mt-6 text-center">
+              <button
+                type="button"
+                aria-expanded={showMoreBenefits}
+                onClick={() => setShowMoreBenefits((v) => !v)}
+                className="inline-flex items-center px-5 py-2 rounded-full border border-gray-300 text-gray-700 bg-white hover:bg-gray-50 hover-scale text-sm font-semibold"
+              >
+                {showMoreBenefits ? 'Zwiń korzyści' : 'Pokaż więcej korzyści'}
+              </button>
             </div>
 
             {/* Micro social proof */}
