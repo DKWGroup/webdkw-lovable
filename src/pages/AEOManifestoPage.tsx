@@ -202,6 +202,53 @@ const AEOManifestoPage = () => {
 
         <AEOVsSEOSection />
 
+        {/* Benefits Section for SEO AI (AEO/GEO) */}
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Co Twoja firma zyska dzięki SEO AI (AEO/GEO)
+            </h2>
+            <p className="text-lg text-gray-700 mb-8">
+              SEO AI to nie tylko „pozycje” w Google. To dominacja w odpowiedziach generowanych przez AI — od Google AI Overviews, przez ChatGPT i Gemini, po Perplexity i Bing Copilot. Efekt? Więcej zapytań od klientów gotowych do zakupu i rosnący udział Twojej marki w odpowiedziach — Answer Share™.
+            </p>
+            <ul className="space-y-4 text-gray-700">
+              <li>
+                <strong>Widoczność tam, gdzie dziś decydują klienci:</strong> Twoja marka pojawia się w odpowiedziach AI (AI Overviews w Google, ChatGPT, Gemini, Perplexity, Bing Copilot). Zwiększasz Answer Share™ — udział w odpowiedziach na kluczowe zapytania.
+              </li>
+              <li>
+                <strong>Więcej zapytań bez klikania:</strong> Gdy 60% zapytań kończy się bez kliknięcia, wygrywa ten, kogo AI wskaże jako odpowiedź. My sprawiamy, że to będziesz Ty.
+              </li>
+              <li>
+                <strong>Krótszy cykl sprzedaży:</strong> Jasne, eksperckie odpowiedzi (AEO) + optymalizacja intencji zakupowych (GEO/AEO) skracają drogę od pytania do kontaktu.
+              </li>
+              <li>
+                <strong>Mierzalne KPI zamiast „próżnych metryk”:</strong> Raportujemy Answer Share™, Zero‑Click Wins, wzrost zapytań i telefonów — liczby, które czuje sprzedaż.
+              </li>
+              <li>
+                <strong>Odporność na zmiany algorytmów:</strong> Budujemy autorytet encji (E‑E‑A‑T), dane strukturalne i „knowledge assets”, które AI chętnie cytuje — to fundament na lata.
+              </li>
+              <li>
+                <strong>Lokalna i krajowa dominacja:</strong> GEO — mapa i Local Pack w Twoim mieście. AEO — „główne źródło odpowiedzi” w skali kraju.
+              </li>
+              <li>
+                <strong>Szybkie wygrane + strategia:</strong> Quick wins w 30–45 dni oraz roadmapa AI‑ready na kwartał do przodu.
+              </li>
+            </ul>
+            <div className="mt-8 bg-orange-50 border border-orange-200 text-orange-900 rounded-xl p-6">
+              <p className="italic">
+                „Średnio po 3–4 miesiącach współpracy klienci odnotowują 20–35% udziału w odpowiedziach AI dla kluczowych zapytań i wzrost liczby kontaktów z GBP o 18–40%.”
+              </p>
+            </div>
+            <p className="mt-6 text-sm text-gray-600">
+              Przeczytaj także: <a href="#process-ai-growth" className="font-semibold text-primary-600 hover:text-primary-700 underline underline-offset-4">Proces (AI‑Growth Framework™)</a>
+              <span className="px-2">•</span>
+              <a href="#pakiety-geo-aeo" className="font-semibold text-primary-600 hover:text-primary-700 underline underline-offset-4">Pakiety GEO/AEO</a>
+              <span className="px-2">•</span>
+              <a href="#faq-aeo-geo" className="font-semibold text-primary-600 hover:text-primary-700 underline underline-offset-4">FAQ AEO/GEO</a>
+            </p>
+          </div>
+        </section>
+
         {/* Audit Section */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -355,7 +402,7 @@ const AEOManifestoPage = () => {
         </section>
 
         {/* Methodology Section */}
-        <section className="py-20 bg-gray-50">
+        <section id="process-ai-growth" className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16">
               AI-Growth Framework™ - Nasz autorski proces w 4 krokach do dominacji
@@ -739,7 +786,7 @@ const AEOManifestoPage = () => {
         </section>
 
         {/* Packages Section */}
-        <section className="py-20 bg-white">
+        <section id="pakiety-geo-aeo" className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16">
               Wybierz swój pakiet dominacji w erze AI
@@ -886,7 +933,7 @@ const AEOManifestoPage = () => {
           </div>
         </section>
         
-        <AEOFAQSection />
+        <div id="faq-aeo-geo"><AEOFAQSection /></div>
 
         <div data-contact-section>
           <ContactSection />
