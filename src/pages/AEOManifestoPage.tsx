@@ -254,7 +254,7 @@ const AEOManifestoPage = () => {
             </div>
 
             {/* Content cards */}
-            <div className="grid lg:grid-cols-3 gap-6 justify-items-center max-w-6xl mx-auto">
+            <div className="flex flex-col lg:flex-row gap-6 justify-center items-start max-w-4xl mx-auto">
               {/* Co zawiera */}
               <article className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm animate-fade-in">
                 <div className="flex items-center gap-3 mb-3">
