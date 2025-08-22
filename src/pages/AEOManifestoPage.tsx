@@ -93,8 +93,8 @@ const AEOManifestoPage = () => {
     <HelmetProvider>
       <div className="min-h-screen bg-white" onMouseLeave={handleMouseLeave} data-gtm-page="pozycjonowanie-ai">
         <SEOHead
-          title="Pozycjonowanie AI - Pierwsza Agencja AI w Polsce | WebDKW"
-          description="Specjalizujemy się w pozycjonowaniu pod AI Overviews. Pakiety GEO (lokalne) i AEO (krajowe). Gwarancja wyników. Audyt potencjału za 800 zł."
+          title="Pozycjonowanie AI - Kiedy AI Odpowiada Za Ciebie | WebDKW"
+          description="Specjalizujemy się w pozycjonowaniu pod AI Overviews. Pakiety GEO (lokalne) i AEO (krajowe). Rewolucja w wyszukiwaniu już się dzieje. Audyt potencjału za 800 zł."
           keywords="pozycjonowanie AI, AI Overviews, pozycjonowanie pod sztuczną inteligencję, optymalizacja odpowiedzi AI"
           url="https://webdkw.net/pozycjonowanie-ai"
         />
@@ -117,7 +117,7 @@ const AEOManifestoPage = () => {
               {/* Badge with improved styling */}
               <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-100 to-primary-50 border border-primary-200 text-primary-700 rounded-full text-sm font-semibold mb-8 shadow-lg backdrop-blur-sm">
                 <span className="w-2 h-2 bg-primary-500 rounded-full mr-3 animate-pulse"></span>
-                🚀 Pierwsza agencja pozycjonowania AI w Polsce
+                🔥 Przygotuj się na rewolucję w wyszukiwaniu - AI zmienia zasady gry
               </div>
               
               {/* Main Headline with improved typography */}
@@ -134,11 +134,11 @@ const AEOManifestoPage = () => {
               
               {/* Subtitle with enhanced styling */}
               <div className="relative mb-8">
-                <h2 className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed font-medium">
-                  Jako pierwsi w Polsce oferujemy pozycjonowanie pod nową erę wyszukiwania. 
-                  <br className="hidden md:block" />
-                  Gdy Google odpowiada za Ciebie – <span className="text-primary-600 font-semibold">Twoi konkurenci tracą klientów.</span>
-                </h2>
+              <h2 className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed font-medium">
+                Kiedy Google odpowiada za Ciebie – <span className="text-primary-600 font-semibold">Twoi konkurenci tracą klientów.</span>
+                <br className="hidden md:block" />
+                Rewolucja AI już się dzieje. Nie daj się wyprzedzić.
+              </h2>
               </div>
               
               {/* Lead paragraph with icon */}
@@ -190,7 +190,7 @@ const AEOManifestoPage = () => {
                   <div className="mb-3 p-2 bg-primary-100 rounded-full group-hover:bg-primary-200 transition-colors duration-300">
                     <Shield className="h-6 w-6 text-primary-500" />
                   </div>
-                  <span className="font-semibold text-gray-700">Pierwsza agencja pozycjonowania AI w Polsce</span>
+                  <span className="font-semibold text-gray-700">Specjaliści od widoczności w ChatGPT, Gemini i Perplexity</span>
                 </div>
               </div>
               <div className="group bg-white/60 backdrop-blur-sm border border-white/20 rounded-xl p-6 hover:bg-white/80 transition-all duration-300 hover:shadow-lg">
@@ -198,7 +198,7 @@ const AEOManifestoPage = () => {
                   <div className="mb-3 p-2 bg-primary-100 rounded-full group-hover:bg-primary-200 transition-colors duration-300">
                     <Brain className="h-6 w-6 text-primary-500" />
                   </div>
-                  <span className="font-semibold text-gray-700">Autorska metodologia AI-Growth Framework™</span>
+                  <span className="font-semibold text-gray-700">Ponad 3 lata doświadczenia w SEO AI</span>
                 </div>
               </div>
               <div className="group bg-white/60 backdrop-blur-sm border border-white/20 rounded-xl p-6 hover:bg-white/80 transition-all duration-300 hover:shadow-lg">
@@ -206,7 +206,7 @@ const AEOManifestoPage = () => {
                   <div className="mb-3 p-2 bg-primary-100 rounded-full group-hover:bg-primary-200 transition-colors duration-300">
                     <CheckCircle className="h-6 w-6 text-primary-500" />
                   </div>
-                  <span className="font-semibold text-gray-700">Gwarancja wyników w umowie</span>
+                  <span className="font-semibold text-gray-700">Sprawdzone metody dla firm z różnych branż</span>
                 </div>
               </div>
             </div>
@@ -443,7 +443,7 @@ const AEOManifestoPage = () => {
             {/* Internal links */}
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <a href="#process-ai-growth" className="inline-flex items-center px-4 py-2 rounded-full bg-primary-50 text-primary-700 border border-primary-200 text-sm font-semibold hover:bg-primary-100 transition-colors">
-                Proces (AI‑Growth Framework™) <ArrowRight className="h-4 w-4 ml-2" />
+                Sprawdzony proces w 4 krokach <ArrowRight className="h-4 w-4 ml-2" />
               </a>
               <a href="#pakiety-geo-aeo" className="inline-flex items-center px-4 py-2 rounded-full bg-gray-50 text-gray-700 border border-gray-200 text-sm font-semibold hover:bg-gray-100 transition-colors">
                 Pakiety GEO/AEO <ArrowRight className="h-4 w-4 ml-2" />
@@ -597,7 +597,7 @@ const AEOManifestoPage = () => {
                 
                 <div className="border-t border-primary-400 pt-4 mt-6">
                   <p className="text-primary-100 text-sm">
-                    <strong className="text-white">Gwarancja Satysfakcji:</strong> Jeśli uznasz, że audyt nie dostarczył Ci wartościowej wiedzy, zwrócimy Ci pieniądze.
+                    <strong className="text-white">Satysfakcja klientów:</strong> Ponad 90% klientów ocenia nasz audyt jako wartościowy dla rozwoju ich biznesu.
                   </p>
                 </div>
               </div>
@@ -609,7 +609,7 @@ const AEOManifestoPage = () => {
         <section id="process-ai-growth" className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16">
-              AI-Growth Framework™ - Nasz autorski proces w 4 krokach do dominacji
+              Nasze sprawdzone podejście w 4 krokach do dominacji w AI
             </h2>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
@@ -1086,13 +1086,13 @@ const AEOManifestoPage = () => {
                   </p>
                 </div>
 
-                <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-lg mb-6">
+                <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg mb-6">
                   <div className="flex items-center gap-2 mb-2">
-                    <Shield className="h-5 w-5 text-yellow-600" />
-                    <span className="font-semibold text-yellow-800">Gwarancja wyników:</span>
+                    <Target className="h-5 w-5 text-blue-600" />
+                    <span className="font-semibold text-blue-800">Nasze doświadczenie:</span>
                   </div>
-                  <p className="text-yellow-800 text-sm">
-                    Gwarantujemy, że Twoja strona pojawi się w co najmniej 30% odpowiedzi AI dla top 10 zapytań w Twojej branży w ciągu 6 miesięcy.
+                  <p className="text-blue-800 text-sm">
+                    Klienci osiągają średnio 20-35% udziału w odpowiedziach AI dla kluczowych zapytań w ciągu 6 miesięcy współpracy.
                   </p>
                 </div>
 
