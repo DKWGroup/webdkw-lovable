@@ -198,7 +198,7 @@ const AEOManifestoPage = () => {
                   <div className="mb-3 p-2 bg-primary-100 rounded-full group-hover:bg-primary-200 transition-colors duration-300">
                     <Brain className="h-6 w-6 text-primary-500" />
                   </div>
-                  <span className="font-semibold text-gray-700">Ponad 3 lata doświadczenia w SEO AI</span>
+                  <span className="font-semibold text-gray-700">Śledzenie trendów AI od początku rewolucji</span>
                 </div>
               </div>
               <div className="group bg-white/60 backdrop-blur-sm border border-white/20 rounded-xl p-6 hover:bg-white/80 transition-all duration-300 hover:shadow-lg">
