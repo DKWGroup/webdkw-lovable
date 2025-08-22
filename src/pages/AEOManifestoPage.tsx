@@ -287,7 +287,7 @@ const AEOManifestoPage = () => {
                 <ul className="text-sm text-gray-700 space-y-2 list-disc pl-5">
                   <li>1‑stronicowy raport PDF</li>
                   <li>AI Readiness Score Lite (0–100 w 5 kategoriach)</li>
-                  <li>Mini‑nagranie Loom 2–3 min</li>
+                  
                   <li>15‑min rozmowa omówkowa</li>
                   <li>Jasne zaproszenie do płatnego Audytu AEO</li>
                 </ul>
