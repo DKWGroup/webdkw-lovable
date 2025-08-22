@@ -254,7 +254,7 @@ const AEOManifestoPage = () => {
             </div>
 
             {/* Content cards */}
-            <div className="grid lg:grid-cols-3 gap-6">
+            <div className="grid lg:grid-cols-3 gap-6 justify-items-center max-w-6xl mx-auto">
               {/* Co zawiera */}
               <article className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm animate-fade-in">
                 <div className="flex items-center gap-3 mb-3">
@@ -316,7 +316,7 @@ const AEOManifestoPage = () => {
               </span>
             </div>
 
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">
               Co Twoja firma zyska dzięki SEO AI (AEO/GEO)
             </h2>
             <p className="text-lg text-gray-700 mb-10 max-w-4xl mx-auto text-center">
