@@ -264,13 +264,13 @@ const AEOManifestoPage = () => {
                   <h3 className="text-lg font-semibold text-gray-900">Co zawiera Audyt SEO AI</h3>
                 </div>
                 <ul className="text-sm text-gray-700 space-y-2 list-disc pl-5">
-                  <li>Snapshot indeksacji (indeksacja, robots, sitemap)</li>
-                  <li>SSL i meta podstawowe (title/description/H1) – strona główna</li>
-                  <li>Mobile‑friendly screenshot + PageSpeed (mobile)</li>
-                  <li>Core Web Vitals skrót: LCP/FID/CLS (bez GSC)</li>
-                  <li>Responsywność i waga strony głównej</li>
-                  <li>Obecność i podstawowa kompletność GBP</li>
-                  <li>3 frazy klienta: czy jest AI Overview i kto jest źródłem</li>
+                  <li>Przegląd obecności w Google (czy strona jest widoczna w wyszukiwarce)</li>
+                  <li>Sprawdzenie bezpieczeństwa i podstawowych elementów strony głównej</li>
+                  <li>Test wyświetlania na telefonach + sprawdzenie szybkości ładowania</li>
+                  <li>Ocena szybkości działania strony (czas ładowania, responsywność)</li>
+                  <li>Sprawdzenie dostosowania do urządzeń mobilnych i rozmiaru strony</li>
+                  <li>Obecność i kompletność wizytówki firmy w Google</li>
+                  <li>Analiza 3 najważniejszych fraz: czy pojawiają się w odpowiedziach AI i kto jest źródłem</li>
                   <li>2–3 „quick wins” (CTA, title length, FAQ schema)</li>
                 </ul>
               </article>
@@ -292,7 +292,7 @@ const AEOManifestoPage = () => {
                   <li>Jasne zaproszenie do płatnego Audytu AEO</li>
                 </ul>
                 <div className="mt-4 p-4 rounded-lg bg-primary-50 border border-primary-200">
-                  <p className="text-sm text-primary-800"><strong>AI Readiness Score Lite</strong>: technika, treść/answerability, CWV, GBP/lokalność, podstawowe SEO (po 20 pkt).</p>
+                  <p className="text-sm text-primary-800"><strong>Ocena gotowości na AI</strong>: technika, jakość treści, szybkość strony, wizytówka Google, podstawowe SEO (po 20 punktów każda kategoria).</p>
                 </div>
               </article>
             </div>
@@ -436,7 +436,7 @@ const AEOManifestoPage = () => {
             {/* Micro social proof */}
             <div className="mt-10 bg-orange-50 border border-orange-200 text-orange-900 rounded-2xl p-6">
               <p className="text-sm md:text-base leading-relaxed">
-                “Średnio po <strong>3–4 miesiącach</strong> współpracy klienci odnotowują <strong>20–35%</strong> udziału w odpowiedziach AI dla kluczowych zapytań i <strong>+18–40%</strong> kontaktów z GBP.”
+                “Średnio po <strong>3–4 miesiącach</strong> współpracy klienci odnotowują <strong>20–35%</strong> udziału w odpowiedziach AI dla kluczowych zapytań i <strong>+18–40%</strong> kontaktów z wizytówki Google.”
               </p>
             </div>
 
@@ -744,7 +744,7 @@ const AEOManifestoPage = () => {
                       </li>
                       <li className="flex items-start gap-3">
                         <span className="mt-1 w-2 h-2 bg-primary-500 rounded-full flex-shrink-0"></span>
-                        <p className="text-gray-700">Implementacja danych strukturalnych: wdrożyliśmy FAQPage (schema.org), aby odpowiedzi wyróżniały się w wynikach wyszukiwania.</p>
+                        <p className="text-gray-700">Wdrożenie znaczników strukturalnych: dodaliśmy specjalne kody, które pomagają Google lepiej zrozumieć treść FAQ i wyróżnić ją w wynikach wyszukiwania.</p>
                       </li>
                     </ul>
                   </section>
@@ -1029,7 +1029,7 @@ const AEOManifestoPage = () => {
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700"><strong>Wdrożenie danych strukturalnych schema.org</strong> - LocalBusiness, FAQPage i Review</span>
+                    <span className="text-gray-700"><strong>Wdrożenie znaczników strukturalnych</strong> - specjalne kody dla wizytówki firmy, FAQ i opinii klientów</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
