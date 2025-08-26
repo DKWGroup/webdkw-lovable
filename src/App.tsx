@@ -20,6 +20,7 @@ import ContactPage from './pages/ContactPage'
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
 import AdminLoginPage from './pages/AdminLoginPage'
 import AdminPage from './pages/AdminPage'
+import AdminSetupPage from './pages/AdminSetupPage'
 import PasswordResetPage from './pages/PasswordResetPage'
 import AEOManifestoPage from './pages/AEOManifestoPage'
 import NotFoundPage from './pages/NotFoundPage'
@@ -49,6 +50,7 @@ function App() {
         <Route path="/uslugi/pozycjonowanie-ai" element={<AEOManifestoPage />} />
         <Route path="/admin/login" element={<AdminLoginPage />} />
         <Route path="/admin" element={<AdminPage />} />
+        <Route path="/admin/setup" element={<AdminSetupPage />} />
         <Route path="/admin/reset-password" element={<PasswordResetPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
