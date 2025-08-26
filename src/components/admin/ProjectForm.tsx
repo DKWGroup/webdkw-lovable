@@ -8,6 +8,7 @@ import 'react-datepicker/dist/react-datepicker.css'
 import Select from 'react-select'
 import { FormValidator } from './FormValidation'
 import FileUpload from './FileUpload'
+import { SafeHtml } from '../../lib/htmlSanitizer';
 
 interface ProjectFormProps {
   project?: Project | null
@@ -790,7 +791,7 @@ const ProjectForm: React.FC<ProjectFormProps> = ({ project, isOpen, onClose, onS
                   </div>
                   <p className="text-orange-500 font-semibold mb-2">{formData.industry}</p>
                   <div className="prose max-w-none mb-4">
-                    <div dangerouslySetInnerHTML={{ __html: formData.description || 'Opis projektu...' }} />
+                    <SafeHtml html={formData.description || 'Opis projektu...'} />
                   </div>
                   
                   {formData.technologies.length > 0 && (

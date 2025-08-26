@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { ExternalLink, TrendingUp, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { supabase, Project } from '../lib/supabase'
+import { SafeHtml } from '../lib/htmlSanitizer'
 
 const PortfolioSection = () => {
   const [projects, setProjects] = useState<Project[]>([])
@@ -131,9 +132,9 @@ const PortfolioSection = () => {
                       <div className="space-y-6">
                         <div>
                           <h4 className="font-bold text-gray-900 mb-2">🎯 Wyzwanie:</h4>
-                          <div 
+                          <SafeHtml 
+                            html={study.description}
                             className="text-gray-600 prose prose-sm max-w-none"
-                            dangerouslySetInnerHTML={{ __html: study.description }}
                           />
                         </div>
 
@@ -200,9 +201,9 @@ const PortfolioSection = () => {
                             <div className="space-y-4">
                               <div>
                                 <h4 className="font-bold text-gray-900 mb-2 text-sm">🎯 Wyzwanie:</h4>
-                                <div 
+                                <SafeHtml 
+                                  html={study.description}
                                   className="text-gray-600 text-sm leading-relaxed prose prose-sm max-w-none"
-                                  dangerouslySetInnerHTML={{ __html: study.description }}
                                 />
                               </div>
 

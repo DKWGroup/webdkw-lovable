@@ -8,6 +8,7 @@ import FileUpload from "./FileUpload";
 import { FormValidator } from "./FormValidation";
 import MarkdownEditor from "./MarkdownEditor";
 import SourceForm from "./SourceForm";
+import { SafeHtml } from "../../lib/htmlSanitizer";
 
 interface BlogPostFormProps {
   post?: BlogPost | null;
@@ -1298,10 +1299,9 @@ const BlogPostForm: React.FC<BlogPostFormProps> = ({
                   )}
 
                   <div className="prose max-w-none">
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: formData.content || "Treść artykułu...",
-                      }}
+                    <SafeHtml
+                      html={formData.content || "Treść artykułu..."}
+                      className=""
                     />
                   </div>
 

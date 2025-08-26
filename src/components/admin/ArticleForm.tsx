@@ -7,6 +7,7 @@ import "react-quill/dist/quill.snow.css";
 import { BlogPost, supabase } from "../../lib/supabase";
 import FileUpload from "./FileUpload";
 import { FormValidator } from "./FormValidation";
+import { SafeHtml } from "../../lib/htmlSanitizer";
 
 interface ArticleFormProps {
   article?: BlogPost | null;
@@ -683,10 +684,9 @@ const ArticleForm: React.FC<ArticleFormProps> = ({
                     {formData.excerpt || "Excerpt artykułu..."}
                   </p>
                   <div className="prose max-w-none">
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: formData.content || "Treść artykułu...",
-                      }}
+                    <SafeHtml
+                      html={formData.content || "Treść artykułu..."}
+                      className=""
                     />
                   </div>
                   {formData.tags.length > 0 && (
