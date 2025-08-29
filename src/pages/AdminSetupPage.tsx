@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { ArrowLeft, Shield, AlertTriangle, Lock } from 'lucide-react';
 import { AdminSetup } from '../components/admin/AdminSetup';
 import { supabase } from '../integrations/supabase/client';
@@ -11,7 +11,6 @@ import { HelmetProvider } from 'react-helmet-async';
 const AdminSetupPage: React.FC = () => {
   const [hasAdmins, setHasAdmins] = useState<boolean | null>(null);
   const [loading, setLoading] = useState(true);
-  const navigate = useNavigate();
 
   useEffect(() => {
     checkAdminExists();

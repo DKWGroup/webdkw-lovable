@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Shield, AlertTriangle, Eye, Calendar, User, Activity, Lock } from 'lucide-react';
+import { Shield, AlertTriangle, Eye, User, Activity, Lock } from 'lucide-react';
 import { supabase } from '../../integrations/supabase/client';
 
 interface SecurityEvent {
   id: string;
   event_type: string;
   ip_address: string;
-  user_agent?: string;
-  email?: string;
+  user_agent: string | null;
+  email: string | null;
   timestamp: string;
   details: any;
 }
