@@ -1,5 +1,6 @@
 import { Mail, Phone } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import CookieSettingsButton from './CookieSettingsButton'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -121,6 +122,7 @@ const Footer = () => {
               <Link to="/polityka-prywatnosci" className="text-gray-400 hover:text-orange-500 text-sm transition-colors">
                 Polityka prywatności
               </Link>
+              <CookieSettingsButton className="text-gray-400 hover:text-orange-500" />
             </div>
           </div>
         </div>

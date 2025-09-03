@@ -24,6 +24,7 @@ import AdminSetupPage from './pages/AdminSetupPage'
 import PasswordResetPage from './pages/PasswordResetPage'
 import AEOManifestoPage from './pages/AEOManifestoPage'
 import NotFoundPage from './pages/NotFoundPage'
+import CookieBanner from './components/CookieBanner'
 function App() {
   return (
     <Router>
@@ -54,6 +55,7 @@ function App() {
         <Route path="/admin/reset-password" element={<PasswordResetPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
+      <CookieBanner />
     </Router>
   )
 }
