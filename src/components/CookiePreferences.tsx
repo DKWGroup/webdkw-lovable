@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, Cookie, Shield, BarChart3, Settings } from 'lucide-react';
+import { loadAnalyticsScripts } from '../lib/cookieScripts';
 
 interface CookiePreferencesProps {
   isOpen: boolean;
@@ -20,8 +21,17 @@ const CookiePreferences: React.FC<CookiePreferencesProps> = ({ isOpen, onClose }
     const consentLevel = preferences.analytics && preferences.marketing ? 'all' : 
                         preferences.analytics ? 'analytics' : 'necessary';
     localStorage.setItem('cookie-consent', consentLevel);
+    
+    // Load scripts immediately if analytics/marketing consent is given
+    if (consentLevel !== 'necessary') {
+      loadAnalyticsScripts(consentLevel).catch(console.error);
+    }
+    
     onClose();
-    window.location.reload(); // Refresh to apply changes
+    // Only reload if no scripts were loaded (for necessary only scenario)
+    if (consentLevel === 'necessary') {
+      window.location.reload();
+    }
   };
 
   const handleToggle = (type: 'analytics' | 'marketing') => {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { X, Cookie, Shield, BarChart3 } from 'lucide-react';
+import { loadAnalyticsScripts } from '../lib/cookieScripts';
 
 const CookieBanner: React.FC = () => {
   const [showBanner, setShowBanner] = useState(false);
@@ -15,6 +16,7 @@ const CookieBanner: React.FC = () => {
   const handleAcceptAll = () => {
     localStorage.setItem('cookie-consent', 'all');
     setShowBanner(false);
+    loadAnalyticsScripts('all').catch(console.error);
   };
 
   const handleAcceptNecessary = () => {

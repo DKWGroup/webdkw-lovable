@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { loadAnalyticsScripts } from '../lib/cookieScripts';
 
 export type CookieConsentLevel = 'all' | 'analytics' | 'necessary' | 'rejected' | null;
 
@@ -16,6 +17,13 @@ export const useCookieConsent = (): CookieConsent => {
   useEffect(() => {
     const storedConsent = localStorage.getItem('cookie-consent') as CookieConsentLevel;
     setConsentLevel(storedConsent);
+    
+    // Load analytics scripts if consent is given
+    if (storedConsent && storedConsent !== 'rejected') {
+      loadAnalyticsScripts(storedConsent).catch(error => {
+        console.error('Failed to load analytics scripts:', error);
+      });
+    }
   }, []);
 
   const hasNecessary = true; // Always true
