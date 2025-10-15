@@ -43,7 +43,6 @@ const WebsiteCreationPage = () => {
       const { data, error } = await supabase
         .from('projects')
         .select('*')
-        .eq('featured', true)
         .order('created_at', { ascending: false })
         .limit(3);
       
@@ -58,10 +57,10 @@ const WebsiteCreationPage = () => {
   useEffect(() => {
     const fetchBlogPosts = async () => {
       const { data, error } = await supabase
-        .from('articles')
+        .from('blog_posts')
         .select('*')
         .eq('published', true)
-        .order('published_at', { ascending: false })
+        .order('created_at', { ascending: false })
         .limit(3);
       
       if (data && !error) {
@@ -599,46 +598,110 @@ const WebsiteCreationPage = () => {
 
               {portfolioProjects.length > 0 ? (
                 <>
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                    {portfolioProjects.map((project, index) => (
-                      <Link
-                        key={index}
-                        to={`/portfolio/${project.slug}`}
-                        className="group bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+                  <div className="grid lg:grid-cols-2 gap-8 mb-12">
+                    {portfolioProjects.map((project) => (
+                      <div
+                        key={project.id}
+                        className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
                       >
-                        {project.image_url && (
-                          <div className="aspect-video overflow-hidden bg-gray-100">
-                            <img
-                              src={project.image_url}
-                              alt={project.title}
-                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                            />
+                        <div className="relative group">
+                          <img
+                            src={project.image_url}
+                            alt={project.title}
+                            className="w-full h-64 object-cover filter transition-all duration-300"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-start p-6">
+                            {project.project_url && (
+                              <a
+                                href={project.project_url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-white text-gray-900 px-4 py-2 rounded-lg font-semibold flex items-center space-x-2 hover:bg-gray-100 transition-colors"
+                                onClick={(e) => e.stopPropagation()}
+                              >
+                                <span>Zobacz projekt</span>
+                                <ArrowRight className="h-4 w-4" />
+                              </a>
+                            )}
                           </div>
-                        )}
-                        <div className="p-6">
-                          <div className="text-sm text-primary-500 font-semibold mb-2">
-                            {project.category}
+                          <div className="absolute top-4 left-4">
+                            <span className="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                              {project.category}
+                            </span>
                           </div>
-                          <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-500 transition-colors">
-                            {project.title}
-                          </h3>
-                          <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                        </div>
+
+                        <div className="p-8">
+                          <div className="flex items-center justify-between mb-4">
+                            <div>
+                              <h3 className="text-2xl font-bold text-gray-900 mb-1">
+                                {project.title}
+                              </h3>
+                              <p className="text-orange-500 font-semibold">
+                                {project.industry}
+                              </p>
+                            </div>
+                            <div className="flex items-center space-x-2 text-gray-500 text-sm">
+                              <Calendar className="h-4 w-4" />
+                              <span>
+                                {project.completion_date ? new Date(project.completion_date).getFullYear() : '2024'}
+                              </span>
+                            </div>
+                          </div>
+
+                          <p className="text-gray-600 leading-relaxed mb-6">
                             {project.description}
                           </p>
-                          {project.technologies && (
-                            <div className="flex flex-wrap gap-2">
-                              {project.technologies.slice(0, 3).map((tech: string, idx: number) => (
-                                <span
-                                  key={idx}
-                                  className="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded"
-                                >
-                                  {tech}
-                                </span>
-                              ))}
+
+                          {project.technologies && project.technologies.length > 0 && (
+                            <div className="mb-6">
+                              <div className="flex flex-wrap gap-2">
+                                {project.technologies.map((tech: string, idx: number) => (
+                                  <span
+                                    key={idx}
+                                    className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm"
+                                  >
+                                    {tech}
+                                  </span>
+                                ))}
+                              </div>
                             </div>
                           )}
+
+                          {project.results && project.results.length > 0 && (
+                            <div className="mb-6">
+                              <h4 className="font-bold text-gray-900 mb-4">
+                                Rezultaty:
+                              </h4>
+                              <div className="grid grid-cols-1 gap-4">
+                                {project.results.map((result: any, idx: number) => (
+                                  <div
+                                    key={idx}
+                                    className="text-center p-4 bg-gray-50 rounded-lg"
+                                  >
+                                    <div className="text-xl font-bold text-gray-900 mb-1">
+                                      {result.value}
+                                    </div>
+                                    <div className="text-sm text-gray-600">
+                                      {result.metric}
+                                    </div>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+
+                          {project.case_study && (
+                            <Link
+                              to={`/case-studies/${project.slug}`}
+                              className="inline-flex items-center space-x-2 text-orange-500 hover:text-orange-600 font-semibold transition-colors"
+                            >
+                              <span>Przeczytaj szczegółowy case study</span>
+                              <ArrowRight className="h-4 w-4" />
+                            </Link>
+                          )}
                         </div>
-                      </Link>
+                      </div>
                     ))}
                   </div>
 
@@ -763,35 +826,59 @@ const WebsiteCreationPage = () => {
 
               {blogPosts.length > 0 ? (
                 <>
-                  <div className="grid md:grid-cols-3 gap-8 mb-12">
-                    {blogPosts.map((post, index) => (
-                      <Link
-                        key={index}
-                        to={`/blog/${post.slug}`}
-                        className="group bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                  <div className="grid lg:grid-cols-3 gap-8 mb-12">
+                    {blogPosts.map((post) => (
+                      <article
+                        key={post.id}
+                        className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
                       >
-                        {post.featured_image && (
-                          <div className="aspect-video overflow-hidden bg-gray-100">
-                            <img
-                              src={post.featured_image}
-                              alt={post.title}
-                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                            />
+                        <div className="relative">
+                          <img
+                            src={
+                              post.image_url ||
+                              "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800"
+                            }
+                            alt={post.title}
+                            className="w-full h-48 object-cover"
+                          />
+                          <div className="absolute top-4 left-4">
+                            {post.tags && post.tags.length > 0 && (
+                              <span className="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                {post.tags[0]}
+                              </span>
+                            )}
                           </div>
-                        )}
-                        <div className="p-6">
-                          <div className="flex items-center gap-2 text-sm text-gray-500 mb-3">
-                            <Calendar className="h-4 w-4" />
-                            {new Date(post.published_at).toLocaleDateString('pl-PL')}
-                          </div>
-                          <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-500 transition-colors line-clamp-2">
-                            {post.title}
-                          </h3>
-                          <p className="text-gray-600 text-sm line-clamp-3">
-                            {post.excerpt || post.meta_description}
-                          </p>
                         </div>
-                      </Link>
+
+                        <div className="p-6">
+                          <div className="flex items-center space-x-4 text-sm text-gray-500 mb-4">
+                            <div className="flex items-center space-x-1">
+                              <Calendar className="h-4 w-4" />
+                              <span>{new Date(post.created_at).toLocaleDateString('pl-PL', {
+                                year: 'numeric',
+                                month: 'long',
+                                day: 'numeric',
+                              })}</span>
+                            </div>
+                          </div>
+
+                          <h2 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
+                            {post.title}
+                          </h2>
+
+                          <p className="text-gray-600 leading-relaxed mb-4">
+                            {post.excerpt}
+                          </p>
+
+                          <Link
+                            to={`/blog/${post.slug}`}
+                            className="inline-flex items-center space-x-2 text-orange-500 hover:text-orange-600 font-semibold transition-colors"
+                          >
+                            <span>Czytaj dalej</span>
+                            <ArrowRight className="h-4 w-4" />
+                          </Link>
+                        </div>
+                      </article>
                     ))}
                   </div>
 
