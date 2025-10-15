@@ -1390,9 +1390,9 @@ const SilesianLandingPage = () => {
                     </h3>
                     <div className="flex-shrink-0">
                       {openFaq === index ? (
-                        <Minus className="h-6 w-6 text-blue-500" />
+                        <Minus className="h-6 w-6 text-orange-500" />
                       ) : (
-                        <Plus className="h-6 w-6 text-blue-500" />
+                        <Plus className="h-6 w-6 text-orange-500" />
                       )}
                     </div>
                   </button>
@@ -1412,7 +1412,7 @@ const SilesianLandingPage = () => {
 
             <div className="text-center mt-12">
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-                <p className="text-yellow-800 font-semibold">
+                <p className="text-blue-800 font-semibold">
                   💬 Masz inne pytanie? Skontaktuj się z nami - odpowiemy w
                   ciągu 24 godzin!
                 </p>

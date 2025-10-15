@@ -3,8 +3,6 @@ import {
   BarChart,
   Check,
   CheckCircle,
-  ChevronDown,
-  ChevronUp,
   Clock,
   Code,
   Lightbulb,
@@ -18,6 +16,8 @@ import {
   Rocket,
   Building2,
   Calendar,
+  Plus,
+  Minus,
 } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { HelmetProvider } from "react-helmet-async";
@@ -916,41 +916,40 @@ const WebsiteCreationPage = () => {
                 {faqs.map((faq, index) => (
                   <div
                     key={index}
-                    className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
+                    className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
                   >
                     <button
                       onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                      className="w-full flex items-center justify-between p-6 text-left"
+                      className="w-full px-8 py-6 text-left flex items-center justify-between focus:outline-none"
                     >
                       <h3 className="text-lg font-bold text-gray-900 pr-4">
                         {faq.question}
                       </h3>
-                      {openFaq === index ? (
-                        <ChevronUp className="h-5 w-5 text-primary-500 flex-shrink-0" />
-                      ) : (
-                        <ChevronDown className="h-5 w-5 text-primary-500 flex-shrink-0" />
-                      )}
+                      <div className="flex-shrink-0">
+                        {openFaq === index ? (
+                          <Minus className="h-6 w-6 text-orange-500" />
+                        ) : (
+                          <Plus className="h-6 w-6 text-orange-500" />
+                        )}
+                      </div>
                     </button>
                     {openFaq === index && (
-                      <div className="px-6 pb-6">
-                        <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                      <div className="px-8 pb-6">
+                        <div className="border-t border-gray-100 pt-6">
+                          <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                        </div>
                       </div>
                     )}
                   </div>
                 ))}
               </div>
 
-              <div className="text-center mt-12 bg-white rounded-lg p-8 shadow-sm">
-                <p className="text-gray-900 font-semibold mb-4">
-                  Nie znalazłeś odpowiedzi na swoje pytanie?
-                </p>
-                <Link
-                  to="/kontakt"
-                  className="inline-flex items-center gap-2 bg-primary-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-600 transition-all duration-300"
-                >
-                  <Phone className="h-5 w-5" />
-                  <span>Umów konsultację 15 min</span>
-                </Link>
+              <div className="text-center mt-12">
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                  <p className="text-blue-800 font-semibold">
+                    💬 Masz inne pytanie? Skontaktuj się ze mną - odpowiem w ciągu 24 godzin!
+                  </p>
+                </div>
               </div>
             </div>
           </section>
