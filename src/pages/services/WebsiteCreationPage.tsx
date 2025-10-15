@@ -956,6 +956,46 @@ const WebsiteCreationPage = () => {
             </div>
           </section>
 
+          {/* Local Pages - Minimalist Linking */}
+          <section className="py-12 bg-gray-50 border-t border-gray-200">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center">
+                <p className="text-sm text-gray-600 mb-4">
+                  Tworzenie stron internetowych w Twoim regionie:
+                </p>
+                <div className="flex flex-wrap items-center justify-center gap-6">
+                  <Link
+                    to="/katowice-tworzenie-stron"
+                    className="text-primary-500 hover:text-primary-600 font-semibold hover:underline transition-colors"
+                  >
+                    Katowice
+                  </Link>
+                  <span className="text-gray-300">•</span>
+                  <Link
+                    to="/chorzow-tworzenie-stron"
+                    className="text-primary-500 hover:text-primary-600 font-semibold hover:underline transition-colors"
+                  >
+                    Chorzów
+                  </Link>
+                  <span className="text-gray-300">•</span>
+                  <Link
+                    to="/gliwice-tworzenie-stron"
+                    className="text-primary-500 hover:text-primary-600 font-semibold hover:underline transition-colors"
+                  >
+                    Gliwice
+                  </Link>
+                  <span className="text-gray-300">•</span>
+                  <Link
+                    to="/strony-internetowe-seo-slask"
+                    className="text-primary-500 hover:text-primary-600 font-semibold hover:underline transition-colors"
+                  >
+                    Cały Śląsk
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* Final CTA Section */}
           <section className="py-20 bg-primary-500 text-white">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
