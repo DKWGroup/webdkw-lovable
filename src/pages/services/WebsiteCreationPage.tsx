@@ -8,19 +8,19 @@ import {
   Clock,
   Code,
   Lightbulb,
-  LineChart,
   Palette,
   Phone,
   Search,
-  Shield,
-  Smartphone,
-  Star,
   Target,
   TrendingUp,
   Users,
   Zap,
+  Globe,
+  Rocket,
+  Building2,
+  Calendar,
 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import FAQSchema from "../../components/FAQSchema";
@@ -28,15 +28,70 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import SEOHead from "../../components/SEOHead";
 import ServiceSchema from "../../components/ServiceSchema";
+import { supabase } from "../../lib/supabase";
 
 const WebsiteCreationPage = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [portfolioProjects, setPortfolioProjects] = useState<any[]>([]);
+  const [blogPosts, setBlogPosts] = useState<any[]>([]);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Hero stats
-  const heroStats = [
-    { label: "Średnia ocena", value: "4.9/5", icon: <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" /> },
-    { label: "Zrealizowanych projektów", value: "150+", icon: <CheckCircle className="h-5 w-5 text-green-500" /> },
-    { label: "Średni wzrost konwersji", value: "+280%", icon: <TrendingUp className="h-5 w-5 text-orange-500" /> },
+  // Fetch portfolio projects
+  useEffect(() => {
+    const fetchPortfolioProjects = async () => {
+      const { data, error } = await supabase
+        .from('projects')
+        .select('*')
+        .eq('featured', true)
+        .order('created_at', { ascending: false })
+        .limit(3);
+      
+      if (data && !error) {
+        setPortfolioProjects(data);
+      }
+    };
+    fetchPortfolioProjects();
+  }, []);
+
+  // Fetch blog posts
+  useEffect(() => {
+    const fetchBlogPosts = async () => {
+      const { data, error } = await supabase
+        .from('articles')
+        .select('*')
+        .eq('published', true)
+        .order('published_at', { ascending: false })
+        .limit(3);
+      
+      if (data && !error) {
+        setBlogPosts(data);
+      }
+    };
+    fetchBlogPosts();
+  }, []);
+
+  // Auto-scroll for client logos
+  useEffect(() => {
+    const scroll = () => {
+      setScrollPosition((prev) => {
+        if (scrollRef.current) {
+          const maxScroll = scrollRef.current.scrollWidth / 2;
+          return prev >= maxScroll ? 0 : prev + 0.5;
+        }
+        return prev;
+      });
+    };
+
+    const intervalId = setInterval(scroll, 20);
+    return () => clearInterval(intervalId);
+  }, []);
+
+  // Hero services (replacing stats)
+  const heroServices = [
+    { label: "Strony firmowe", icon: <Building2 className="h-6 w-6 text-orange-500" />, description: "Profesjonalna wizytówka Twojej firmy" },
+    { label: "Landing pages", icon: <Rocket className="h-6 w-6 text-orange-500" />, description: "Strony zoptymalizowane pod konwersję" },
+    { label: "Serwisy WWW", icon: <Globe className="h-6 w-6 text-orange-500" />, description: "Rozbudowane portale i platformy" },
   ];
 
   // Problems & Solutions
@@ -163,46 +218,6 @@ const WebsiteCreationPage = () => {
     },
   ];
 
-  // Case studies
-  const caseStudies = [
-    {
-      company: "TechStart Solutions",
-      industry: "IT",
-      problem: "Strona przynosiła tylko 2-3 zapytania miesięcznie",
-      solution: "Przeprojektowaliśmy stronę z myślą o klientach, przetestowaliśmy różne wersje i poprawiliśmy widoczność w Google",
-      results: [
-        { metric: "Wzrost zapytań", value: "+340%", icon: <TrendingUp /> },
-        { metric: "Zapytania miesięcznie", value: "8-12", icon: <Target /> },
-        { metric: "Szybkość ładowania", value: "1.2s", icon: <Zap /> },
-        { metric: "Pozycje w Google", value: "TOP 3", icon: <Search /> },
-      ]
-    },
-    {
-      company: "EcoGreen Consulting",
-      industry: "Doradztwo",
-      problem: "Reklamy Google kosztowały dużo a nie przynosiły klientów",
-      solution: "Stworzyliśmy specjalne strony pod reklamy, dokładnie śledziliśmy efekty i uprościliśmy proces kontaktu",
-      results: [
-        { metric: "Zwrot z reklam", value: "+420%", icon: <LineChart /> },
-        { metric: "Koszt pozyskania klienta", value: "-65%", icon: <TrendingUp /> },
-        { metric: "Odsetek kontaktów", value: "12.8%", icon: <Target /> },
-        { metric: "Wzrost odwiedzin z Google", value: "+280%", icon: <Search /> },
-      ]
-    },
-    {
-      company: "LuxuryHome Design",
-      industry: "Sklep online",
-      problem: "Strona ładowała się strasznie wolno, klienci uciekali zanim cokolwiek zobaczyli",
-      solution: "Przebudowaliśmy stronę od podstaw, maksymalnie przyspieszyliśmy i zadbaliśmy o wygodę zakupów na telefonie",
-      results: [
-        { metric: "Szybkość strony", value: "-78%", icon: <Zap /> },
-        { metric: "Odsetek odrzuceń", value: "-45%", icon: <Users /> },
-        { metric: "Średnia wartość koszyka", value: "+85%", icon: <TrendingUp /> },
-        { metric: "Zakupy z telefonu", value: "+195%", icon: <Smartphone /> },
-      ]
-    },
-  ];
-
   // Packages - Simplified
   const packages = [
     {
@@ -216,8 +231,7 @@ const WebsiteCreationPage = () => {
         "Podstawowe SEO",
         "Formularz kontaktowy",
       ],
-      timeframe: "2-3 tygodnie",
-      sla: "Odpowiedź w 48h"
+      timeframe: "2-3 tygodnie"
     },
     {
       name: "BIZNES",
@@ -231,8 +245,7 @@ const WebsiteCreationPage = () => {
         "Panel zarządzania treścią",
         "3 miesiące wsparcia gratis",
       ],
-      timeframe: "4-6 tygodni",
-      sla: "Odpowiedź w 24h"
+      timeframe: "4-6 tygodni"
     },
     {
       name: "E-COMMERCE",
@@ -246,8 +259,7 @@ const WebsiteCreationPage = () => {
         "SEO dla produktów",
         "6 miesięcy wsparcia gratis",
       ],
-      timeframe: "6-10 tygodni",
-      sla: "Odpowiedź w 12h"
+      timeframe: "6-10 tygodni"
     },
   ];
 
@@ -263,40 +275,13 @@ const WebsiteCreationPage = () => {
 
   // Social proof - clients
   const clients = [
+    { name: "Akademia Lutowania", logo: "/images/clients/akademia-lutowania.webp" },
     { name: "Contenty", logo: "/images/clients/contenty.webp" },
-    { name: "GK", logo: "/images/clients/gk.webp" },
-    { name: "Glowup", logo: "/images/clients/glowup.webp" },
-    { name: "MK Helicopters", logo: "/images/clients/mkhelicopters.webp" },
-    { name: "Welldone", logo: "/images/clients/welldone.webp" },
-    { name: "INP", logo: "/images/clients/inp.svg" },
-  ];
-
-  // Testimonials
-  const testimonials = [
-    {
-      name: "Anna Kowalska",
-      company: "TechStart Solutions",
-      role: "Właścicielka",
-      text: "WebDKW stworzyli nam nie tylko ładną stronę, ale przede wszystkim narzędzie do pozyskiwania klientów. Mamy teraz 3 razy więcej zapytań. Inwestycja zwróciła się w 4 miesiące.",
-      rating: 5,
-      metric: "+340% zapytań"
-    },
-    {
-      name: "Tomasz Wiśniewski",
-      company: "EcoGreen Consulting",
-      role: "Założyciel",
-      text: "Po uruchomieniu nowej strony ilość zapytań wzrosła o 280%. Najważniejsze, że to klienci, którzy naprawdę chcą z nami współpracować i mają na to budżet.",
-      rating: 5,
-      metric: "+280% zapytań"
-    },
-    {
-      name: "Katarzyna Nowak",
-      company: "LuxuryHome Design",
-      role: "Dyrektor Marketingu",
-      text: "Kamil to prawdziwy partner w biznesie. Jego rady i wiedza pomogły nam zwiększyć średnią wartość koszyka o 85%. Polecam każdemu, kto myśli o rozwoju w internecie.",
-      rating: 5,
-      metric: "+85% wartość koszyka"
-    },
+    { name: "Grzegorz Kusz", logo: "/images/clients/gk.webp" },
+    { name: "GlowUP", logo: "/images/clients/glowup.webp" },
+    { name: "Investment Partners", logo: "/images/clients/inp.svg" },
+    { name: "MKHelicopters", logo: "/images/clients/mkhelicopters.webp" },
+    { name: "WellDone", logo: "/images/clients/welldone.webp" }
   ];
 
   // FAQ
@@ -386,7 +371,7 @@ const WebsiteCreationPage = () => {
                   <span className="text-primary-500">sprzedają</span>
                 </h1>
                 <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
-                  Szybkie, widoczne w Google i gotowe na AI. WordPress, custom, e‑commerce z gwarancjami jakości i SLA.
+                  Tworzymy strony i sklepy internetowe, które szybko pojawiają się w Google, są gotowe na AI i gwarantują realne wyniki biznesowe.
                 </p>
 
                 {/* CTA Buttons */}
@@ -407,31 +392,39 @@ const WebsiteCreationPage = () => {
                   </Link>
                 </div>
 
-                {/* Trust signals */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-                  {heroStats.map((stat, index) => (
-                    <div key={index} className="bg-gray-50 rounded-lg p-4">
-                      <div className="flex items-center justify-center gap-2 mb-2">
-                        {stat.icon}
-                        <div className="text-2xl font-bold text-gray-900">{stat.value}</div>
+                {/* Main Services */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                  {heroServices.map((service, index) => (
+                    <div key={index} className="bg-gray-50 rounded-lg p-6 text-center">
+                      <div className="flex justify-center mb-3">
+                        {service.icon}
                       </div>
-                      <div className="text-sm text-gray-600">{stat.label}</div>
+                      <div className="text-lg font-bold text-gray-900 mb-1">{service.label}</div>
+                      <div className="text-sm text-gray-600">{service.description}</div>
                     </div>
                   ))}
                 </div>
 
-                {/* Client logos - Horizontal Scroll */}
-                <div className="mt-12">
-                  <p className="text-sm text-gray-500 mb-6 uppercase tracking-wide">Zaufali nam</p>
-                  <div className="overflow-x-auto">
-                    <div className="flex items-center justify-start gap-12 min-w-max px-4 opacity-60">
-                      {clients.map((client, index) => (
-                        <img
+                {/* Client logos - Auto Scroll */}
+                <div className="mt-12 border-t border-gray-200 pt-8">
+                  <p className="text-gray-500 text-sm mb-6">Zaufali nam:</p>
+                  <div className="relative overflow-hidden">
+                    <div 
+                      ref={scrollRef}
+                      className="flex gap-12 items-center"
+                      style={{ transform: `translateX(-${scrollPosition}px)` }}
+                    >
+                      {[...clients, ...clients].map((client, index) => (
+                        <div 
                           key={index}
-                          src={client.logo}
-                          alt={client.name}
-                          className="h-8 md:h-10 object-contain filter brightness-0 flex-shrink-0"
-                        />
+                          className="flex-shrink-0 transition-all duration-300"
+                        >
+                          <img 
+                            src={client.logo} 
+                            alt={client.name} 
+                            className="h-12 sm:h-16 w-auto filter grayscale invert opacity-60 hover:opacity-100 transition-all duration-300 object-contain" 
+                          />
+                        </div>
                       ))}
                     </div>
                   </div>
@@ -594,7 +587,7 @@ const WebsiteCreationPage = () => {
             </div>
           </section>
 
-          {/* Case Studies Section */}
+          {/* Portfolio Section */}
           <section className="py-20 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-16">
@@ -602,74 +595,70 @@ const WebsiteCreationPage = () => {
                   Sprawdzone rezultaty
                 </h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  Konkretne wyniki z prawdziwych projektów
+                  Zobacz nasze najnowsze realizacje
                 </p>
               </div>
 
-              <div className="grid lg:grid-cols-3 gap-8 mb-12">
-                {caseStudies.map((study, index) => (
-                  <div
-                    key={index}
-                    className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
-                  >
-                    <div className="bg-primary-50 p-6 border-b border-gray-200">
-                      <div className="text-sm text-primary-500 font-semibold mb-1">
-                        {study.industry}
-                      </div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                        {study.company}
-                      </h3>
-                    </div>
-
-                    <div className="p-6">
-                      <div className="mb-4">
-                        <h4 className="text-sm font-bold text-red-500 mb-2 uppercase">
-                          Problem
-                        </h4>
-                        <p className="text-gray-600 text-sm">{study.problem}</p>
-                      </div>
-
-                      <div className="mb-6">
-                        <h4 className="text-sm font-bold text-primary-500 mb-2 uppercase">
-                          Rozwiązanie
-                        </h4>
-                        <p className="text-gray-600 text-sm">{study.solution}</p>
-                      </div>
-
-                      <div>
-                        <h4 className="text-sm font-bold text-gray-900 mb-4 uppercase">
-                          Wyniki
-                        </h4>
-                        <div className="grid grid-cols-2 gap-4">
-                          {study.results.map((result, idx) => (
-                            <div key={idx} className="text-center p-3 bg-gray-50 rounded-lg">
-                              <div className="flex justify-center mb-2 text-primary-500">
-                                {result.icon}
-                              </div>
-                              <div className="text-2xl font-bold text-gray-900 mb-1">
-                                {result.value}
-                              </div>
-                              <div className="text-xs text-gray-600">
-                                {result.metric}
-                              </div>
+              {portfolioProjects.length > 0 ? (
+                <>
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    {portfolioProjects.map((project, index) => (
+                      <Link
+                        key={index}
+                        to={`/portfolio/${project.slug}`}
+                        className="group bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+                      >
+                        {project.image_url && (
+                          <div className="aspect-video overflow-hidden bg-gray-100">
+                            <img
+                              src={project.image_url}
+                              alt={project.title}
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            />
+                          </div>
+                        )}
+                        <div className="p-6">
+                          <div className="text-sm text-primary-500 font-semibold mb-2">
+                            {project.category}
+                          </div>
+                          <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-500 transition-colors">
+                            {project.title}
+                          </h3>
+                          <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                            {project.description}
+                          </p>
+                          {project.technologies && (
+                            <div className="flex flex-wrap gap-2">
+                              {project.technologies.slice(0, 3).map((tech: string, idx: number) => (
+                                <span
+                                  key={idx}
+                                  className="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded"
+                                >
+                                  {tech}
+                                </span>
+                              ))}
                             </div>
-                          ))}
+                          )}
                         </div>
-                      </div>
-                    </div>
+                      </Link>
+                    ))}
                   </div>
-                ))}
-              </div>
 
-              <div className="text-center">
-                <Link
-                  to="/case-studies"
-                  className="inline-flex items-center gap-2 bg-primary-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                >
-                  <span>Zobacz wszystkie case studies</span>
-                  <ArrowRight className="h-5 w-5" />
-                </Link>
-              </div>
+                  <div className="text-center">
+                    <Link
+                      to="/portfolio"
+                      className="inline-flex items-center gap-2 bg-primary-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                    >
+                      <span>Zobacz całe portfolio</span>
+                      <ArrowRight className="h-5 w-5" />
+                    </Link>
+                  </div>
+                </>
+              ) : (
+                <div className="text-center text-gray-500">
+                  <p>Wkrótce dodamy nasze najnowsze realizacje</p>
+                </div>
+              )}
             </div>
           </section>
 
@@ -723,14 +712,10 @@ const WebsiteCreationPage = () => {
                         ))}
                       </ul>
 
-                      <div className="space-y-3 mb-6 text-center">
+                      <div className="mb-6 text-center">
                         <p className="text-sm text-gray-600">
                           <Clock className="inline h-4 w-4 mr-1" />
                           Czas realizacji: <strong>{pkg.timeframe}</strong>
-                        </p>
-                        <p className="text-sm text-gray-600">
-                          <Shield className="inline h-4 w-4 mr-1" />
-                          SLA: <strong>{pkg.sla}</strong>
                         </p>
                       </div>
 
@@ -766,48 +751,67 @@ const WebsiteCreationPage = () => {
             </div>
           </section>
 
-          {/* Social Proof Section */}
+          {/* Blog Posts Section */}
           <section className="py-20 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-16">
                 <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
-                  Opinie klientów
+                  Najnowsze artykuły
                 </h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  Sprawdź, co mówią o nas zadowoleni klienci
+                  Poznaj nasze porady i insights z branży
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-8">
-                {testimonials.map((testimonial, index) => (
-                  <div
-                    key={index}
-                    className="bg-gray-50 rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300"
-                  >
-                    <div className="flex items-center gap-1 mb-4">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
-                      ))}
-                    </div>
-                    <p className="text-gray-700 mb-6 leading-relaxed">
-                      "{testimonial.text}"
-                    </p>
-                    <div className="flex items-center justify-between pt-6 border-t border-gray-200">
-                      <div>
-                        <div className="font-bold text-gray-900">{testimonial.name}</div>
-                        <div className="text-sm text-gray-600">
-                          {testimonial.role}, {testimonial.company}
+              {blogPosts.length > 0 ? (
+                <>
+                  <div className="grid md:grid-cols-3 gap-8 mb-12">
+                    {blogPosts.map((post, index) => (
+                      <Link
+                        key={index}
+                        to={`/blog/${post.slug}`}
+                        className="group bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                      >
+                        {post.featured_image && (
+                          <div className="aspect-video overflow-hidden bg-gray-100">
+                            <img
+                              src={post.featured_image}
+                              alt={post.title}
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            />
+                          </div>
+                        )}
+                        <div className="p-6">
+                          <div className="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                            <Calendar className="h-4 w-4" />
+                            {new Date(post.published_at).toLocaleDateString('pl-PL')}
+                          </div>
+                          <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-500 transition-colors line-clamp-2">
+                            {post.title}
+                          </h3>
+                          <p className="text-gray-600 text-sm line-clamp-3">
+                            {post.excerpt || post.meta_description}
+                          </p>
                         </div>
-                      </div>
-                      <div className="text-right">
-                        <div className="text-2xl font-bold text-primary-500">
-                          {testimonial.metric}
-                        </div>
-                      </div>
-                    </div>
+                      </Link>
+                    ))}
                   </div>
-                ))}
-              </div>
+
+                  <div className="text-center">
+                    <Link
+                      to="/blog"
+                      className="inline-flex items-center gap-2 bg-primary-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                    >
+                      <span>Zobacz wszystkie artykuły</span>
+                      <ArrowRight className="h-5 w-5" />
+                    </Link>
+                  </div>
+                </>
+              ) : (
+                <div className="text-center text-gray-500">
+                  <p>Wkrótce pojawią się nowe artykuły</p>
+                </div>
+              )}
             </div>
           </section>
 
