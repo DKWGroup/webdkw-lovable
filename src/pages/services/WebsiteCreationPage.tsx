@@ -43,23 +43,23 @@ const WebsiteCreationPage = () => {
   const problems = [
     {
       icon: <Target className="h-8 w-8 text-red-500" />,
-      problem: "Brak zapytań ofertowych i sprzedaży",
-      solution: "Projektujemy strony pod konwersję z przemyślanymi CTA i ścieżkami użytkownika"
+      problem: "Strona nie przynosi klientów",
+      solution: "Tworzymy strony, które zachęcają odwiedzających do kontaktu i zakupu"
     },
     {
       icon: <Search className="h-8 w-8 text-red-500" />,
-      problem: "Niska widoczność w Google",
-      solution: "Optymalizacja pod SEO/GEO/AEO z danymi strukturalnymi i planem intencji"
+      problem: "Nikt nie znajduje Twojej firmy w Google",
+      solution: "Dbamy o to, żeby Twoja strona była widoczna dla potencjalnych klientów"
     },
     {
       icon: <Zap className="h-8 w-8 text-red-500" />,
-      problem: "Wolna strona i słaba jakość UX",
-      solution: "Core Web Vitals <2.5s LCP, mobile-first, dostępność WCAG 2.1 AA"
+      problem: "Strona wolno się ładuje i odstrasza użytkowników",
+      solution: "Strona ładuje się błyskawicznie - nawet na słabszym łączu i telefonie"
     },
     {
       icon: <BarChart className="h-8 w-8 text-red-500" />,
-      problem: "Brak przygotowania pod kampanie reklamowe",
-      solution: "Landing pages z pixel trackingiem, A/B testing i integracją z CRM"
+      problem: "Reklamy Google nie przynoszą efektów",
+      solution: "Przygotowujemy strony pod kampanie, żeby każda złotówka się liczyła"
     },
   ];
 
@@ -67,23 +67,23 @@ const WebsiteCreationPage = () => {
   const solutions = [
     {
       icon: <Target className="h-8 w-8 text-orange-500" />,
-      title: "Projektujemy pod konwersję",
-      description: "Każdy element strony ma cel - dopracowane CTA, ścieżki użytkownika i optymalizacja pod sprzedaż"
+      title: "Strona, która skutecznie sprzedaje",
+      description: "Każdy przycisk i formularz jest zaprojektowany tak, żeby odwiedzający łatwo się z Tobą skontaktował"
     },
     {
       icon: <Search className="h-8 w-8 text-orange-500" />,
-      title: "SEO przyszłości (GEO/AEO)",
-      description: "Dane strukturalne schema.org, optymalizacja pod AI (ChatGPT, Gemini) i asystentów głosowych"
+      title: "Widoczność w Google i wyszukiwarkach AI",
+      description: "Twoja strona będzie odpowiadać na pytania klientów - zarówno w Google, jak i w ChatGPT czy innych asystentach AI"
     },
     {
       icon: <Zap className="h-8 w-8 text-orange-500" />,
-      title: "Szybkość i mobile-first",
-      description: "LCP <2.5s, CLS <0.1, TTFB <0.9s. WebP/AVIF, lazy loading, CDN"
+      title: "Błyskawiczna szybkość na każdym urządzeniu",
+      description: "Strona ładuje się natychmiastowo - niezależnie czy klient wchodzi z telefonu, tabletu czy komputera"
     },
     {
       icon: <BarChart className="h-8 w-8 text-orange-500" />,
-      title: "Gotowe pod kampanie",
-      description: "Piksele reklamowe, call tracking, mapy ciepła, nagrania sesji, integracja z GA4"
+      title: "Gotowa na reklamy Google i Meta",
+      description: "Wiemy dokładnie, które reklamy przynoszą klientów - śledzimy każde kliknięcie i telefon"
     },
   ];
 
@@ -91,31 +91,31 @@ const WebsiteCreationPage = () => {
   const offerScope = [
     {
       category: "Typy stron",
-      items: ["Landing page sprzedażowe", "Strony firmowe (5-50 podstron)", "Strony onepage", "Strony rozbudowane z blogiem"]
+      items: ["Strony sprzedażowe jednego produktu", "Strony firmowe wizytówki", "Strony typu one-page", "Strony z blogiem i aktualnościami"]
     },
     {
-      category: "E-commerce",
-      items: ["Sklepy online z integracjami", "Płatności (Stripe, PayU, Przelewy24)", "Magazyny i ERP/CRM", "Marketplace i dropshipping"]
+      category: "Sklepy internetowe",
+      items: ["Sklepy z płatnościami online", "Połączenie z systemami płatności (PayU, Przelewy24)", "Integracja z magazynem i systemami firmowymi", "Sprzedaż na marketplace"]
     },
     {
-      category: "SEO/GEO/AEO",
-      items: ["Plan intencji i strategia", "Dane strukturalne (schema.org)", "Optymalizacja pod AI i głos", "LocalBusiness i NAP"]
+      category: "Widoczność w Google i AI",
+      items: ["Strategia słów kluczowych", "Przygotowanie pod wyszukiwarki AI", "Optymalizacja dla lokalnych firm", "Informacje o firmie czytelne dla Google"]
     },
     {
-      category: "UX/UI i treści",
-      items: ["Projekt UX/UI pod konwersję", "Copywriting sprzedażowy", "Responsywność i dostępność", "A/B testing setup"]
+      category: "Projekt i treści",
+      items: ["Nowoczesny design dopasowany do Twojej marki", "Profesjonalne teksty zachęcające do zakupu", "Strona działa idealnie na telefonach", "Testy różnych wersji przycisków i formularzy"]
     },
     {
-      category: "Wydajność",
-      items: ["Core Web Vitals", "Optymalizacja obrazów", "CDN i caching", "Mobile-first"]
+      category: "Szybkość",
+      items: ["Strona ładuje się błyskawicznie", "Zdjęcia w najnowszych formatach", "Szybkie serwery", "Priorytet dla wersji mobilnej"]
     },
     {
-      category: "Analityka",
-      items: ["GA4 i GSC", "Piksele (Google, Meta, LinkedIn)", "Mapy ciepła i nagrania sesji", "Call tracking"]
+      category: "Mierzenie efektów",
+      items: ["Google Analytics i Search Console", "Kody śledzące dla reklam", "Nagrania sesji użytkowników", "Śledzenie połączeń telefonicznych"]
     },
     {
-      category: "Wsparcie",
-      items: ["Dokumentacja i szkolenie", "SLA i support", "Aktualizacje i backupy", "Gwarancje jakości"]
+      category: "Opieka po wdrożeniu",
+      items: ["Instrukcje i szkolenie jak zarządzać stroną", "Wsparcie techniczne", "Regularne aktualizacje i kopie zapasowe", "Gwarancja poprawnego działania"]
     },
   ];
 
@@ -124,42 +124,42 @@ const WebsiteCreationPage = () => {
     {
       number: 1,
       icon: <Lightbulb className="h-8 w-8 text-orange-500" />,
-      title: "Diagnoza i strategia",
-      description: "Audyt konkurencji, analiza grupy docelowej, definicja celów biznesowych i strategii konwersji",
+      title: "Poznajemy Twój biznes",
+      description: "Sprawdzamy czego potrzebują Twoi klienci, co robią konkurenci i jak najlepiej zaprezentować Twoją ofertę",
       duration: "1 tydzień",
-      deliverables: ["Brief projektowy", "Analiza konkurencji", "Plan konwersji"]
+      deliverables: ["Dokument z ustaleniami", "Analiza konkurencji", "Plan działania"]
     },
     {
       number: 2,
       icon: <Palette className="h-8 w-8 text-orange-500" />,
-      title: "UX/UI i treści",
-      description: "Wireframes, projekt graficzny zoptymalizowany pod konwersję, copywriting sprzedażowy",
+      title: "Projektujemy i piszemy treści",
+      description: "Tworzymy szkice strony, nowoczesny design i profesjonalne teksty, które zachęcają do kontaktu",
       duration: "1-2 tygodnie",
-      deliverables: ["Wireframes", "Design system", "Treści sprzedażowe"]
+      deliverables: ["Szkice układu strony", "Projekt graficzny", "Gotowe teksty"]
     },
     {
       number: 3,
       icon: <Code className="h-8 w-8 text-orange-500" />,
-      title: "Wdrożenie",
-      description: "Kodowanie, integracje, SEO techniczne, dane strukturalne, optymalizacja wydajności",
+      title: "Tworzymy stronę",
+      description: "Budujemy stronę, łączymy ją z potrzebnymi systemami i dbamy o to, żeby Google ją polubił",
       duration: "2-3 tygodnie",
-      deliverables: ["Działająca strona", "Integracje", "SEO on-page"]
+      deliverables: ["Działająca strona", "Połączenia z systemami", "Przygotowanie pod Google"]
     },
     {
       number: 4,
       icon: <CheckCircle className="h-8 w-8 text-orange-500" />,
-      title: "Testy i uruchomienie",
-      description: "Testy funkcjonalności, wydajności, security audit, uruchomienie na produkcji",
+      title: "Testujemy i uruchamiamy",
+      description: "Sprawdzamy czy wszystko działa jak należy, testujemy szybkość i bezpieczeństwo, po czym publikujemy stronę",
       duration: "1 tydzień",
-      deliverables: ["Raporty testów", "Live strona", "Dokumentacja"]
+      deliverables: ["Raport z testów", "Opublikowana strona", "Instrukcja obsługi"]
     },
     {
       number: 5,
       icon: <TrendingUp className="h-8 w-8 text-orange-500" />,
-      title: "Wzrost i wsparcie",
-      description: "3 miesiące wsparcia, optymalizacja wyników, raportowanie, szkolenie z CMS",
+      title: "Pomagamy rosnąć",
+      description: "Przez 3 miesiące pomagamy ulepszyć wyniki, szkolimy z obsługi strony i regularnie raportujemy postępy",
       duration: "3 miesiące",
-      deliverables: ["Miesięczne raporty", "Support 24/7", "Optymalizacje"]
+      deliverables: ["Co-miesięczne raporty", "Pomoc techniczna", "Sugestie ulepszeń"]
     },
   ];
 
@@ -168,37 +168,37 @@ const WebsiteCreationPage = () => {
     {
       company: "TechStart Solutions",
       industry: "IT",
-      problem: "Strona generowała tylko 2-3 zapytania miesięcznie",
-      solution: "Przeprojektowanie pod konwersję, A/B testing, optymalizacja SEO",
+      problem: "Strona przynosiła tylko 2-3 zapytania miesięcznie",
+      solution: "Przeprojektowaliśmy stronę z myślą o klientach, przetestowaliśmy różne wersje i poprawiliśmy widoczność w Google",
       results: [
-        { metric: "Wzrost konwersji", value: "+340%", icon: <TrendingUp /> },
-        { metric: "Zapytania ofertowe", value: "8-12/mies.", icon: <Target /> },
-        { metric: "LCP", value: "1.2s", icon: <Zap /> },
+        { metric: "Wzrost zapytań", value: "+340%", icon: <TrendingUp /> },
+        { metric: "Zapytania miesięcznie", value: "8-12", icon: <Target /> },
+        { metric: "Szybkość ładowania", value: "1.2s", icon: <Zap /> },
         { metric: "Pozycje w Google", value: "TOP 3", icon: <Search /> },
       ]
     },
     {
       company: "EcoGreen Consulting",
-      industry: "Consulting",
-      problem: "Wysokie koszty kampanii Google Ads bez rezultatów",
-      solution: "Dedykowane landing pages, pixel tracking, optymalizacja ścieżek",
+      industry: "Doradztwo",
+      problem: "Reklamy Google kosztowały dużo a nie przynosiły klientów",
+      solution: "Stworzyliśmy specjalne strony pod reklamy, dokładnie śledziliśmy efekty i uprościliśmy proces kontaktu",
       results: [
-        { metric: "ROI z Ads", value: "+420%", icon: <LineChart /> },
-        { metric: "Koszt leada", value: "-65%", icon: <TrendingUp /> },
-        { metric: "Współczynnik konwersji", value: "12.8%", icon: <Target /> },
-        { metric: "Ruch organiczny", value: "+280%", icon: <Search /> },
+        { metric: "Zwrot z reklam", value: "+420%", icon: <LineChart /> },
+        { metric: "Koszt pozyskania klienta", value: "-65%", icon: <TrendingUp /> },
+        { metric: "Odsetek kontaktów", value: "12.8%", icon: <Target /> },
+        { metric: "Wzrost odwiedzin z Google", value: "+280%", icon: <Search /> },
       ]
     },
     {
       company: "LuxuryHome Design",
-      industry: "E-commerce",
-      problem: "Wolna strona, wysokie bounce rate, niskie pozycje w Google",
-      solution: "Rebuild na headless, Core Web Vitals, SEO techniczne, dane strukturalne",
+      industry: "Sklep online",
+      problem: "Strona ładowała się strasznie wolno, klienci uciekali zanim cokolwiek zobaczyli",
+      solution: "Przebudowaliśmy stronę od podstaw, maksymalnie przyspieszyliśmy i zadbaliśmy o wygodę zakupów na telefonie",
       results: [
-        { metric: "Czas ładowania", value: "-78%", icon: <Zap /> },
-        { metric: "Bounce rate", value: "-45%", icon: <Users /> },
-        { metric: "Średnia wartość zamówienia", value: "+85%", icon: <TrendingUp /> },
-        { metric: "Ruch mobilny", value: "+195%", icon: <Smartphone /> },
+        { metric: "Szybkość strony", value: "-78%", icon: <Zap /> },
+        { metric: "Odsetek odrzuceń", value: "-45%", icon: <Users /> },
+        { metric: "Średnia wartość koszyka", value: "+85%", icon: <TrendingUp /> },
+        { metric: "Zakupy z telefonu", value: "+195%", icon: <Smartphone /> },
       ]
     },
   ];
@@ -208,77 +208,77 @@ const WebsiteCreationPage = () => {
     {
       name: "START",
       price: "5 000 - 8 000 zł",
-      description: "Dla małych firm i freelancerów rozpoczynających działalność online",
+      description: "Dla małych firm rozpoczynających działalność w internecie",
       recommended: false,
       features: [
-        "Landing page lub onepage (3-5 sekcji)",
-        "Responsywny design mobile-first",
-        "Podstawowe SEO (meta, sitemap, robots)",
-        "Formularz kontaktowy z walidacją",
-        "Dane strukturalne (Organization, Service)",
-        "GA4 i GSC",
-        "Core Web Vitals <2.5s LCP",
-        "1 miesiąc wsparcia",
-        "Dokumentacja i szkolenie",
+        "Prosta strona sprzedażowa (3-5 sekcji)",
+        "Działa na telefonach i komputerach",
+        "Podstawy widoczności w Google",
+        "Formularz kontaktowy",
+        "Informacje o firmie dla Google",
+        "Google Analytics i Search Console",
+        "Szybkie ładowanie (poniżej 2.5s)",
+        "1 miesiąc pomocy po uruchomieniu",
+        "Instrukcja jak obsługiwać stronę",
       ],
       timeframe: "2-3 tygodnie",
-      sla: "48h response time"
+      sla: "Odpowiedź w 48h"
     },
     {
       name: "BIZNES",
       price: "10 000 - 18 000 zł",
-      description: "Kompleksowa strona firmowa zoptymalizowana pod konwersję i SEO",
+      description: "Kompleksowa strona firmowa, która skutecznie pozyskuje klientów",
       recommended: true,
       features: [
-        "Strona firmowa (10-20 podstron)",
-        "UX/UI pod konwersję + A/B testing",
-        "Zaawansowane SEO/GEO/AEO",
-        "Dane strukturalne (FAQ, HowTo, Review, LocalBusiness)",
-        "Blog z CMS",
-        "Integracja z CRM",
-        "Piksele reklamowe + call tracking",
-        "Mapy ciepła i nagrania sesji",
-        "Core Web Vitals premium",
-        "3 miesiące wsparcia + optymalizacje",
-        "Content premium (10 artykułów)",
-        "Miesięczne raporty",
+        "Pełna strona firmowa (10-20 podstron)",
+        "Design zachęcający do kontaktu + testy wersji",
+        "Zaawansowana widoczność w Google i AI",
+        "Pełne przygotowanie pod wyszukiwarki",
+        "Blog z łatwą edycją treści",
+        "Połączenie z systemem CRM",
+        "Śledzenie reklam i połączeń telefonicznych",
+        "Nagrania jak klienci korzystają ze strony",
+        "Maksymalna szybkość",
+        "3 miesiące pomocy + poprawki",
+        "10 profesjonalnych artykułów na blog",
+        "Co-miesięczne raporty wyników",
       ],
       timeframe: "4-6 tygodni",
-      sla: "24h response time"
+      sla: "Odpowiedź w 24h"
     },
     {
-      name: "E-COMMERCE",
+      name: "SKLEP ONLINE",
       price: "18 000 - 35 000 zł",
-      description: "Sklep online z zaawansowanymi integracjami i automatyzacjami",
+      description: "Profesjonalny sklep internetowy gotowy do sprzedaży",
       recommended: false,
       features: [
         "Sklep online (50-500 produktów)",
-        "Zaawansowany UX/UI e-commerce",
-        "Integracje płatności (Stripe, PayU, P24)",
-        "Integracja z magazynem/ERP/CRM",
-        "Marketplace i dropshipping",
-        "SEO e-commerce + dane strukturalne (Product, Review)",
-        "Automatyzacje (remarketing, abandoned cart)",
-        "GA4 Enhanced E-commerce",
-        "Headless architecture (opcja)",
-        "Core Web Vitals premium",
-        "6 miesięcy wsparcia + optymalizacje",
-        "Szkolenie zaawansowane",
-        "Cotygodniowe raporty",
+        "Wygodne zakupy dla klientów",
+        "Płatności online (PayU, Przelewy24, Stripe)",
+        "Połączenie z magazynem i systemami firmowymi",
+        "Sprzedaż na Allegro/Amazon",
+        "Widoczność produktów w Google",
+        "Automatyczne przypomnienia o koszyku",
+        "Szczegółowa analiza sprzedaży",
+        "Najnowsze technologie (opcja)",
+        "Maksymalna szybkość",
+        "6 miesięcy pomocy + poprawki",
+        "Szkolenie z obsługi sklepu",
+        "Co-tygodniowe raporty sprzedaży",
       ],
       timeframe: "6-10 tygodni",
-      sla: "12h response time"
+      sla: "Odpowiedź w 12h"
     },
   ];
 
   // Add-ons
   const addOns = [
-    { name: "Content premium (artykuły blog)", price: "500-1500 zł/artykuł" },
-    { name: "Sesja foto/wideo", price: "2000-5000 zł" },
-    { name: "Automatyzacje (Zapier, Make)", price: "1500-3000 zł" },
-    { name: "Dodatkowe języki (tłumaczenie + wdrożenie)", price: "2000-4000 zł/język" },
-    { name: "Integracje niestandardowe (API)", price: "3000-8000 zł" },
-    { name: "Lead magnet (PDF/checklist/guide)", price: "1000-2500 zł" },
+    { name: "Profesjonalne artykuły na blog", price: "500-1500 zł/artykuł" },
+    { name: "Sesja zdjęciowa/filmowa", price: "2000-5000 zł" },
+    { name: "Automatyzacje i łączenie systemów", price: "1500-3000 zł" },
+    { name: "Dodatkowe wersje językowe", price: "2000-4000 zł/język" },
+    { name: "Dedykowane integracje", price: "3000-8000 zł" },
+    { name: "Materiały do pobrania dla klientów (PDF)", price: "1000-2500 zł" },
   ];
 
   // Social proof - clients
@@ -296,70 +296,70 @@ const WebsiteCreationPage = () => {
     {
       name: "Anna Kowalska",
       company: "TechStart Solutions",
-      role: "CEO",
-      text: "WebDKW nie tylko stworzyli piękną stronę, ale przede wszystkim narzędzie, które generuje nam 3x więcej leadów. ROI zwrócił się w 4 miesiące.",
+      role: "Właścicielka",
+      text: "WebDKW stworzyli nam nie tylko ładną stronę, ale przede wszystkim narzędzie do pozyskiwania klientów. Mamy teraz 3 razy więcej zapytań. Inwestycja zwróciła się w 4 miesiące.",
       rating: 5,
-      metric: "+340% konwersji"
+      metric: "+340% zapytań"
     },
     {
       name: "Tomasz Wiśniewski",
       company: "EcoGreen Consulting",
-      role: "Founder",
-      text: "Po wdrożeniu SEO nasze zapytania wzrosły o 280%. Najważniejsze, że to jakościowi klienci z odpowiednim budżetem.",
+      role: "Założyciel",
+      text: "Po uruchomieniu nowej strony ilość zapytań wzrosła o 280%. Najważniejsze, że to klienci, którzy naprawdę chcą z nami współpracować i mają na to budżet.",
       rating: 5,
       metric: "+280% zapytań"
     },
     {
       name: "Katarzyna Nowak",
       company: "LuxuryHome Design",
-      role: "Marketing Director",
-      text: "Marcin to prawdziwy partner biznesowy. Jego doradztwo strategiczne pomogło nam podnieść średnią wartość zamówienia o 85%.",
+      role: "Dyrektor Marketingu",
+      text: "Kamil to prawdziwy partner w biznesie. Jego rady i wiedza pomogły nam zwiększyć średnią wartość koszyka o 85%. Polecam każdemu, kto myśli o rozwoju w internecie.",
       rating: 5,
-      metric: "+85% AOV"
+      metric: "+85% wartość koszyka"
     },
   ];
 
   // FAQ
   const faqs = [
     {
-      question: "Ile kosztuje strona internetowa i od czego zależy cena?",
-      answer: "Cena zależy od złożoności projektu, liczby podstron, integracji i funkcjonalności. Pakiet START to 5-8k zł (landing/onepage), BIZNES 10-18k zł (strona firmowa z SEO), E-COMMERCE 18-35k zł (sklep z integracjami). Finalna wycena powstaje po konsultacji 15 min i uzupełnieniu briefu."
+      question: "Ile kosztuje strona internetowa?",
+      answer: "Cena zależy od tego, czego potrzebujesz. Prosta strona sprzedażowa to 5-8 tys. zł. Pełna strona firmowa z blogiem i widocznością w Google to 10-18 tys. zł. Sklep internetowy to 18-35 tys. zł. Dokładną cenę ustalimy po krótkiej rozmowie, w której poznamy Twoje potrzeby."
     },
     {
-      question: "Ile czasu zajmuje realizacja projektu?",
-      answer: "START: 2-3 tygodnie, BIZNES: 4-6 tygodni, E-COMMERCE: 6-10 tygodni. Obejmuje to wszystkie etapy od strategii po uruchomienie i testy. Dokładny harmonogram ustalamy na etapie briefu."
+      question: "Jak długo trzeba czekać na gotową stronę?",
+      answer: "Prosta strona: 2-3 tygodnie. Strona firmowa: 4-6 tygodni. Sklep online: 6-10 tygodni. To czas od rozmowy o Twoich potrzebach, przez projekt i tworzenie, aż po uruchomienie. Dokładny termin ustalimy razem."
     },
     {
-      question: "Jakie gwarancje i zabezpieczenia oferujecie?",
-      answer: "Gwarancja jakości zgodna z umową, SLA (12-48h response time), poprawki błędów, prawa autorskie i własność kodu, pełna własność kont (hosting, domeny, analityka), backupy codzienne, wsparcie powdrożeniowe (1-6 miesięcy w zależności od pakietu)."
+      question: "Co jeśli coś nie będzie działać?",
+      answer: "Wszystko jest objęte gwarancją zgodnie z umową. Odpowiadamy na zgłoszenia w 12-48 godzin (w zależności od pakietu). Naprawiamy wszystkie błędy bezpłatnie. Strona, kod i wszystkie konta są w 100% Twoje. Robimy codzienne kopie zapasowe. Po uruchomieniu pomagamy przez 1-6 miesięcy."
     },
     {
-      question: "WordPress vs custom - co wybrać?",
-      answer: "WordPress: szybsze wdrożenie, niższy koszt, łatwa edycja treści, idealne dla stron firmowych i blogów. Custom (headless): maksymalna wydajność, dedykowane funkcje, skalowalność, idealne dla e-commerce i platform. Doradzimy najlepsze rozwiązanie po analizie potrzeb."
+      question: "WordPress czy dedykowana strona - co lepsze?",
+      answer: "WordPress to szybsze wdrożenie, niższy koszt i łatwa edycja treści - świetny dla większości firm i blogów. Dedykowana strona (bez WordPress) to maksymalna szybkość i dowolne funkcje - idealny dla sklepów i bardziej złożonych projektów. Doradzimy co będzie najlepsze dla Ciebie."
     },
     {
-      question: "Czy mogę samodzielnie zarządzać treścią?",
-      answer: "Tak! Każda strona ma intuicyjny CMS (WordPress lub Headless CMS). Przeprowadzamy szkolenie z obsługi, dostarczamy dokumentację wideo i oferujemy support. Możesz edytować teksty, dodawać zdjęcia, publikować artykuły bez znajomości kodu."
+      question: "Czy będę mógł sam zmieniać teksty na stronie?",
+      answer: "Tak! Pokażemy Ci jak edytować teksty, dodawać zdjęcia i publikować artykuły. To jest bardzo proste i nie wymaga żadnej wiedzy technicznej. Dostaniesz też filmy instruktażowe i zawsze możesz zapytać nas o pomoc."
     },
     {
-      question: "Jakie integracje są możliwe?",
-      answer: "CRM (HubSpot, Salesforce, Pipedrive), ERP (Comarch, Subiekt), płatności (Stripe, PayU, Przelewy24, PayPal), email marketing (Mailchimp, GetResponse), automatyzacje (Zapier, Make), marketplace (Allegro, Amazon), magazyny, call tracking, live chat."
+      question: "Czy możecie połączyć stronę z moimi systemami?",
+      answer: "Tak, łączymy strony z najpopularniejszymi systemami: CRM (np. HubSpot, Salesforce), systemami firmowymi, płatnościami online (PayU, Przelewy24, Stripe), emailingiem (Mailchimp, GetResponse), Allegro, Amazon i wieloma innymi. Powiemy Ci co jest możliwe w Twoim przypadku."
     },
     {
-      question: "Co obejmuje wsparcie i utrzymanie?",
-      answer: "Aktualizacje bezpieczeństwa, backupy codzienne, monitoring uptime, support techniczny zgodny z SLA, poprawki błędów, optymalizacje wydajności, miesięczne raporty (GA4, GSC, wyniki SEO), konsultacje strategiczne."
+      question: "Co się dzieje po uruchomieniu strony?",
+      answer: "Przez określony czas (1-6 miesięcy w zależności od pakietu) pomagamy i poprawiamy wszystko co trzeba. Aktualizujemy zabezpieczenia, robimy kopie zapasowe, monitorujemy czy strona działa, wysyłamy raporty z wyników i radzimy jak poprawić efekty."
     },
     {
-      question: "Czy strona będzie przygotowana pod Google Ads?",
-      answer: "Tak! Implementujemy piksele (Google, Meta, LinkedIn), tworzymy dedykowane landing pages pod kampanie, konfigurujemy konwersje w GA4, dodajemy call tracking, A/B testing i optymalizujemy ścieżki użytkownika pod reklamę płatną."
+      question: "Czy strona będzie działać z reklamami Google?",
+      answer: "Tak! Przygotowujemy specjalne strony pod reklamy Google i Facebook. Dodajemy kody śledzące, dzięki którym będziesz wiedział które reklamy przynoszą klientów. Śledzimy też telefony z reklam. Testujemy różne wersje, żeby reklamy jak najlepiej działały."
     },
   ];
 
   // Team
   const team = {
     name: "Kamil Krukowski",
-    role: "Founder & Lead Developer",
-    bio: "10+ lat doświadczenia w IT i marketingu. Specjalizacja: SEO/GEO/AEO, UX/UI, performance optimization. Misja: AI-ready web - strony gotowe na przyszłość AI.",
+    role: "Założyciel i główny specjalista",
+    bio: "Ponad 10 lat doświadczenia w tworzeniu stron i marketingu internetowym. Pomagam firmom być widocznymi w Google, w ChatGPT i innych narzędziach AI. Tworzę strony, które nie tylko ładnie wyglądają, ale przede wszystkim przynoszą klientów.",
     linkedin: "https://www.linkedin.com/in/kamil-krukowski",
     image: "/images/Kamil-Krukowski-small.webp"
   };
