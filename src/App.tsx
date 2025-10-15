@@ -13,6 +13,7 @@ import CaseStudyPage from "./pages/CaseStudyPage";
 import ContactPage from "./pages/ContactPage";
 import FAQPage from "./pages/FAQPage";
 import HomePage from "./pages/HomePage";
+import KatowiceWebsitesPage from "./pages/KatowiceWebsitesPage";
 import LeadMagnetPage from "./pages/LeadMagnetPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import PasswordResetPage from "./pages/PasswordResetPage";
@@ -57,6 +58,10 @@ function App() {
           <Route
             path="/strony-internetowe-seo-slask"
             element={<SilesianLandingPage />}
+          />
+          <Route
+            path="/katowice-tworzenie-stron"
+            element={<KatowiceWebsitesPage />}
           />
           <Route path="/proces-realizacji" element={<ProcessPage />} />
           <Route path="/o-nas" element={<AboutPage />} />
