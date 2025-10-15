@@ -3,14 +3,14 @@ import {
   BarChart,
   Check,
   CheckCircle,
+  ChevronDown,
+  ChevronUp,
   Clock,
   Code,
   Lightbulb,
   LineChart,
-  Minus,
   Palette,
   Phone,
-  Plus,
   Search,
   Shield,
   Smartphone,
@@ -203,83 +203,63 @@ const WebsiteCreationPage = () => {
     },
   ];
 
-  // Packages
+  // Packages - Simplified
   const packages = [
     {
       name: "START",
-      price: "5 000 - 8 000 zł",
-      description: "Dla małych firm rozpoczynających działalność w internecie",
+      price: "od 5 000 zł",
+      description: "Dla małych firm i startupów",
       recommended: false,
       features: [
-        "Prosta strona sprzedażowa (3-5 sekcji)",
-        "Działa na telefonach i komputerach",
-        "Podstawy widoczności w Google",
+        "Do 5 podstron",
+        "Responsywny design",
+        "Podstawowe SEO",
         "Formularz kontaktowy",
-        "Informacje o firmie dla Google",
-        "Google Analytics i Search Console",
-        "Szybkie ładowanie (poniżej 2.5s)",
-        "1 miesiąc pomocy po uruchomieniu",
-        "Instrukcja jak obsługiwać stronę",
       ],
       timeframe: "2-3 tygodnie",
       sla: "Odpowiedź w 48h"
     },
     {
       name: "BIZNES",
-      price: "10 000 - 18 000 zł",
-      description: "Kompleksowa strona firmowa, która skutecznie pozyskuje klientów",
+      price: "od 10 000 zł",
+      description: "Dla rozwijających się firm",
       recommended: true,
       features: [
-        "Pełna strona firmowa (10-20 podstron)",
-        "Design zachęcający do kontaktu + testy wersji",
-        "Zaawansowana widoczność w Google i AI",
-        "Pełne przygotowanie pod wyszukiwarki",
-        "Blog z łatwą edycją treści",
-        "Połączenie z systemem CRM",
-        "Śledzenie reklam i połączeń telefonicznych",
-        "Nagrania jak klienci korzystają ze strony",
-        "Maksymalna szybkość",
-        "3 miesiące pomocy + poprawki",
-        "10 profesjonalnych artykułów na blog",
-        "Co-miesięczne raporty wyników",
+        "Do 15 podstron",
+        "Zaawansowane SEO",
+        "Integracje (CRM, analityka)",
+        "Panel zarządzania treścią",
+        "3 miesiące wsparcia gratis",
       ],
       timeframe: "4-6 tygodni",
       sla: "Odpowiedź w 24h"
     },
     {
-      name: "SKLEP ONLINE",
-      price: "18 000 - 35 000 zł",
-      description: "Profesjonalny sklep internetowy gotowy do sprzedaży",
+      name: "E-COMMERCE",
+      price: "od 18 000 zł",
+      description: "Dla sklepów internetowych",
       recommended: false,
       features: [
-        "Sklep online (50-500 produktów)",
-        "Wygodne zakupy dla klientów",
-        "Płatności online (PayU, Przelewy24, Stripe)",
-        "Połączenie z magazynem i systemami firmowymi",
-        "Sprzedaż na Allegro/Amazon",
-        "Widoczność produktów w Google",
-        "Automatyczne przypomnienia o koszyku",
-        "Szczegółowa analiza sprzedaży",
-        "Najnowsze technologie (opcja)",
-        "Maksymalna szybkość",
-        "6 miesięcy pomocy + poprawki",
-        "Szkolenie z obsługi sklepu",
-        "Co-tygodniowe raporty sprzedaży",
+        "Pełna funkcjonalność sklepu",
+        "Płatności online",
+        "Integracja z kurierami",
+        "SEO dla produktów",
+        "6 miesięcy wsparcia gratis",
       ],
       timeframe: "6-10 tygodni",
       sla: "Odpowiedź w 12h"
     },
   ];
 
-  // Add-ons
-  const addOns = [
-    { name: "Profesjonalne artykuły na blog", price: "500-1500 zł/artykuł" },
-    { name: "Sesja zdjęciowa/filmowa", price: "2000-5000 zł" },
-    { name: "Automatyzacje i łączenie systemów", price: "1500-3000 zł" },
-    { name: "Dodatkowe wersje językowe", price: "2000-4000 zł/język" },
-    { name: "Dedykowane integracje", price: "3000-8000 zł" },
-    { name: "Materiały do pobrania dla klientów (PDF)", price: "1000-2500 zł" },
-  ];
+  // Add-ons - Hidden but kept for future use
+  // const addOns = [
+  //   { name: "Profesjonalne artykuły na blog", price: "500-1500 zł/artykuł" },
+  //   { name: "Sesja zdjęciowa/filmowa", price: "2000-5000 zł" },
+  //   { name: "Automatyzacje i łączenie systemów", price: "1500-3000 zł" },
+  //   { name: "Dodatkowe wersje językowe", price: "2000-4000 zł/język" },
+  //   { name: "Dedykowane integracje", price: "3000-8000 zł" },
+  //   { name: "Materiały do pobrania dla klientów (PDF)", price: "1000-2500 zł" },
+  // ];
 
   // Social proof - clients
   const clients = [
@@ -440,18 +420,20 @@ const WebsiteCreationPage = () => {
                   ))}
                 </div>
 
-                {/* Client logos */}
+                {/* Client logos - Horizontal Scroll */}
                 <div className="mt-12">
                   <p className="text-sm text-gray-500 mb-6 uppercase tracking-wide">Zaufali nam</p>
-                  <div className="flex flex-wrap items-center justify-center gap-8 opacity-60">
-                    {clients.map((client, index) => (
-                      <img
-                        key={index}
-                        src={client.logo}
-                        alt={client.name}
-                        className="h-8 md:h-10 object-contain filter brightness-0"
-                      />
-                    ))}
+                  <div className="overflow-x-auto">
+                    <div className="flex items-center justify-start gap-12 min-w-max px-4 opacity-60">
+                      {clients.map((client, index) => (
+                        <img
+                          key={index}
+                          src={client.logo}
+                          alt={client.name}
+                          className="h-8 md:h-10 object-contain filter brightness-0 flex-shrink-0"
+                        />
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -767,23 +749,7 @@ const WebsiteCreationPage = () => {
                 ))}
               </div>
 
-              {/* Add-ons */}
-              <div className="max-w-4xl mx-auto">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-                  Dodatki opcjonalne
-                </h3>
-                <div className="grid md:grid-cols-2 gap-4">
-                  {addOns.map((addon, index) => (
-                    <div
-                      key={index}
-                      className="bg-white border border-gray-200 rounded-lg p-4 flex items-center justify-between"
-                    >
-                      <span className="text-gray-900">{addon.name}</span>
-                      <span className="text-primary-500 font-semibold">{addon.price}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              {/* Add-ons - Hidden */}
 
               <div className="text-center mt-12">
                 <p className="text-gray-600 mb-6">
@@ -871,9 +837,9 @@ const WebsiteCreationPage = () => {
                         {faq.question}
                       </h3>
                       {openFaq === index ? (
-                        <Minus className="h-5 w-5 text-primary-500 flex-shrink-0" />
+                        <ChevronUp className="h-5 w-5 text-primary-500 flex-shrink-0" />
                       ) : (
-                        <Plus className="h-5 w-5 text-primary-500 flex-shrink-0" />
+                        <ChevronDown className="h-5 w-5 text-primary-500 flex-shrink-0" />
                       )}
                     </button>
                     {openFaq === index && (
