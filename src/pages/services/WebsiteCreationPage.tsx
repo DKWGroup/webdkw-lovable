@@ -13,7 +13,6 @@ import {
   Search,
   Target,
   TrendingUp,
-  Users,
   Zap,
   Globe,
   Rocket,
@@ -28,6 +27,7 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import SEOHead from "../../components/SEOHead";
 import ServiceSchema from "../../components/ServiceSchema";
+import ContactSection from "../../components/ContactSection";
 import { supabase } from "../../lib/supabase";
 
 const WebsiteCreationPage = () => {
@@ -324,8 +324,7 @@ const WebsiteCreationPage = () => {
   const team = {
     name: "Kamil Krukowski",
     role: "Założyciel i główny specjalista",
-    bio: "Ponad 10 lat doświadczenia w tworzeniu stron i marketingu internetowym. Pomagam firmom być widocznymi w Google, w ChatGPT i innych narzędziach AI. Tworzę strony, które nie tylko ładnie wyglądają, ale przede wszystkim przynoszą klientów.",
-    linkedin: "https://www.linkedin.com/in/kamil-krukowski",
+    bio: "4 lata doświadczenia w tworzeniu stron i marketingu internetowym. Pomagam firmom być widocznymi w Google, w ChatGPT i innych narzędziach AI. Tworzę strony, które nie tylko ładnie wyglądają, ale przede wszystkim przynoszą klientów.",
     image: "/images/Kamil-Krukowski-small.webp"
   };
 
@@ -334,7 +333,6 @@ const WebsiteCreationPage = () => {
     company: "WebDKW - DKW Group",
     phone: "+48 881 046 689",
     email: "contact.dkwgroup@gmail.com",
-    address: "Warszawa, Polska",
     coverage: "Cała Polska (zdalnie)",
     hours: "Pn-Pt: 9:00-18:00"
   };
@@ -894,18 +892,9 @@ const WebsiteCreationPage = () => {
                       {team.name}
                     </h3>
                     <p className="text-primary-500 font-semibold mb-4">{team.role}</p>
-                    <p className="text-gray-600 mb-6 leading-relaxed">
+                    <p className="text-gray-600 leading-relaxed">
                       {team.bio}
                     </p>
-                    <a
-                      href={team.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-primary-500 hover:underline"
-                    >
-                      <Users className="h-5 w-5" />
-                      <span>LinkedIn</span>
-                    </a>
                   </div>
                 </div>
 
@@ -928,9 +917,6 @@ const WebsiteCreationPage = () => {
                         <a href={`mailto:${nap.email}`} className="text-primary-500 hover:underline">
                           {nap.email}
                         </a>
-                      </p>
-                      <p>
-                        <strong>Lokalizacja:</strong> {nap.address}
                       </p>
                     </div>
                   </div>
@@ -1028,6 +1014,8 @@ const WebsiteCreationPage = () => {
             </div>
           </section>
         </main>
+
+        <ContactSection />
 
         <Footer />
       </div>
