@@ -1,406 +1,722 @@
 import {
-  ArrowLeft,
+  ArrowRight,
   BarChart,
   Check,
-  ExternalLink,
-  Globe,
-  Headphones,
+  CheckCircle,
+  Clock,
+  Code,
+  Lightbulb,
+  LineChart,
   Minus,
+  Palette,
+  Phone,
   Plus,
   Search,
   Shield,
   Smartphone,
+  Star,
+  Target,
+  TrendingUp,
+  Users,
+  Zap,
 } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import { Link } from "react-router-dom";
+import FAQSchema from "../../components/FAQSchema";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import SEOHead from "../../components/SEOHead";
-import { Project, supabase } from "../../lib/supabase";
+import ServiceSchema from "../../components/ServiceSchema";
 
 const WebsiteCreationPage = () => {
-  const [projects, setProjects] = useState<Project[]>([]);
-  const [openProcess, setOpenProcess] = useState<number | null>(null);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  useEffect(() => {
-    fetchProjects();
-  }, []);
+  // Hero stats
+  const heroStats = [
+    { label: "Średnia ocena", value: "4.9/5", icon: <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" /> },
+    { label: "Zrealizowanych projektów", value: "150+", icon: <CheckCircle className="h-5 w-5 text-green-500" /> },
+    { label: "Średni wzrost konwersji", value: "+280%", icon: <TrendingUp className="h-5 w-5 text-orange-500" /> },
+  ];
 
-  const fetchProjects = async () => {
-    try {
-      const { data, error } = await supabase
-        .from("projects")
-        .select("*")
-        .in("category", ["Strona firmowa", "Landing page", "Strona wizytówka"])
-        .limit(3);
-
-      if (error) throw error;
-      setProjects(data || []);
-    } catch (error) {
-      console.error("Error fetching projects:", error);
-    }
-  };
-
-  const packages = [
+  // Problems & Solutions
+  const problems = [
     {
-      name: "Strona Wizytówka",
-      price: "od 4 000 zł",
-      description: "Idealna dla małych firm i freelancerów",
-      features: [
-        "Do 5 podstron",
-        "Responsywny design",
-        "Podstawowe SEO",
-        "Formularz kontaktowy",
-        "Galeria zdjęć",
-        "Mapa Google",
-        "Certyfikat SSL",
-        "1 miesiąc wsparcia",
-      ],
-      timeframe: "1 tydzień",
+      icon: <Target className="h-8 w-8 text-red-500" />,
+      problem: "Brak zapytań ofertowych i sprzedaży",
+      solution: "Projektujemy strony pod konwersję z przemyślanymi CTA i ścieżkami użytkownika"
     },
     {
-      name: "Podstawowa strona firmowa",
-      price: "od 6 000 zł",
-      description: "Zoptymalizowana pod konwersję strona sprzedażowa",
-      features: [
-        "Jedna strona zoptymalizowana pod konwersję",
-        "A/B testing setup",
-        "Zaawansowane CTA",
-        "Integracja z narzędziami analitycznymi",
-        "Optymalizacja szybkości",
-        "Pixel tracking (Facebook, Google)",
-        "Formularz lead generation",
-        "2 miesiące wsparcia",
-      ],
-      timeframe: "2 tygodnie",
-      popular: true,
+      icon: <Search className="h-8 w-8 text-red-500" />,
+      problem: "Niska widoczność w Google",
+      solution: "Optymalizacja pod SEO/GEO/AEO z danymi strukturalnymi i planem intencji"
     },
     {
-      name: "Strona z blogiem",
-      price: "od 5 000 zł",
-      description: "Kompleksowa prezentacja firmy",
-      features: [
-        "Do 15 podstron",
-        "Zaawansowany design",
-        "Kompleksowe SEO",
-        "Blog/aktualności",
-        "Galeria projektów",
-        "Formularz ofertowy",
-        "Panel administracyjny",
-        "3 miesiące wsparcia",
-      ],
-      timeframe: "2 tygodnie",
+      icon: <Zap className="h-8 w-8 text-red-500" />,
+      problem: "Wolna strona i słaba jakość UX",
+      solution: "Core Web Vitals <2.5s LCP, mobile-first, dostępność WCAG 2.1 AA"
+    },
+    {
+      icon: <BarChart className="h-8 w-8 text-red-500" />,
+      problem: "Brak przygotowania pod kampanie reklamowe",
+      solution: "Landing pages z pixel trackingiem, A/B testing i integracją z CRM"
     },
   ];
 
-  const benefits = [
+  // Solutions features
+  const solutions = [
     {
-      icon: <Globe className="h-8 w-8 text-orange-500" />,
-      title: "Profesjonalny wizerunek",
-      description:
-        "Buduj zaufanie klientów dzięki profesjonalnej prezentacji online",
-    },
-    {
-      icon: <Smartphone className="h-8 w-8 text-orange-500" />,
-      title: "Responsywność",
-      description:
-        "Twoja strona będzie wyglądać perfekcyjnie na wszystkich urządzeniach",
+      icon: <Target className="h-8 w-8 text-orange-500" />,
+      title: "Projektujemy pod konwersję",
+      description: "Każdy element strony ma cel - dopracowane CTA, ścieżki użytkownika i optymalizacja pod sprzedaż"
     },
     {
       icon: <Search className="h-8 w-8 text-orange-500" />,
-      title: "Optymalizacja SEO",
-      description: "Zwiększ widoczność w Google i przyciągnij więcej klientów",
+      title: "SEO przyszłości (GEO/AEO)",
+      description: "Dane strukturalne schema.org, optymalizacja pod AI (ChatGPT, Gemini) i asystentów głosowych"
     },
     {
-      icon: <Shield className="h-8 w-8 text-orange-500" />,
-      title: "Bezpieczeństwo",
-      description: "Certyfikat SSL i regularne aktualizacje bezpieczeństwa",
+      icon: <Zap className="h-8 w-8 text-orange-500" />,
+      title: "Szybkość i mobile-first",
+      description: "LCP <2.5s, CLS <0.1, TTFB <0.9s. WebP/AVIF, lazy loading, CDN"
+    },
+    {
+      icon: <BarChart className="h-8 w-8 text-orange-500" />,
+      title: "Gotowe pod kampanie",
+      description: "Piksele reklamowe, call tracking, mapy ciepła, nagrania sesji, integracja z GA4"
     },
   ];
 
+  // Offer scope
+  const offerScope = [
+    {
+      category: "Typy stron",
+      items: ["Landing page sprzedażowe", "Strony firmowe (5-50 podstron)", "Strony onepage", "Strony rozbudowane z blogiem"]
+    },
+    {
+      category: "E-commerce",
+      items: ["Sklepy online z integracjami", "Płatności (Stripe, PayU, Przelewy24)", "Magazyny i ERP/CRM", "Marketplace i dropshipping"]
+    },
+    {
+      category: "SEO/GEO/AEO",
+      items: ["Plan intencji i strategia", "Dane strukturalne (schema.org)", "Optymalizacja pod AI i głos", "LocalBusiness i NAP"]
+    },
+    {
+      category: "UX/UI i treści",
+      items: ["Projekt UX/UI pod konwersję", "Copywriting sprzedażowy", "Responsywność i dostępność", "A/B testing setup"]
+    },
+    {
+      category: "Wydajność",
+      items: ["Core Web Vitals", "Optymalizacja obrazów", "CDN i caching", "Mobile-first"]
+    },
+    {
+      category: "Analityka",
+      items: ["GA4 i GSC", "Piksele (Google, Meta, LinkedIn)", "Mapy ciepła i nagrania sesji", "Call tracking"]
+    },
+    {
+      category: "Wsparcie",
+      items: ["Dokumentacja i szkolenie", "SLA i support", "Aktualizacje i backupy", "Gwarancje jakości"]
+    },
+  ];
+
+  // Process steps
   const processSteps = [
     {
-      title: "Konsultacja i analiza potrzeb",
-      details: [
-        "Szczegółowa rozmowa o celach biznesowych",
-        "Analiza grupy docelowej i konkurencji",
-        "Określenie funkcjonalności i zakresu projektu",
-        "Ustalenie harmonogramu i budżetu",
-        "Przygotowanie briefu projektowego",
-      ],
+      number: 1,
+      icon: <Lightbulb className="h-8 w-8 text-orange-500" />,
+      title: "Diagnoza i strategia",
+      description: "Audyt konkurencji, analiza grupy docelowej, definicja celów biznesowych i strategii konwersji",
+      duration: "1 tydzień",
+      deliverables: ["Brief projektowy", "Analiza konkurencji", "Plan konwersji"]
     },
     {
-      title: "Przygotowanie koncepcji i wireframes",
-      details: [
-        "Projektowanie architektury informacji",
-        "Tworzenie wireframes dla kluczowych stron",
-        "Planowanie ścieżek użytkownika (user journey)",
-        "Optymalizacja pod konwersję",
-        "Prezentacja i iteracje na podstawie feedbacku",
-      ],
+      number: 2,
+      icon: <Palette className="h-8 w-8 text-orange-500" />,
+      title: "UX/UI i treści",
+      description: "Wireframes, projekt graficzny zoptymalizowany pod konwersję, copywriting sprzedażowy",
+      duration: "1-2 tygodnie",
+      deliverables: ["Wireframes", "Design system", "Treści sprzedażowe"]
     },
     {
-      title: "Projektowanie graficzne",
-      details: [
-        "Tworzenie unikalnego designu zgodnego z brandingiem",
-        "Projektowanie responsywnych layoutów",
-        "Dobór kolorystyki, typografii i elementów graficznych",
-        "Tworzenie komponentów UI i style guide",
-        "Optymalizacja pod kątem UX i konwersji",
-      ],
+      number: 3,
+      icon: <Code className="h-8 w-8 text-orange-500" />,
+      title: "Wdrożenie",
+      description: "Kodowanie, integracje, SEO techniczne, dane strukturalne, optymalizacja wydajności",
+      duration: "2-3 tygodnie",
+      deliverables: ["Działająca strona", "Integracje", "SEO on-page"]
     },
     {
-      title: "Kodowanie i implementacja",
-      details: [
-        "Kodowanie front-endu z użyciem najnowszych technologii",
-        "Implementacja systemu zarządzania treścią (CMS)",
-        "Integracja z narzędziami analitycznymi",
-        "Optymalizacja wydajności i szybkości ładowania",
-        "Implementacja podstawowych funkcji SEO",
-      ],
+      number: 4,
+      icon: <CheckCircle className="h-8 w-8 text-orange-500" />,
+      title: "Testy i uruchomienie",
+      description: "Testy funkcjonalności, wydajności, security audit, uruchomienie na produkcji",
+      duration: "1 tydzień",
+      deliverables: ["Raporty testów", "Live strona", "Dokumentacja"]
     },
     {
-      title: "Testy i optymalizacja",
-      details: [
-        "Testy funkcjonalności na różnych urządzeniach",
-        "Testy wydajności i optymalizacja szybkości",
-        "Sprawdzenie kompatybilności z przeglądarkami",
-        "Testy formularzy i integracji",
-        "Optymalizacja SEO on-page",
-      ],
-    },
-    {
-      title: "Wdrożenie i szkolenie",
-      details: [
-        "Konfiguracja hostingu i domeny",
-        "Wdrożenie strony na środowisko produkcyjne",
-        "Konfiguracja narzędzi analitycznych",
-        "Szkolenie z obsługi panelu CMS",
-        "Przekazanie dokumentacji i materiałów",
-      ],
+      number: 5,
+      icon: <TrendingUp className="h-8 w-8 text-orange-500" />,
+      title: "Wzrost i wsparcie",
+      description: "3 miesiące wsparcia, optymalizacja wyników, raportowanie, szkolenie z CMS",
+      duration: "3 miesiące",
+      deliverables: ["Miesięczne raporty", "Support 24/7", "Optymalizacje"]
     },
   ];
 
-  const uniqueFeatures = [
+  // Case studies
+  const caseStudies = [
     {
-      title: "Strategiczne podejście do konwersji",
-      description:
-        "Każdy element strony projektujemy z myślą o maksymalizacji konwersji i generowaniu leadów.",
+      company: "TechStart Solutions",
+      industry: "IT",
+      problem: "Strona generowała tylko 2-3 zapytania miesięcznie",
+      solution: "Przeprojektowanie pod konwersję, A/B testing, optymalizacja SEO",
+      results: [
+        { metric: "Wzrost konwersji", value: "+340%", icon: <TrendingUp /> },
+        { metric: "Zapytania ofertowe", value: "8-12/mies.", icon: <Target /> },
+        { metric: "LCP", value: "1.2s", icon: <Zap /> },
+        { metric: "Pozycje w Google", value: "TOP 3", icon: <Search /> },
+      ]
     },
     {
-      title: "Optymalizacja pod Google Ads",
-      description:
-        "Strony przygotowane pod kampanie reklamowe z odpowiednimi landing page'ami i trackingiem.",
+      company: "EcoGreen Consulting",
+      industry: "Consulting",
+      problem: "Wysokie koszty kampanii Google Ads bez rezultatów",
+      solution: "Dedykowane landing pages, pixel tracking, optymalizacja ścieżek",
+      results: [
+        { metric: "ROI z Ads", value: "+420%", icon: <LineChart /> },
+        { metric: "Koszt leada", value: "-65%", icon: <TrendingUp /> },
+        { metric: "Współczynnik konwersji", value: "12.8%", icon: <Target /> },
+        { metric: "Ruch organiczny", value: "+280%", icon: <Search /> },
+      ]
     },
     {
-      title: "Zaawansowana analityka",
-      description:
-        "Implementujemy narzędzia do śledzenia zachowań użytkowników i optymalizacji wyników.",
-    },
-    {
-      title: "Mobilne pierwszeństwo",
-      description:
-        "Projektujemy najpierw na urządzenia mobilne, zapewniając doskonałe doświadczenie na każdym ekranie.",
+      company: "LuxuryHome Design",
+      industry: "E-commerce",
+      problem: "Wolna strona, wysokie bounce rate, niskie pozycje w Google",
+      solution: "Rebuild na headless, Core Web Vitals, SEO techniczne, dane strukturalne",
+      results: [
+        { metric: "Czas ładowania", value: "-78%", icon: <Zap /> },
+        { metric: "Bounce rate", value: "-45%", icon: <Users /> },
+        { metric: "Średnia wartość zamówienia", value: "+85%", icon: <TrendingUp /> },
+        { metric: "Ruch mobilny", value: "+195%", icon: <Smartphone /> },
+      ]
     },
   ];
 
+  // Packages
+  const packages = [
+    {
+      name: "START",
+      price: "5 000 - 8 000 zł",
+      description: "Dla małych firm i freelancerów rozpoczynających działalność online",
+      recommended: false,
+      features: [
+        "Landing page lub onepage (3-5 sekcji)",
+        "Responsywny design mobile-first",
+        "Podstawowe SEO (meta, sitemap, robots)",
+        "Formularz kontaktowy z walidacją",
+        "Dane strukturalne (Organization, Service)",
+        "GA4 i GSC",
+        "Core Web Vitals <2.5s LCP",
+        "1 miesiąc wsparcia",
+        "Dokumentacja i szkolenie",
+      ],
+      timeframe: "2-3 tygodnie",
+      sla: "48h response time"
+    },
+    {
+      name: "BIZNES",
+      price: "10 000 - 18 000 zł",
+      description: "Kompleksowa strona firmowa zoptymalizowana pod konwersję i SEO",
+      recommended: true,
+      features: [
+        "Strona firmowa (10-20 podstron)",
+        "UX/UI pod konwersję + A/B testing",
+        "Zaawansowane SEO/GEO/AEO",
+        "Dane strukturalne (FAQ, HowTo, Review, LocalBusiness)",
+        "Blog z CMS",
+        "Integracja z CRM",
+        "Piksele reklamowe + call tracking",
+        "Mapy ciepła i nagrania sesji",
+        "Core Web Vitals premium",
+        "3 miesiące wsparcia + optymalizacje",
+        "Content premium (10 artykułów)",
+        "Miesięczne raporty",
+      ],
+      timeframe: "4-6 tygodni",
+      sla: "24h response time"
+    },
+    {
+      name: "E-COMMERCE",
+      price: "18 000 - 35 000 zł",
+      description: "Sklep online z zaawansowanymi integracjami i automatyzacjami",
+      recommended: false,
+      features: [
+        "Sklep online (50-500 produktów)",
+        "Zaawansowany UX/UI e-commerce",
+        "Integracje płatności (Stripe, PayU, P24)",
+        "Integracja z magazynem/ERP/CRM",
+        "Marketplace i dropshipping",
+        "SEO e-commerce + dane strukturalne (Product, Review)",
+        "Automatyzacje (remarketing, abandoned cart)",
+        "GA4 Enhanced E-commerce",
+        "Headless architecture (opcja)",
+        "Core Web Vitals premium",
+        "6 miesięcy wsparcia + optymalizacje",
+        "Szkolenie zaawansowane",
+        "Cotygodniowe raporty",
+      ],
+      timeframe: "6-10 tygodni",
+      sla: "12h response time"
+    },
+  ];
+
+  // Add-ons
+  const addOns = [
+    { name: "Content premium (artykuły blog)", price: "500-1500 zł/artykuł" },
+    { name: "Sesja foto/wideo", price: "2000-5000 zł" },
+    { name: "Automatyzacje (Zapier, Make)", price: "1500-3000 zł" },
+    { name: "Dodatkowe języki (tłumaczenie + wdrożenie)", price: "2000-4000 zł/język" },
+    { name: "Integracje niestandardowe (API)", price: "3000-8000 zł" },
+    { name: "Lead magnet (PDF/checklist/guide)", price: "1000-2500 zł" },
+  ];
+
+  // Social proof - clients
+  const clients = [
+    { name: "Contenty", logo: "/images/clients/contenty.webp" },
+    { name: "GK", logo: "/images/clients/gk.webp" },
+    { name: "Glowup", logo: "/images/clients/glowup.webp" },
+    { name: "MK Helicopters", logo: "/images/clients/mkhelicopters.webp" },
+    { name: "Welldone", logo: "/images/clients/welldone.webp" },
+    { name: "INP", logo: "/images/clients/inp.svg" },
+  ];
+
+  // Testimonials
+  const testimonials = [
+    {
+      name: "Anna Kowalska",
+      company: "TechStart Solutions",
+      role: "CEO",
+      text: "WebDKW nie tylko stworzyli piękną stronę, ale przede wszystkim narzędzie, które generuje nam 3x więcej leadów. ROI zwrócił się w 4 miesiące.",
+      rating: 5,
+      metric: "+340% konwersji"
+    },
+    {
+      name: "Tomasz Wiśniewski",
+      company: "EcoGreen Consulting",
+      role: "Founder",
+      text: "Po wdrożeniu SEO nasze zapytania wzrosły o 280%. Najważniejsze, że to jakościowi klienci z odpowiednim budżetem.",
+      rating: 5,
+      metric: "+280% zapytań"
+    },
+    {
+      name: "Katarzyna Nowak",
+      company: "LuxuryHome Design",
+      role: "Marketing Director",
+      text: "Marcin to prawdziwy partner biznesowy. Jego doradztwo strategiczne pomogło nam podnieść średnią wartość zamówienia o 85%.",
+      rating: 5,
+      metric: "+85% AOV"
+    },
+  ];
+
+  // FAQ
   const faqs = [
     {
-      question: "Ile czasu zajmuje stworzenie strony internetowej?",
-      answer:
-        "Czas realizacji zależy od złożoności projektu. Prosta strona wizytówka to 2-3 tygodnie, landing page 2-4 tygodnie, a kompleksowa strona firmowa 4-6 tygodni. Dokładny harmonogram ustalamy na etapie konsultacji.",
+      question: "Ile kosztuje strona internetowa i od czego zależy cena?",
+      answer: "Cena zależy od złożoności projektu, liczby podstron, integracji i funkcjonalności. Pakiet START to 5-8k zł (landing/onepage), BIZNES 10-18k zł (strona firmowa z SEO), E-COMMERCE 18-35k zł (sklep z integracjami). Finalna wycena powstaje po konsultacji 15 min i uzupełnieniu briefu."
     },
     {
-      question: "Czy mogę samodzielnie zarządzać treścią na stronie?",
-      answer:
-        "Tak! Każda strona wyposażona jest w intuicyjny panel CMS, który pozwala na łatwe zarządzanie treścią. Dodatkowo przeprowadzamy szkolenie z obsługi systemu.",
+      question: "Ile czasu zajmuje realizacja projektu?",
+      answer: "START: 2-3 tygodnie, BIZNES: 4-6 tygodni, E-COMMERCE: 6-10 tygodni. Obejmuje to wszystkie etapy od strategii po uruchomienie i testy. Dokładny harmonogram ustalamy na etapie briefu."
     },
     {
-      question: "Czy strona będzie zoptymalizowana pod SEO?",
-      answer:
-        "Absolutnie. Każda strona jest podstawowo zoptymalizowana pod SEO (meta tagi, struktura URL, szybkość ładowania). Dla lepszych rezultatów oferujemy również zaawansowane pakiety SEO.",
+      question: "Jakie gwarancje i zabezpieczenia oferujecie?",
+      answer: "Gwarancja jakości zgodna z umową, SLA (12-48h response time), poprawki błędów, prawa autorskie i własność kodu, pełna własność kont (hosting, domeny, analityka), backupy codzienne, wsparcie powdrożeniowe (1-6 miesięcy w zależności od pakietu)."
     },
     {
-      question: "Co się dzieje po zakończeniu projektu?",
-      answer:
-        "Otrzymujesz pełne wsparcie techniczne przez okres określony w pakiecie (1-3 miesiące). Obejmuje to poprawki błędów, aktualizacje bezpieczeństwa i pomoc techniczną.",
+      question: "WordPress vs custom - co wybrać?",
+      answer: "WordPress: szybsze wdrożenie, niższy koszt, łatwa edycja treści, idealne dla stron firmowych i blogów. Custom (headless): maksymalna wydajność, dedykowane funkcje, skalowalność, idealne dla e-commerce i platform. Doradzimy najlepsze rozwiązanie po analizie potrzeb."
     },
     {
-      question: "Czy strona będzie działać na urządzeniach mobilnych?",
-      answer:
-        "Tak, wszystkie nasze strony są w pełni responsywne i zoptymalizowane pod urządzenia mobilne. Projektujemy z podejściem 'mobile-first'.",
+      question: "Czy mogę samodzielnie zarządzać treścią?",
+      answer: "Tak! Każda strona ma intuicyjny CMS (WordPress lub Headless CMS). Przeprowadzamy szkolenie z obsługi, dostarczamy dokumentację wideo i oferujemy support. Możesz edytować teksty, dodawać zdjęcia, publikować artykuły bez znajomości kodu."
+    },
+    {
+      question: "Jakie integracje są możliwe?",
+      answer: "CRM (HubSpot, Salesforce, Pipedrive), ERP (Comarch, Subiekt), płatności (Stripe, PayU, Przelewy24, PayPal), email marketing (Mailchimp, GetResponse), automatyzacje (Zapier, Make), marketplace (Allegro, Amazon), magazyny, call tracking, live chat."
+    },
+    {
+      question: "Co obejmuje wsparcie i utrzymanie?",
+      answer: "Aktualizacje bezpieczeństwa, backupy codzienne, monitoring uptime, support techniczny zgodny z SLA, poprawki błędów, optymalizacje wydajności, miesięczne raporty (GA4, GSC, wyniki SEO), konsultacje strategiczne."
+    },
+    {
+      question: "Czy strona będzie przygotowana pod Google Ads?",
+      answer: "Tak! Implementujemy piksele (Google, Meta, LinkedIn), tworzymy dedykowane landing pages pod kampanie, konfigurujemy konwersje w GA4, dodajemy call tracking, A/B testing i optymalizujemy ścieżki użytkownika pod reklamę płatną."
     },
   ];
+
+  // Team
+  const team = {
+    name: "Kamil Krukowski",
+    role: "Founder & Lead Developer",
+    bio: "10+ lat doświadczenia w IT i marketingu. Specjalizacja: SEO/GEO/AEO, UX/UI, performance optimization. Misja: AI-ready web - strony gotowe na przyszłość AI.",
+    linkedin: "https://www.linkedin.com/in/kamil-krukowski",
+    image: "/images/Kamil-Krukowski-small.webp"
+  };
+
+  // NAP data
+  const nap = {
+    company: "WebDKW - DKW Group",
+    phone: "+48 881 046 689",
+    email: "contact.dkwgroup@gmail.com",
+    address: "Warszawa, Polska",
+    coverage: "Cała Polska (zdalnie)",
+    hours: "Pn-Pt: 9:00-18:00"
+  };
 
   return (
     <HelmetProvider>
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-background">
         <SEOHead
-          title="Tworzenie Stron Internetowych | WebDKW"
-          description="Profesjonalne strony internetowe i landing page'y. Buduj zaufanie i zwiększ konwersje z naszymi rozwiązaniami."
-          keywords="strona internetowa, landing page, web design, responsywna strona"
+          title="Tworzenie Stron Internetowych - Szybkie, Widoczne w Google, Gotowe na AI"
+          description="Projektujemy strony, które sprzedają. Szybkie, responsywne, zoptymalizowane pod SEO/GEO/AEO. WordPress, custom, e-commerce. Gwarancje jakości, SLA, transparentne ceny. Umów konsultację 15 min."
+          keywords="tworzenie stron internetowych, strona firmowa, landing page, sklep online, e-commerce, SEO, GEO, AEO, WordPress, headless, UX/UI, Core Web Vitals, Google Ads"
           url="https://webdkw.net/uslugi/tworzenie-stron"
         />
+        
+        <ServiceSchema
+          name="Tworzenie Stron Internetowych"
+          description="Profesjonalne tworzenie stron internetowych, landing pages i sklepów online. Szybkie, responsywne, zoptymalizowane pod SEO/GEO/AEO i dane strukturalne."
+          provider="WebDKW"
+          areaServed="Polska"
+          url="https://webdkw.net/uslugi/tworzenie-stron"
+        />
+
+        <FAQSchema items={faqs} />
+
         <Header />
 
-        <main className="pt-20">
-          {/* Header section */}
-          <section className="bg-white py-16">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="flex items-center space-x-4 mb-8">
-                <Link
-                  to="/uslugi"
-                  className="flex items-center space-x-2 text-gray-600 hover:text-orange-500 transition-colors"
-                >
-                  <ArrowLeft className="h-5 w-5" />
-                  <span>Powrót do usług</span>
-                </Link>
-              </div>
-
+        <main className="pt-16">
+          {/* HERO Section */}
+          <section className="relative bg-gradient-to-br from-background via-background to-muted py-20 md:py-28 overflow-hidden">
+            <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
               <div className="text-center max-w-4xl mx-auto">
-                <div className="flex justify-center mb-6">
-                  <Globe className="h-16 w-16 text-orange-500" />
-                </div>
-                <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                  Tworzenie stron internetowych
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
+                  Projektujemy strony, które{" "}
+                  <span className="text-primary">sprzedają</span>
                 </h1>
-                <p className="text-xl text-gray-600 leading-relaxed">
-                  Profesjonalne strony wizytówkowe i landing page'y, które
-                  budują zaufanie i przekonują klientów do skorzystania z Twoich
-                  usług.
+                <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
+                  Szybkie, widoczne w Google i gotowe na AI. WordPress, custom, e‑commerce z gwarancjami jakości i SLA.
                 </p>
-              </div>
-            </div>
-          </section>
 
-          {/* Benefits section */}
-          <section className="py-16">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-3xl font-bold text-gray-900 text-center mb-4">
-                Dlaczego warto zainwestować w profesjonalną stronę?
-              </h2>
-              <p className="text-xl text-gray-600 leading-relaxed mb-12 text-center">
-                W dzisiejszych czasach strona internetowa to podstawa obecności
-                w sieci. To właśnie ona jest wizytówką Twojej firmy, buduje
-                zaufanie i pozwala dotrzeć do nowych odbiorców. Profesjonalnie
-                zaprojektowana strona internetowa:
-              </p>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {benefits.map((benefit, index) => (
-                  <div
-                    key={index}
-                    className="bg-white p-6 rounded-xl shadow-lg text-center"
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+                  <Link
+                    to="/kontakt"
+                    className="group w-full sm:w-auto bg-primary text-primary-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-2"
                   >
-                    <div className="flex justify-center mb-4">
-                      {benefit.icon}
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">
-                      {benefit.title}
-                    </h3>
-                    <p className="text-gray-600">{benefit.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
+                    <span>Zamów wycenę</span>
+                    <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                  <Link
+                    to="/kontakt"
+                    className="w-full sm:w-auto bg-background text-foreground border-2 border-border px-8 py-4 rounded-lg text-lg font-semibold hover:bg-muted transition-all duration-300 flex items-center justify-center gap-2"
+                  >
+                    <Phone className="h-5 w-5" />
+                    <span>Umów konsultację 15 min</span>
+                  </Link>
+                </div>
 
-          {/* What makes our websites unique */}
-          <section className="py-16 bg-white">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-                Co wyróżnia nasze strony internetowe?
-              </h2>
-              <div className="grid md:grid-cols-2 gap-8">
-                {uniqueFeatures.map((feature, index) => (
-                  <div key={index} className="bg-gray-50 p-6 rounded-xl">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">
-                      {feature.title}
-                    </h3>
-                    <p className="text-gray-600">{feature.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* Portfolio projects */}
-          {projects.length > 0 && (
-            <section className="py-16">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-                  Przykłady naszych realizacji
-                </h2>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {projects.map((project) => (
-                    <div
-                      key={project.id}
-                      className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
-                    >
-                      <div className="relative group">
-                        <img
-                          src={project.image_url}
-                          alt={project.title}
-                          className="w-full h-48 object-cover"
-                        />
-                        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                          {project.project_url && (
-                            <a
-                              href={project.project_url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="bg-white text-gray-900 px-4 py-2 rounded-lg font-semibold flex items-center space-x-2"
-                            >
-                              <span>Zobacz projekt</span>
-                              <ExternalLink className="h-4 w-4" />
-                            </a>
-                          )}
-                        </div>
+                {/* Trust signals */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+                  {heroStats.map((stat, index) => (
+                    <div key={index} className="bg-card border border-border rounded-lg p-4 shadow-sm">
+                      <div className="flex items-center justify-center gap-2 mb-2">
+                        {stat.icon}
+                        <div className="text-2xl font-bold text-foreground">{stat.value}</div>
                       </div>
-                      <div className="p-6">
-                        <h3 className="text-xl font-bold text-gray-900 mb-2">
-                          {project.title}
-                        </h3>
-                        <p className="text-orange-500 font-semibold mb-3">
-                          {project.industry}
-                        </p>
-                        <p className="text-gray-600 text-sm">
-                          {project.description}
-                        </p>
-                      </div>
+                      <div className="text-sm text-muted-foreground">{stat.label}</div>
                     </div>
                   ))}
                 </div>
-              </div>
-            </section>
-          )}
 
-          {/* Packages section */}
-          <section className="py-16 bg-white">
+                {/* Client logos */}
+                <div className="mt-12">
+                  <p className="text-sm text-muted-foreground mb-6 uppercase tracking-wide">Zaufali nam</p>
+                  <div className="flex flex-wrap items-center justify-center gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-300">
+                    {clients.map((client, index) => (
+                      <img
+                        key={index}
+                        src={client.logo}
+                        alt={client.name}
+                        className="h-8 md:h-10 object-contain filter brightness-0"
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Problems & Solutions Section */}
+          <section className="py-20 bg-muted">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                  Pakiety i cennik
+              <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+                  Znasz te problemy?
                 </h2>
-                <p className="text-xl text-gray-600">
-                  Wybierz pakiet dostosowany do potrzeb Twojego biznesu
+                <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                  90% MŚP w Polsce zmaga się z tymi wyzwaniami. Mamy sprawdzone rozwiązania.
                 </p>
               </div>
 
-              <div className="grid lg:grid-cols-3 gap-8">
+              <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-16">
+                {problems.map((item, index) => (
+                  <div
+                    key={index}
+                    className="bg-card border-l-4 border-destructive rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300"
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 mt-1">{item.icon}</div>
+                      <div>
+                        <h3 className="text-lg font-bold text-foreground mb-2">
+                          {item.problem}
+                        </h3>
+                        <div className="flex items-start gap-2">
+                          <Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
+                          <p className="text-muted-foreground">{item.solution}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Solutions grid */}
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {solutions.map((solution, index) => (
+                  <div
+                    key={index}
+                    className="bg-card rounded-lg p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-border"
+                  >
+                    <div className="mb-4">{solution.icon}</div>
+                    <h3 className="text-lg font-bold text-foreground mb-2">
+                      {solution.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground">{solution.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Offer & Scope Section */}
+          <section className="py-20 bg-background">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+                  Kompleksowa oferta i zakres
+                </h2>
+                <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                  Od strategii i projektu, przez wdrożenie i integracje, po analitykę i wsparcie
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                {offerScope.map((scope, index) => (
+                  <div
+                    key={index}
+                    className="bg-card border border-border rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-300"
+                  >
+                    <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
+                      <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                        <CheckCircle className="h-5 w-5 text-primary" />
+                      </div>
+                      {scope.category}
+                    </h3>
+                    <ul className="space-y-2">
+                      {scope.items.map((item, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
+                          <Check className="h-4 w-4 text-green-500 flex-shrink-0 mt-0.5" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Process Section */}
+          <section className="py-20 bg-muted">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+                  Sprawdzony proces 5 kroków
+                </h2>
+                <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                  Transparentny harmonogram z gwarancjami jakości i SLA
+                </p>
+              </div>
+
+              <div className="space-y-8">
+                {processSteps.map((step, index) => (
+                  <div
+                    key={index}
+                    className="bg-card border border-border rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300"
+                  >
+                    <div className="flex flex-col md:flex-row items-start gap-6">
+                      {/* Number */}
+                      <div className="flex-shrink-0 w-16 h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-2xl font-bold shadow-lg">
+                        {step.number}
+                      </div>
+
+                      {/* Content */}
+                      <div className="flex-1">
+                        <div className="flex items-start gap-3 mb-3">
+                          {step.icon}
+                          <div>
+                            <h3 className="text-2xl font-bold text-foreground mb-1">
+                              {step.title}
+                            </h3>
+                            <p className="text-primary font-semibold">{step.duration}</p>
+                          </div>
+                        </div>
+                        <p className="text-muted-foreground mb-4">{step.description}</p>
+                        <div className="flex flex-wrap gap-2">
+                          {step.deliverables.map((deliverable, idx) => (
+                            <span
+                              key={idx}
+                              className="bg-muted text-muted-foreground text-sm px-3 py-1 rounded-full"
+                            >
+                              {deliverable}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="text-center mt-12">
+                <Link
+                  to="/proces-realizacji"
+                  className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                >
+                  <span>Zobacz szczegółowy opis procesu</span>
+                  <ArrowRight className="h-5 w-5" />
+                </Link>
+              </div>
+            </div>
+          </section>
+
+          {/* Case Studies Section */}
+          <section className="py-20 bg-background">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+                  Sprawdzone rezultaty
+                </h2>
+                <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                  Konkretne wyniki z prawdziwych projektów
+                </p>
+              </div>
+
+              <div className="grid lg:grid-cols-3 gap-8 mb-12">
+                {caseStudies.map((study, index) => (
+                  <div
+                    key={index}
+                    className="bg-card border border-border rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+                  >
+                    <div className="bg-primary/10 p-6 border-b border-border">
+                      <div className="text-sm text-primary font-semibold mb-1">
+                        {study.industry}
+                      </div>
+                      <h3 className="text-2xl font-bold text-foreground mb-2">
+                        {study.company}
+                      </h3>
+                    </div>
+
+                    <div className="p-6">
+                      <div className="mb-4">
+                        <h4 className="text-sm font-bold text-destructive mb-2 uppercase">
+                          Problem
+                        </h4>
+                        <p className="text-muted-foreground text-sm">{study.problem}</p>
+                      </div>
+
+                      <div className="mb-6">
+                        <h4 className="text-sm font-bold text-primary mb-2 uppercase">
+                          Rozwiązanie
+                        </h4>
+                        <p className="text-muted-foreground text-sm">{study.solution}</p>
+                      </div>
+
+                      <div>
+                        <h4 className="text-sm font-bold text-foreground mb-4 uppercase">
+                          Wyniki
+                        </h4>
+                        <div className="grid grid-cols-2 gap-4">
+                          {study.results.map((result, idx) => (
+                            <div key={idx} className="text-center p-3 bg-muted rounded-lg">
+                              <div className="flex justify-center mb-2 text-primary">
+                                {result.icon}
+                              </div>
+                              <div className="text-2xl font-bold text-foreground mb-1">
+                                {result.value}
+                              </div>
+                              <div className="text-xs text-muted-foreground">
+                                {result.metric}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="text-center">
+                <Link
+                  to="/case-studies"
+                  className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                >
+                  <span>Zobacz wszystkie case studies</span>
+                  <ArrowRight className="h-5 w-5" />
+                </Link>
+              </div>
+            </div>
+          </section>
+
+          {/* Packages Section */}
+          <section className="py-20 bg-muted">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+                  Pakiety i cennik
+                </h2>
+                <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                  Transparentne widełki cenowe. Finalna wycena po konsultacji 15 min.
+                </p>
+              </div>
+
+              <div className="grid lg:grid-cols-3 gap-8 mb-12">
                 {packages.map((pkg, index) => (
                   <div
                     key={index}
-                    className={`relative bg-white rounded-2xl shadow-xl border-2 transition-all duration-300 hover:shadow-2xl ${
-                      pkg.popular
-                        ? "border-orange-500 transform lg:scale-105"
-                        : "border-gray-200"
+                    className={`relative bg-card rounded-2xl shadow-xl border-2 transition-all duration-300 hover:shadow-2xl ${
+                      pkg.recommended
+                        ? "border-primary transform lg:scale-105"
+                        : "border-border"
                     }`}
                   >
-                    {pkg.popular && (
-                      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                        <div className="bg-orange-500 text-white px-6 py-2 rounded-full text-sm font-bold">
+                    {pkg.recommended && (
+                      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
+                        <div className="bg-primary text-primary-foreground px-6 py-2 rounded-full text-sm font-bold shadow-lg">
                           NAJPOPULARNIEJSZY
                         </div>
                       </div>
@@ -408,38 +724,120 @@ const WebsiteCreationPage = () => {
 
                     <div className="p-8">
                       <div className="text-center mb-8">
-                        <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                        <h3 className="text-3xl font-bold text-foreground mb-2">
                           {pkg.name}
                         </h3>
-                        <div className="text-3xl font-bold text-orange-500 mb-4">
+                        <div className="text-3xl font-bold text-primary mb-4">
                           {pkg.price}
                         </div>
-                        <p className="text-gray-600">{pkg.description}</p>
+                        <p className="text-muted-foreground text-sm">{pkg.description}</p>
                       </div>
 
                       <ul className="space-y-3 mb-8">
                         {pkg.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-start space-x-3">
-                            <Check className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                            <span className="text-gray-700">{feature}</span>
+                          <li key={idx} className="flex items-start gap-3">
+                            <Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
+                            <span className="text-sm text-muted-foreground">{feature}</span>
                           </li>
                         ))}
                       </ul>
 
-                      <div className="text-center">
-                        <p className="text-sm text-gray-500 mb-6">
-                          Czas realizacji: {pkg.timeframe}
+                      <div className="space-y-3 mb-6 text-center">
+                        <p className="text-sm text-muted-foreground">
+                          <Clock className="inline h-4 w-4 mr-1" />
+                          Czas realizacji: <strong>{pkg.timeframe}</strong>
                         </p>
-                        <Link
-                          to="/kontakt"
-                          className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 inline-block ${
-                            pkg.popular
-                              ? "bg-orange-500 text-white hover:bg-orange-600"
-                              : "bg-gray-100 text-gray-900 hover:bg-gray-200"
-                          }`}
-                        >
-                          Umów konsultację
-                        </Link>
+                        <p className="text-sm text-muted-foreground">
+                          <Shield className="inline h-4 w-4 mr-1" />
+                          SLA: <strong>{pkg.sla}</strong>
+                        </p>
+                      </div>
+
+                      <Link
+                        to="/kontakt"
+                        className={`w-full block text-center py-3 px-6 rounded-lg font-semibold transition-all duration-300 ${
+                          pkg.recommended
+                            ? "bg-primary text-primary-foreground hover:bg-primary/90"
+                            : "bg-muted text-foreground hover:bg-muted/80"
+                        }`}
+                      >
+                        Zamów wycenę
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Add-ons */}
+              <div className="max-w-4xl mx-auto">
+                <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
+                  Dodatki opcjonalne
+                </h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                  {addOns.map((addon, index) => (
+                    <div
+                      key={index}
+                      className="bg-card border border-border rounded-lg p-4 flex items-center justify-between"
+                    >
+                      <span className="text-foreground">{addon.name}</span>
+                      <span className="text-primary font-semibold">{addon.price}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="text-center mt-12">
+                <p className="text-muted-foreground mb-6">
+                  Potrzebujesz indywidualnej wyceny? Umów bezpłatną konsultację.
+                </p>
+                <Link
+                  to="/kontakt"
+                  className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                >
+                  <Phone className="h-5 w-5" />
+                  <span>Umów konsultację 15 min</span>
+                </Link>
+              </div>
+            </div>
+          </section>
+
+          {/* Social Proof Section */}
+          <section className="py-20 bg-background">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+                  Opinie klientów
+                </h2>
+                <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                  Sprawdź, co mówią o nas zadowoleni klienci
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-8">
+                {testimonials.map((testimonial, index) => (
+                  <div
+                    key={index}
+                    className="bg-card border border-border rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300"
+                  >
+                    <div className="flex items-center gap-1 mb-4">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                      ))}
+                    </div>
+                    <p className="text-muted-foreground mb-6 leading-relaxed">
+                      "{testimonial.text}"
+                    </p>
+                    <div className="flex items-center justify-between pt-6 border-t border-border">
+                      <div>
+                        <div className="font-bold text-foreground">{testimonial.name}</div>
+                        <div className="text-sm text-muted-foreground">
+                          {testimonial.role}, {testimonial.company}
+                        </div>
+                      </div>
+                      <div className="text-right">
+                        <div className="text-2xl font-bold text-primary">
+                          {testimonial.metric}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -448,153 +846,176 @@ const WebsiteCreationPage = () => {
             </div>
           </section>
 
-          {/* Process section */}
-          <section className="py-16">
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-3xl font-bold text-gray-900 text-center mb-4">
-                Proces realizacji
-              </h2>
-              <p className="text-xl text-gray-600 leading-relaxed mb-12 text-center">
-                Każdy projekt realizujemy kompleksowo – od analizy potrzeb,
-                przez projekt graficzny, aż po wdrożenie i optymalizację SEO.
-                Nasz proces obejmuje:
-              </p>
-              <div className="space-y-4">
-                {processSteps.map((step, index) => (
-                  <div key={index} className="bg-white rounded-2xl shadow-lg">
-                    <button
-                      onClick={() =>
-                        setOpenProcess(openProcess === index ? null : index)
-                      }
-                      className="w-full px-8 py-6 text-left flex items-center justify-between focus:outline-none"
-                    >
-                      <div className="flex items-center space-x-4">
-                        <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold">
-                          {index + 1}
-                        </div>
-                        <h3 className="text-lg font-bold text-gray-900">
-                          {step.title}
-                        </h3>
-                      </div>
-                      <div className="flex-shrink-0">
-                        {openProcess === index ? (
-                          <Minus className="h-6 w-6 text-orange-500" />
-                        ) : (
-                          <Plus className="h-6 w-6 text-orange-500" />
-                        )}
-                      </div>
-                    </button>
-
-                    {openProcess === index && (
-                      <div className="px-8 pb-6">
-                        <div className="border-t border-gray-100 pt-6">
-                          <ul className="space-y-2">
-                            {step.details.map((detail, idx) => (
-                              <li
-                                key={idx}
-                                className="flex items-start space-x-3"
-                              >
-                                <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
-                                <span className="text-gray-600">{detail}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* Additional info */}
-          <section className="py-16 bg-white">
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="bg-blue-50 p-6 rounded-xl">
-                  <BarChart className="h-8 w-8 text-blue-500 mb-4" />
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">
-                    Analityka i monitoring
-                  </h3>
-                  <p className="text-gray-600">
-                    Każda strona jest wyposażona w Google Analytics i narzędzia
-                    do monitorowania ruchu i konwersji.
-                  </p>
-                </div>
-
-                <div className="bg-green-50 p-6 rounded-xl">
-                  <Headphones className="h-8 w-8 text-green-500 mb-4" />
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">
-                    Wsparcie techniczne
-                  </h3>
-                  <p className="text-gray-600">
-                    Otrzymujesz wsparcie techniczne, szkolenie z obsługi oraz
-                    pomoc w przypadku problemów.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
           {/* FAQ Section */}
-          <section className="py-16">
+          <section className="py-20 bg-muted">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-                Często zadawane pytania
-              </h2>
+              <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+                  Najczęściej zadawane pytania
+                </h2>
+                <p className="text-xl text-muted-foreground">
+                  Wszystko, co musisz wiedzieć przed rozpoczęciem współpracy
+                </p>
+              </div>
+
               <div className="space-y-4">
                 {faqs.map((faq, index) => (
-                  <div key={index} className="bg-white rounded-2xl shadow-lg">
+                  <div
+                    key={index}
+                    className="bg-card border border-border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
+                  >
                     <button
-                      onClick={() =>
-                        setOpenFaq(openFaq === index ? null : index)
-                      }
-                      className="w-full px-8 py-6 text-left flex items-center justify-between focus:outline-none"
+                      onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                      className="w-full flex items-center justify-between p-6 text-left"
                     >
-                      <h3 className="text-lg font-bold text-gray-900 pr-4">
+                      <h3 className="text-lg font-bold text-foreground pr-4">
                         {faq.question}
                       </h3>
-                      <div className="flex-shrink-0">
-                        {openFaq === index ? (
-                          <Minus className="h-6 w-6 text-orange-500" />
-                        ) : (
-                          <Plus className="h-6 w-6 text-orange-500" />
-                        )}
-                      </div>
+                      {openFaq === index ? (
+                        <Minus className="h-5 w-5 text-primary flex-shrink-0" />
+                      ) : (
+                        <Plus className="h-5 w-5 text-primary flex-shrink-0" />
+                      )}
                     </button>
-
                     {openFaq === index && (
-                      <div className="px-8 pb-6">
-                        <div className="border-t border-gray-100 pt-6">
-                          <p className="text-gray-600 leading-relaxed">
-                            {faq.answer}
-                          </p>
-                        </div>
+                      <div className="px-6 pb-6">
+                        <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
                       </div>
                     )}
                   </div>
                 ))}
               </div>
+
+              <div className="text-center mt-12 bg-card border border-border rounded-lg p-8">
+                <p className="text-foreground font-semibold mb-4">
+                  Nie znalazłeś odpowiedzi na swoje pytanie?
+                </p>
+                <Link
+                  to="/kontakt"
+                  className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-all duration-300"
+                >
+                  <Phone className="h-5 w-5" />
+                  <span>Umów konsultację 15 min</span>
+                </Link>
+              </div>
             </div>
           </section>
 
-          {/* CTA Section */}
-          <section className="py-16 bg-gradient-to-r from-orange-500 to-orange-600">
+          {/* About/Team Section */}
+          <section className="py-20 bg-background">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+                  O nas
+                </h2>
+                <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                  Doświadczenie w IT i marketingu. Misja: AI-ready web.
+                </p>
+              </div>
+
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-card border border-border rounded-lg p-8 shadow-lg flex flex-col md:flex-row items-center gap-8">
+                  <img
+                    src={team.image}
+                    alt={team.name}
+                    className="w-32 h-32 rounded-full object-cover shadow-md"
+                  />
+                  <div className="flex-1 text-center md:text-left">
+                    <h3 className="text-2xl font-bold text-foreground mb-2">
+                      {team.name}
+                    </h3>
+                    <p className="text-primary font-semibold mb-4">{team.role}</p>
+                    <p className="text-muted-foreground mb-6 leading-relaxed">
+                      {team.bio}
+                    </p>
+                    <a
+                      href={team.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-primary hover:underline"
+                    >
+                      <Users className="h-5 w-5" />
+                      <span>LinkedIn</span>
+                    </a>
+                  </div>
+                </div>
+
+                {/* NAP data */}
+                <div className="mt-12 grid md:grid-cols-2 gap-6">
+                  <div className="bg-card border border-border rounded-lg p-6">
+                    <h4 className="font-bold text-foreground mb-4">Dane kontaktowe</h4>
+                    <div className="space-y-3 text-muted-foreground">
+                      <p>
+                        <strong>Firma:</strong> {nap.company}
+                      </p>
+                      <p>
+                        <strong>Telefon:</strong>{" "}
+                        <a href={`tel:${nap.phone}`} className="text-primary hover:underline">
+                          {nap.phone}
+                        </a>
+                      </p>
+                      <p>
+                        <strong>Email:</strong>{" "}
+                        <a href={`mailto:${nap.email}`} className="text-primary hover:underline">
+                          {nap.email}
+                        </a>
+                      </p>
+                      <p>
+                        <strong>Lokalizacja:</strong> {nap.address}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="bg-card border border-border rounded-lg p-6">
+                    <h4 className="font-bold text-foreground mb-4">Zasięg działania</h4>
+                    <div className="space-y-3 text-muted-foreground">
+                      <p>
+                        <strong>Obszar:</strong> {nap.coverage}
+                      </p>
+                      <p>
+                        <strong>Godziny pracy:</strong> {nap.hours}
+                      </p>
+                      <p className="pt-4">
+                        <Link
+                          to="/o-nas"
+                          className="text-primary hover:underline inline-flex items-center gap-2"
+                        >
+                          <span>Dowiedz się więcej o nas</span>
+                          <ArrowRight className="h-4 w-4" />
+                        </Link>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Final CTA Section */}
+          <section className="py-20 bg-primary text-primary-foreground">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Gotowy na profesjonalną stronę internetową?
+              <h2 className="text-3xl md:text-5xl font-bold mb-6">
+                Gotowy na stronę, która sprzedaje?
               </h2>
-              <p className="text-xl text-white/90 mb-8">
-                Umów się na bezpłatną konsultację i otrzymaj spersonalizowaną
-                wycenę.
+              <p className="text-xl mb-8 opacity-90">
+                Umów bezpłatną konsultację 15 min i otrzymaj indywidualną wycenę w 24-48h
               </p>
-              <Link
-                to="/kontakt"
-                className="inline-block bg-white text-orange-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-              >
-                Umów bezpłatną konsultację
-              </Link>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Link
+                  to="/kontakt"
+                  className="w-full sm:w-auto bg-background text-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-background/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-2"
+                >
+                  <span>Zamów wycenę teraz</span>
+                  <ArrowRight className="h-5 w-5" />
+                </Link>
+                <Link
+                  to="/kontakt"
+                  className="w-full sm:w-auto bg-primary-foreground/10 backdrop-blur text-primary-foreground border-2 border-primary-foreground/20 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-foreground/20 transition-all duration-300 flex items-center justify-center gap-2"
+                >
+                  <Phone className="h-5 w-5" />
+                  <span>Zarezerwuj termin</span>
+                </Link>
+              </div>
             </div>
           </section>
         </main>
