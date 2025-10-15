@@ -376,9 +376,9 @@ const WebsiteCreationPage = () => {
 
   return (
     <HelmetProvider>
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-white">
         <SEOHead
-          title="Tworzenie Stron Internetowych - Szybkie, Widoczne w Google, Gotowe na AI"
+          title="Tworzenie Stron Internetowych - Strony, Które Sprzedają | WebDKW"
           description="Projektujemy strony, które sprzedają. Szybkie, responsywne, zoptymalizowane pod SEO/GEO/AEO. WordPress, custom, e-commerce. Gwarancje jakości, SLA, transparentne ceny. Umów konsultację 15 min."
           keywords="tworzenie stron internetowych, strona firmowa, landing page, sklep online, e-commerce, SEO, GEO, AEO, WordPress, headless, UX/UI, Core Web Vitals, Google Ads"
           url="https://webdkw.net/uslugi/tworzenie-stron"
@@ -398,15 +398,14 @@ const WebsiteCreationPage = () => {
 
         <main className="pt-16">
           {/* HERO Section */}
-          <section className="relative bg-gradient-to-br from-background via-background to-muted py-20 md:py-28 overflow-hidden">
-            <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <section className="relative bg-white py-20 md:py-28">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center max-w-4xl mx-auto">
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                   Projektujemy strony, które{" "}
-                  <span className="text-primary">sprzedają</span>
+                  <span className="text-primary-500">sprzedają</span>
                 </h1>
-                <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
+                <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
                   Szybkie, widoczne w Google i gotowe na AI. WordPress, custom, e‑commerce z gwarancjami jakości i SLA.
                 </p>
 
@@ -414,14 +413,14 @@ const WebsiteCreationPage = () => {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
                   <Link
                     to="/kontakt"
-                    className="group w-full sm:w-auto bg-primary text-primary-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-2"
+                    className="group w-full sm:w-auto bg-primary-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-2"
                   >
                     <span>Zamów wycenę</span>
                     <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                   <Link
                     to="/kontakt"
-                    className="w-full sm:w-auto bg-background text-foreground border-2 border-border px-8 py-4 rounded-lg text-lg font-semibold hover:bg-muted transition-all duration-300 flex items-center justify-center gap-2"
+                    className="w-full sm:w-auto bg-white text-gray-900 border-2 border-gray-300 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-50 transition-all duration-300 flex items-center justify-center gap-2"
                   >
                     <Phone className="h-5 w-5" />
                     <span>Umów konsultację 15 min</span>
@@ -431,20 +430,20 @@ const WebsiteCreationPage = () => {
                 {/* Trust signals */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
                   {heroStats.map((stat, index) => (
-                    <div key={index} className="bg-card border border-border rounded-lg p-4 shadow-sm">
+                    <div key={index} className="bg-gray-50 rounded-lg p-4">
                       <div className="flex items-center justify-center gap-2 mb-2">
                         {stat.icon}
-                        <div className="text-2xl font-bold text-foreground">{stat.value}</div>
+                        <div className="text-2xl font-bold text-gray-900">{stat.value}</div>
                       </div>
-                      <div className="text-sm text-muted-foreground">{stat.label}</div>
+                      <div className="text-sm text-gray-600">{stat.label}</div>
                     </div>
                   ))}
                 </div>
 
                 {/* Client logos */}
                 <div className="mt-12">
-                  <p className="text-sm text-muted-foreground mb-6 uppercase tracking-wide">Zaufali nam</p>
-                  <div className="flex flex-wrap items-center justify-center gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-300">
+                  <p className="text-sm text-gray-500 mb-6 uppercase tracking-wide">Zaufali nam</p>
+                  <div className="flex flex-wrap items-center justify-center gap-8 opacity-60">
                     {clients.map((client, index) => (
                       <img
                         key={index}
@@ -460,13 +459,13 @@ const WebsiteCreationPage = () => {
           </section>
 
           {/* Problems & Solutions Section */}
-          <section className="py-20 bg-muted">
+          <section className="py-20 bg-gray-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+                <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
                   Znasz te problemy?
                 </h2>
-                <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                   90% MŚP w Polsce zmaga się z tymi wyzwaniami. Mamy sprawdzone rozwiązania.
                 </p>
               </div>
@@ -475,17 +474,17 @@ const WebsiteCreationPage = () => {
                 {problems.map((item, index) => (
                   <div
                     key={index}
-                    className="bg-card border-l-4 border-destructive rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300"
+                    className="bg-white border-l-4 border-red-500 rounded-lg p-8 shadow-lg hover:shadow-xl transition-all duration-300"
                   >
                     <div className="flex items-start gap-4">
                       <div className="flex-shrink-0 mt-1">{item.icon}</div>
                       <div>
-                        <h3 className="text-lg font-bold text-foreground mb-2">
+                        <h3 className="text-xl font-bold text-gray-900 mb-3">
                           {item.problem}
                         </h3>
                         <div className="flex items-start gap-2">
                           <Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                          <p className="text-muted-foreground">{item.solution}</p>
+                          <p className="text-gray-600">{item.solution}</p>
                         </div>
                       </div>
                     </div>
@@ -498,13 +497,13 @@ const WebsiteCreationPage = () => {
                 {solutions.map((solution, index) => (
                   <div
                     key={index}
-                    className="bg-card rounded-lg p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-border"
+                    className="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition-all duration-300"
                   >
                     <div className="mb-4">{solution.icon}</div>
-                    <h3 className="text-lg font-bold text-foreground mb-2">
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">
                       {solution.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground">{solution.description}</p>
+                    <p className="text-sm text-gray-600">{solution.description}</p>
                   </div>
                 ))}
               </div>
@@ -512,13 +511,13 @@ const WebsiteCreationPage = () => {
           </section>
 
           {/* Offer & Scope Section */}
-          <section className="py-20 bg-background">
+          <section className="py-20 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+                <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
                   Kompleksowa oferta i zakres
                 </h2>
-                <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                   Od strategii i projektu, przez wdrożenie i integracje, po analitykę i wsparcie
                 </p>
               </div>
@@ -527,17 +526,17 @@ const WebsiteCreationPage = () => {
                 {offerScope.map((scope, index) => (
                   <div
                     key={index}
-                    className="bg-card border border-border rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-300"
+                    className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-300"
                   >
-                    <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
-                      <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                        <CheckCircle className="h-5 w-5 text-primary" />
+                    <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+                      <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
+                        <CheckCircle className="h-5 w-5 text-primary-500" />
                       </div>
                       {scope.category}
                     </h3>
                     <ul className="space-y-2">
                       {scope.items.map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <li key={idx} className="flex items-start gap-2 text-sm text-gray-600">
                           <Check className="h-4 w-4 text-green-500 flex-shrink-0 mt-0.5" />
                           <span>{item}</span>
                         </li>
@@ -550,13 +549,13 @@ const WebsiteCreationPage = () => {
           </section>
 
           {/* Process Section */}
-          <section className="py-20 bg-muted">
+          <section className="py-20 bg-gray-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+                <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
                   Sprawdzony proces 5 kroków
                 </h2>
-                <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                   Transparentny harmonogram z gwarancjami jakości i SLA
                 </p>
               </div>
@@ -565,11 +564,11 @@ const WebsiteCreationPage = () => {
                 {processSteps.map((step, index) => (
                   <div
                     key={index}
-                    className="bg-card border border-border rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300"
+                    className="bg-white rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300"
                   >
                     <div className="flex flex-col md:flex-row items-start gap-6">
                       {/* Number */}
-                      <div className="flex-shrink-0 w-16 h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-2xl font-bold shadow-lg">
+                      <div className="flex-shrink-0 w-16 h-16 bg-primary-500 text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-lg">
                         {step.number}
                       </div>
 
@@ -578,18 +577,18 @@ const WebsiteCreationPage = () => {
                         <div className="flex items-start gap-3 mb-3">
                           {step.icon}
                           <div>
-                            <h3 className="text-2xl font-bold text-foreground mb-1">
+                            <h3 className="text-2xl font-bold text-gray-900 mb-1">
                               {step.title}
                             </h3>
-                            <p className="text-primary font-semibold">{step.duration}</p>
+                            <p className="text-primary-500 font-semibold">{step.duration}</p>
                           </div>
                         </div>
-                        <p className="text-muted-foreground mb-4">{step.description}</p>
+                        <p className="text-gray-600 mb-4">{step.description}</p>
                         <div className="flex flex-wrap gap-2">
                           {step.deliverables.map((deliverable, idx) => (
                             <span
                               key={idx}
-                              className="bg-muted text-muted-foreground text-sm px-3 py-1 rounded-full"
+                              className="bg-gray-100 text-gray-700 text-sm px-3 py-1 rounded-full"
                             >
                               {deliverable}
                             </span>
@@ -604,7 +603,7 @@ const WebsiteCreationPage = () => {
               <div className="text-center mt-12">
                 <Link
                   to="/proces-realizacji"
-                  className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  className="inline-flex items-center gap-2 bg-primary-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
                   <span>Zobacz szczegółowy opis procesu</span>
                   <ArrowRight className="h-5 w-5" />
@@ -614,13 +613,13 @@ const WebsiteCreationPage = () => {
           </section>
 
           {/* Case Studies Section */}
-          <section className="py-20 bg-background">
+          <section className="py-20 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+                <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
                   Sprawdzone rezultaty
                 </h2>
-                <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                   Konkretne wyniki z prawdziwych projektów
                 </p>
               </div>
@@ -629,46 +628,46 @@ const WebsiteCreationPage = () => {
                 {caseStudies.map((study, index) => (
                   <div
                     key={index}
-                    className="bg-card border border-border rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
                   >
-                    <div className="bg-primary/10 p-6 border-b border-border">
-                      <div className="text-sm text-primary font-semibold mb-1">
+                    <div className="bg-primary-50 p-6 border-b border-gray-200">
+                      <div className="text-sm text-primary-500 font-semibold mb-1">
                         {study.industry}
                       </div>
-                      <h3 className="text-2xl font-bold text-foreground mb-2">
+                      <h3 className="text-2xl font-bold text-gray-900 mb-2">
                         {study.company}
                       </h3>
                     </div>
 
                     <div className="p-6">
                       <div className="mb-4">
-                        <h4 className="text-sm font-bold text-destructive mb-2 uppercase">
+                        <h4 className="text-sm font-bold text-red-500 mb-2 uppercase">
                           Problem
                         </h4>
-                        <p className="text-muted-foreground text-sm">{study.problem}</p>
+                        <p className="text-gray-600 text-sm">{study.problem}</p>
                       </div>
 
                       <div className="mb-6">
-                        <h4 className="text-sm font-bold text-primary mb-2 uppercase">
+                        <h4 className="text-sm font-bold text-primary-500 mb-2 uppercase">
                           Rozwiązanie
                         </h4>
-                        <p className="text-muted-foreground text-sm">{study.solution}</p>
+                        <p className="text-gray-600 text-sm">{study.solution}</p>
                       </div>
 
                       <div>
-                        <h4 className="text-sm font-bold text-foreground mb-4 uppercase">
+                        <h4 className="text-sm font-bold text-gray-900 mb-4 uppercase">
                           Wyniki
                         </h4>
                         <div className="grid grid-cols-2 gap-4">
                           {study.results.map((result, idx) => (
-                            <div key={idx} className="text-center p-3 bg-muted rounded-lg">
-                              <div className="flex justify-center mb-2 text-primary">
+                            <div key={idx} className="text-center p-3 bg-gray-50 rounded-lg">
+                              <div className="flex justify-center mb-2 text-primary-500">
                                 {result.icon}
                               </div>
-                              <div className="text-2xl font-bold text-foreground mb-1">
+                              <div className="text-2xl font-bold text-gray-900 mb-1">
                                 {result.value}
                               </div>
-                              <div className="text-xs text-muted-foreground">
+                              <div className="text-xs text-gray-600">
                                 {result.metric}
                               </div>
                             </div>
@@ -683,7 +682,7 @@ const WebsiteCreationPage = () => {
               <div className="text-center">
                 <Link
                   to="/case-studies"
-                  className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  className="inline-flex items-center gap-2 bg-primary-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
                   <span>Zobacz wszystkie case studies</span>
                   <ArrowRight className="h-5 w-5" />
@@ -693,13 +692,13 @@ const WebsiteCreationPage = () => {
           </section>
 
           {/* Packages Section */}
-          <section className="py-20 bg-muted">
+          <section className="py-20 bg-gray-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+                <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
                   Pakiety i cennik
                 </h2>
-                <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                   Transparentne widełki cenowe. Finalna wycena po konsultacji 15 min.
                 </p>
               </div>
@@ -708,15 +707,15 @@ const WebsiteCreationPage = () => {
                 {packages.map((pkg, index) => (
                   <div
                     key={index}
-                    className={`relative bg-card rounded-2xl shadow-xl border-2 transition-all duration-300 hover:shadow-2xl ${
+                    className={`relative bg-white rounded-2xl shadow-xl border-2 transition-all duration-300 hover:shadow-2xl ${
                       pkg.recommended
-                        ? "border-primary transform lg:scale-105"
-                        : "border-border"
+                        ? "border-primary-500 transform lg:scale-105"
+                        : "border-gray-200"
                     }`}
                   >
                     {pkg.recommended && (
                       <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-                        <div className="bg-primary text-primary-foreground px-6 py-2 rounded-full text-sm font-bold shadow-lg">
+                        <div className="bg-primary-500 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
                           NAJPOPULARNIEJSZY
                         </div>
                       </div>
@@ -724,30 +723,30 @@ const WebsiteCreationPage = () => {
 
                     <div className="p-8">
                       <div className="text-center mb-8">
-                        <h3 className="text-3xl font-bold text-foreground mb-2">
+                        <h3 className="text-3xl font-bold text-gray-900 mb-2">
                           {pkg.name}
                         </h3>
-                        <div className="text-3xl font-bold text-primary mb-4">
+                        <div className="text-3xl font-bold text-primary-500 mb-4">
                           {pkg.price}
                         </div>
-                        <p className="text-muted-foreground text-sm">{pkg.description}</p>
+                        <p className="text-gray-600 text-sm">{pkg.description}</p>
                       </div>
 
                       <ul className="space-y-3 mb-8">
                         {pkg.features.map((feature, idx) => (
                           <li key={idx} className="flex items-start gap-3">
                             <Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                            <span className="text-sm text-muted-foreground">{feature}</span>
+                            <span className="text-sm text-gray-700">{feature}</span>
                           </li>
                         ))}
                       </ul>
 
                       <div className="space-y-3 mb-6 text-center">
-                        <p className="text-sm text-muted-foreground">
+                        <p className="text-sm text-gray-600">
                           <Clock className="inline h-4 w-4 mr-1" />
                           Czas realizacji: <strong>{pkg.timeframe}</strong>
                         </p>
-                        <p className="text-sm text-muted-foreground">
+                        <p className="text-sm text-gray-600">
                           <Shield className="inline h-4 w-4 mr-1" />
                           SLA: <strong>{pkg.sla}</strong>
                         </p>
@@ -757,8 +756,8 @@ const WebsiteCreationPage = () => {
                         to="/kontakt"
                         className={`w-full block text-center py-3 px-6 rounded-lg font-semibold transition-all duration-300 ${
                           pkg.recommended
-                            ? "bg-primary text-primary-foreground hover:bg-primary/90"
-                            : "bg-muted text-foreground hover:bg-muted/80"
+                            ? "bg-primary-500 text-white hover:bg-primary-600"
+                            : "bg-gray-100 text-gray-900 hover:bg-gray-200"
                         }`}
                       >
                         Zamów wycenę
@@ -770,29 +769,29 @@ const WebsiteCreationPage = () => {
 
               {/* Add-ons */}
               <div className="max-w-4xl mx-auto">
-                <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
                   Dodatki opcjonalne
                 </h3>
                 <div className="grid md:grid-cols-2 gap-4">
                   {addOns.map((addon, index) => (
                     <div
                       key={index}
-                      className="bg-card border border-border rounded-lg p-4 flex items-center justify-between"
+                      className="bg-white border border-gray-200 rounded-lg p-4 flex items-center justify-between"
                     >
-                      <span className="text-foreground">{addon.name}</span>
-                      <span className="text-primary font-semibold">{addon.price}</span>
+                      <span className="text-gray-900">{addon.name}</span>
+                      <span className="text-primary-500 font-semibold">{addon.price}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
               <div className="text-center mt-12">
-                <p className="text-muted-foreground mb-6">
+                <p className="text-gray-600 mb-6">
                   Potrzebujesz indywidualnej wyceny? Umów bezpłatną konsultację.
                 </p>
                 <Link
                   to="/kontakt"
-                  className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  className="inline-flex items-center gap-2 bg-primary-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
                   <Phone className="h-5 w-5" />
                   <span>Umów konsultację 15 min</span>
@@ -802,13 +801,13 @@ const WebsiteCreationPage = () => {
           </section>
 
           {/* Social Proof Section */}
-          <section className="py-20 bg-background">
+          <section className="py-20 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+                <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
                   Opinie klientów
                 </h2>
-                <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                   Sprawdź, co mówią o nas zadowoleni klienci
                 </p>
               </div>
@@ -817,25 +816,25 @@ const WebsiteCreationPage = () => {
                 {testimonials.map((testimonial, index) => (
                   <div
                     key={index}
-                    className="bg-card border border-border rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300"
+                    className="bg-gray-50 rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300"
                   >
                     <div className="flex items-center gap-1 mb-4">
                       {[...Array(testimonial.rating)].map((_, i) => (
                         <Star key={i} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                       ))}
                     </div>
-                    <p className="text-muted-foreground mb-6 leading-relaxed">
+                    <p className="text-gray-700 mb-6 leading-relaxed">
                       "{testimonial.text}"
                     </p>
-                    <div className="flex items-center justify-between pt-6 border-t border-border">
+                    <div className="flex items-center justify-between pt-6 border-t border-gray-200">
                       <div>
-                        <div className="font-bold text-foreground">{testimonial.name}</div>
-                        <div className="text-sm text-muted-foreground">
+                        <div className="font-bold text-gray-900">{testimonial.name}</div>
+                        <div className="text-sm text-gray-600">
                           {testimonial.role}, {testimonial.company}
                         </div>
                       </div>
                       <div className="text-right">
-                        <div className="text-2xl font-bold text-primary">
+                        <div className="text-2xl font-bold text-primary-500">
                           {testimonial.metric}
                         </div>
                       </div>
@@ -847,13 +846,13 @@ const WebsiteCreationPage = () => {
           </section>
 
           {/* FAQ Section */}
-          <section className="py-20 bg-muted">
+          <section className="py-20 bg-gray-50">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+                <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
                   Najczęściej zadawane pytania
                 </h2>
-                <p className="text-xl text-muted-foreground">
+                <p className="text-xl text-gray-600">
                   Wszystko, co musisz wiedzieć przed rozpoczęciem współpracy
                 </p>
               </div>
@@ -862,37 +861,37 @@ const WebsiteCreationPage = () => {
                 {faqs.map((faq, index) => (
                   <div
                     key={index}
-                    className="bg-card border border-border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
+                    className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
                   >
                     <button
                       onClick={() => setOpenFaq(openFaq === index ? null : index)}
                       className="w-full flex items-center justify-between p-6 text-left"
                     >
-                      <h3 className="text-lg font-bold text-foreground pr-4">
+                      <h3 className="text-lg font-bold text-gray-900 pr-4">
                         {faq.question}
                       </h3>
                       {openFaq === index ? (
-                        <Minus className="h-5 w-5 text-primary flex-shrink-0" />
+                        <Minus className="h-5 w-5 text-primary-500 flex-shrink-0" />
                       ) : (
-                        <Plus className="h-5 w-5 text-primary flex-shrink-0" />
+                        <Plus className="h-5 w-5 text-primary-500 flex-shrink-0" />
                       )}
                     </button>
                     {openFaq === index && (
                       <div className="px-6 pb-6">
-                        <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
+                        <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
                       </div>
                     )}
                   </div>
                 ))}
               </div>
 
-              <div className="text-center mt-12 bg-card border border-border rounded-lg p-8">
-                <p className="text-foreground font-semibold mb-4">
+              <div className="text-center mt-12 bg-white rounded-lg p-8 shadow-sm">
+                <p className="text-gray-900 font-semibold mb-4">
                   Nie znalazłeś odpowiedzi na swoje pytanie?
                 </p>
                 <Link
                   to="/kontakt"
-                  className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-all duration-300"
+                  className="inline-flex items-center gap-2 bg-primary-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-600 transition-all duration-300"
                 >
                   <Phone className="h-5 w-5" />
                   <span>Umów konsultację 15 min</span>
@@ -902,37 +901,37 @@ const WebsiteCreationPage = () => {
           </section>
 
           {/* About/Team Section */}
-          <section className="py-20 bg-background">
+          <section className="py-20 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+                <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
                   O nas
                 </h2>
-                <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                   Doświadczenie w IT i marketingu. Misja: AI-ready web.
                 </p>
               </div>
 
               <div className="max-w-4xl mx-auto">
-                <div className="bg-card border border-border rounded-lg p-8 shadow-lg flex flex-col md:flex-row items-center gap-8">
+                <div className="bg-gray-50 rounded-lg p-8 shadow-lg flex flex-col md:flex-row items-center gap-8">
                   <img
                     src={team.image}
                     alt={team.name}
                     className="w-32 h-32 rounded-full object-cover shadow-md"
                   />
                   <div className="flex-1 text-center md:text-left">
-                    <h3 className="text-2xl font-bold text-foreground mb-2">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
                       {team.name}
                     </h3>
-                    <p className="text-primary font-semibold mb-4">{team.role}</p>
-                    <p className="text-muted-foreground mb-6 leading-relaxed">
+                    <p className="text-primary-500 font-semibold mb-4">{team.role}</p>
+                    <p className="text-gray-600 mb-6 leading-relaxed">
                       {team.bio}
                     </p>
                     <a
                       href={team.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-primary hover:underline"
+                      className="inline-flex items-center gap-2 text-primary-500 hover:underline"
                     >
                       <Users className="h-5 w-5" />
                       <span>LinkedIn</span>
@@ -942,21 +941,21 @@ const WebsiteCreationPage = () => {
 
                 {/* NAP data */}
                 <div className="mt-12 grid md:grid-cols-2 gap-6">
-                  <div className="bg-card border border-border rounded-lg p-6">
-                    <h4 className="font-bold text-foreground mb-4">Dane kontaktowe</h4>
-                    <div className="space-y-3 text-muted-foreground">
+                  <div className="bg-gray-50 rounded-lg p-6">
+                    <h4 className="font-bold text-gray-900 mb-4">Dane kontaktowe</h4>
+                    <div className="space-y-3 text-gray-600">
                       <p>
                         <strong>Firma:</strong> {nap.company}
                       </p>
                       <p>
                         <strong>Telefon:</strong>{" "}
-                        <a href={`tel:${nap.phone}`} className="text-primary hover:underline">
+                        <a href={`tel:${nap.phone}`} className="text-primary-500 hover:underline">
                           {nap.phone}
                         </a>
                       </p>
                       <p>
                         <strong>Email:</strong>{" "}
-                        <a href={`mailto:${nap.email}`} className="text-primary hover:underline">
+                        <a href={`mailto:${nap.email}`} className="text-primary-500 hover:underline">
                           {nap.email}
                         </a>
                       </p>
@@ -966,9 +965,9 @@ const WebsiteCreationPage = () => {
                     </div>
                   </div>
 
-                  <div className="bg-card border border-border rounded-lg p-6">
-                    <h4 className="font-bold text-foreground mb-4">Zasięg działania</h4>
-                    <div className="space-y-3 text-muted-foreground">
+                  <div className="bg-gray-50 rounded-lg p-6">
+                    <h4 className="font-bold text-gray-900 mb-4">Zasięg działania</h4>
+                    <div className="space-y-3 text-gray-600">
                       <p>
                         <strong>Obszar:</strong> {nap.coverage}
                       </p>
@@ -978,7 +977,7 @@ const WebsiteCreationPage = () => {
                       <p className="pt-4">
                         <Link
                           to="/o-nas"
-                          className="text-primary hover:underline inline-flex items-center gap-2"
+                          className="text-primary-500 hover:underline inline-flex items-center gap-2"
                         >
                           <span>Dowiedz się więcej o nas</span>
                           <ArrowRight className="h-4 w-4" />
@@ -992,7 +991,7 @@ const WebsiteCreationPage = () => {
           </section>
 
           {/* Final CTA Section */}
-          <section className="py-20 bg-primary text-primary-foreground">
+          <section className="py-20 bg-primary-500 text-white">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
               <h2 className="text-3xl md:text-5xl font-bold mb-6">
                 Gotowy na stronę, która sprzedaje?
@@ -1003,14 +1002,14 @@ const WebsiteCreationPage = () => {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
                   to="/kontakt"
-                  className="w-full sm:w-auto bg-background text-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-background/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto bg-white text-gray-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-2"
                 >
                   <span>Zamów wycenę teraz</span>
                   <ArrowRight className="h-5 w-5" />
                 </Link>
                 <Link
                   to="/kontakt"
-                  className="w-full sm:w-auto bg-primary-foreground/10 backdrop-blur text-primary-foreground border-2 border-primary-foreground/20 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-foreground/20 transition-all duration-300 flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto bg-white/10 backdrop-blur text-white border-2 border-white/20 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white/20 transition-all duration-300 flex items-center justify-center gap-2"
                 >
                   <Phone className="h-5 w-5" />
                   <span>Zarezerwuj termin</span>
