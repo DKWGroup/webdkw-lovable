@@ -14,6 +14,7 @@ import ContactPage from "./pages/ContactPage";
 import FAQPage from "./pages/FAQPage";
 import HomePage from "./pages/HomePage";
 import KatowiceWebsitesPage from "./pages/KatowiceWebsitesPage";
+import ChorzowWebsitesPage from "./pages/ChorzowWebsitesPage";
 import LeadMagnetPage from "./pages/LeadMagnetPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import PasswordResetPage from "./pages/PasswordResetPage";
@@ -62,6 +63,10 @@ function App() {
           <Route
             path="/katowice-tworzenie-stron"
             element={<KatowiceWebsitesPage />}
+          />
+          <Route
+            path="/chorzow-tworzenie-stron"
+            element={<ChorzowWebsitesPage />}
           />
           <Route path="/proces-realizacji" element={<ProcessPage />} />
           <Route path="/o-nas" element={<AboutPage />} />
