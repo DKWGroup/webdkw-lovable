@@ -2,7 +2,6 @@ import {
   ArrowRight,
   CheckCircle,
   Clock,
-  Mail,
   MapPin,
   Phone,
   ChevronDown,
@@ -19,6 +18,7 @@ import LocalBusinessSchema from "../components/LocalBusinessSchema";
 import FAQSchema from "../components/FAQSchema";
 import ServiceSchema from "../components/ServiceSchema";
 import PortfolioSection from "../components/PortfolioSection";
+import ContactSection from "../components/ContactSection";
 
 const KatowiceWebsitesPage = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -90,19 +90,6 @@ const KatowiceWebsitesPage = () => {
       answer: "Przez 1-6 miesięcy (zależnie od pakietu) pomagamy, poprawiamy, monitorujemy i raportujemy wyniki. Jesteśmy z Tobą na każdym kroku."
     },
   ];
-
-  // NAP data
-  const nap = {
-    company: "WebDKW - Tworzenie Stron Katowice",
-    phone: "+48 881 046 689",
-    email: "contact.dkwgroup@gmail.com",
-    address: "Katowice, Śląskie",
-    city: "Katowice",
-    region: "Śląskie",
-    postalCode: "40-001",
-    country: "Polska",
-    hours: "Pn-Pt: 9:00-18:00"
-  };
 
   return (
     <HelmetProvider>
@@ -443,39 +430,30 @@ const KatowiceWebsitesPage = () => {
               </div>
 
               <div className="grid lg:grid-cols-2 gap-12 items-center">
-                {/* Left side - image or info */}
+                {/* Left side - founder photo and bio */}
                 <div className="space-y-6">
-                  <div className="bg-primary-50 rounded-2xl p-8">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                      WebDKW - Tworzenie Stron Katowice
+                  <div className="flex flex-col items-center text-center">
+                    <img
+                      src="/images/Kamil-Krukowski.webp"
+                      alt="Kamil Krukowski - Założyciel WebDKW"
+                      className="w-48 h-48 rounded-full object-cover mb-6 shadow-xl"
+                    />
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                      Kamil Krukowski
                     </h3>
-                    <p className="text-gray-700 leading-relaxed mb-4">
-                      Działamy w Katowicach i na całym Śląsku. Rozumiemy specyfikę lokalnego rynku, znamy konkurencję i wiemy, jak przyciągnąć klientów z regionu.
+                    <p className="text-primary-500 font-semibold mb-4">
+                      Założyciel WebDKW
                     </p>
-                    <p className="text-gray-700 leading-relaxed mb-4">
-                      Nie jesteśmy korporacją - jesteśmy agencją, która stawia na prostą komunikację, szybkie działanie i konkretne efekty. Każdy projekt traktujemy indywidualnie.
-                    </p>
-                    <p className="text-gray-700 leading-relaxed">
-                      Nasi klienci to firmy z Katowic, Sosnowca, Gliwic, Zabrza i całego województwa śląskiego. Od małych firm po większe sklepy online.
-                    </p>
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-gray-50 rounded-lg p-6 text-center">
-                      <div className="text-3xl font-bold text-primary-500 mb-2">50+</div>
-                      <div className="text-sm text-gray-600">Projektów w regionie</div>
-                    </div>
-                    <div className="bg-gray-50 rounded-lg p-6 text-center">
-                      <div className="text-3xl font-bold text-primary-500 mb-2">2-6 tyg</div>
-                      <div className="text-sm text-gray-600">Średni czas realizacji</div>
-                    </div>
-                    <div className="bg-gray-50 rounded-lg p-6 text-center">
-                      <div className="text-3xl font-bold text-primary-500 mb-2">100%</div>
-                      <div className="text-sm text-gray-600">Zadowolonych klientów</div>
-                    </div>
-                    <div className="bg-gray-50 rounded-lg p-6 text-center">
-                      <div className="text-3xl font-bold text-primary-500 mb-2">24/7</div>
-                      <div className="text-sm text-gray-600">Wsparcie techniczne</div>
+                    <div className="bg-primary-50 rounded-2xl p-6 text-left">
+                      <p className="text-gray-700 leading-relaxed mb-4">
+                        Od ponad 5 lat tworzę strony internetowe, które naprawdę sprzedają. Specjalizuję się w lokalnym SEO i optymalizacji stron pod konwersję.
+                      </p>
+                      <p className="text-gray-700 leading-relaxed mb-4">
+                        Działam w Katowicach i na całym Śląsku. Rozumiem specyfikę lokalnego rynku, znam konkurencję i wiem, jak przyciągnąć klientów z regionu.
+                      </p>
+                      <p className="text-gray-700 leading-relaxed">
+                        Stawiamy na prostą komunikację, szybkie działanie i konkretne efekty. Każdy projekt traktuję indywidualnie.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -538,36 +516,6 @@ const KatowiceWebsitesPage = () => {
                   </div>
                 </div>
               </div>
-
-              <div className="mt-16 text-center bg-gray-50 rounded-2xl p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  Dane kontaktowe
-                </h3>
-                <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                  <div className="flex flex-col items-center">
-                    <Phone className="h-8 w-8 text-primary-500 mb-3" />
-                    <div className="font-semibold text-gray-900 mb-1">Telefon</div>
-                    <a href="tel:+48881046689" className="text-primary-500 hover:text-primary-600">
-                      +48 881 046 689
-                    </a>
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <Mail className="h-8 w-8 text-primary-500 mb-3" />
-                    <div className="font-semibold text-gray-900 mb-1">Email</div>
-                    <a href="mailto:contact.dkwgroup@gmail.com" className="text-primary-500 hover:text-primary-600">
-                      contact.dkwgroup@gmail.com
-                    </a>
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <MapPin className="h-8 w-8 text-primary-500 mb-3" />
-                    <div className="font-semibold text-gray-900 mb-1">Lokalizacja</div>
-                    <div className="text-gray-600">Katowice, Śląskie</div>
-                  </div>
-                </div>
-                <div className="mt-6">
-                  <p className="text-gray-600 text-sm">Pn-Pt: 9:00-18:00</p>
-                </div>
-              </div>
             </div>
           </section>
 
@@ -614,89 +562,7 @@ const KatowiceWebsitesPage = () => {
           </section>
 
           {/* Contact Section - Local */}
-          <section className="py-20 bg-gray-50">
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
-                  Skontaktuj się z nami
-                </h2>
-                <p className="text-xl text-gray-600">
-                  Działamy lokalnie w Katowicach i na całym Śląsku
-                </p>
-              </div>
-
-              <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-                <div className="grid md:grid-cols-2 gap-8 mb-8">
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-6">Dane kontaktowe</h3>
-                    <div className="space-y-4">
-                      <div className="flex items-start gap-3">
-                        <MapPin className="h-5 w-5 text-primary-500 mt-1 flex-shrink-0" />
-                        <div>
-                          <div className="font-semibold text-gray-900">Adres</div>
-                          <div className="text-gray-600">{nap.address}</div>
-                          <div className="text-gray-600">{nap.city}, {nap.region}</div>
-                        </div>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <Phone className="h-5 w-5 text-primary-500 mt-1 flex-shrink-0" />
-                        <div>
-                          <div className="font-semibold text-gray-900">Telefon</div>
-                          <a href={`tel:${nap.phone}`} className="text-primary-500 hover:underline">
-                            {nap.phone}
-                          </a>
-                        </div>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <Mail className="h-5 w-5 text-primary-500 mt-1 flex-shrink-0" />
-                        <div>
-                          <div className="font-semibold text-gray-900">Email</div>
-                          <a href={`mailto:${nap.email}`} className="text-primary-500 hover:underline">
-                            {nap.email}
-                          </a>
-                        </div>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <Clock className="h-5 w-5 text-primary-500 mt-1 flex-shrink-0" />
-                        <div>
-                          <div className="font-semibold text-gray-900">Godziny pracy</div>
-                          <div className="text-gray-600">{nap.hours}</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-6">Umów konsultację</h3>
-                    <div className="space-y-4">
-                      <Link
-                        to="/kontakt"
-                        className="block text-center bg-primary-500 text-white px-6 py-4 rounded-lg font-semibold hover:bg-primary-600 transition-colors"
-                      >
-                        Wypełnij formularz kontaktowy
-                      </Link>
-                      <a
-                        href="tel:+48881046689"
-                        className="block text-center border-2 border-primary-500 text-primary-500 px-6 py-4 rounded-lg font-semibold hover:bg-primary-50 transition-colors"
-                      >
-                        Zadzwoń: +48 881 046 689
-                      </a>
-                      <p className="text-sm text-gray-600 text-center">
-                        Odpowiadamy w ciągu 24 godzin
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="border-t border-gray-200 pt-8">
-                  <h3 className="text-lg font-bold text-gray-900 mb-4">Obsługiwane obszary</h3>
-                  <p className="text-gray-600">
-                    Katowice, Sosnowiec, Bytom, Gliwice, Zabrze, Ruda Śląska, Tychy, Dąbrowa Górnicza, Chorzów, Jaworzno oraz cały region śląski.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
+          <ContactSection />
         </main>
 
         <Footer />
