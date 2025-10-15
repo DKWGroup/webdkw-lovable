@@ -563,6 +563,70 @@ const GliwiceWebsitesPage = () => {
 
           {/* Contact Section - Local */}
           <ContactSection />
+
+          {/* Internal Linking - Other Cities */}
+          <section className="py-16 bg-gray-50">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                  Działamy również w innych miastach na Śląsku
+                </h2>
+                <p className="text-xl text-gray-600">
+                  Tworzymy strony internetowe dla firm z całego regionu
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <Link
+                  to="/katowice-tworzenie-stron"
+                  className="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow group"
+                >
+                  <div className="flex items-center gap-3 mb-3">
+                    <MapPin className="h-6 w-6 text-primary-500" />
+                    <h3 className="text-xl font-bold text-gray-900">Katowice</h3>
+                  </div>
+                  <p className="text-gray-600 mb-4">
+                    Tworzenie stron internetowych w Katowicach. Lokalne SEO i widoczność w Google Maps.
+                  </p>
+                  <span className="text-primary-500 font-semibold group-hover:underline">
+                    Zobacz ofertę dla Katowic →
+                  </span>
+                </Link>
+
+                <Link
+                  to="/chorzow-tworzenie-stron"
+                  className="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow group"
+                >
+                  <div className="flex items-center gap-3 mb-3">
+                    <MapPin className="h-6 w-6 text-primary-500" />
+                    <h3 className="text-xl font-bold text-gray-900">Chorzów</h3>
+                  </div>
+                  <p className="text-gray-600 mb-4">
+                    Tworzenie stron internetowych w Chorzowie. Profesjonalne strony dla firm z regionu.
+                  </p>
+                  <span className="text-primary-500 font-semibold group-hover:underline">
+                    Zobacz ofertę dla Chorzowa →
+                  </span>
+                </Link>
+
+                <Link
+                  to="/strony-internetowe-seo-slask"
+                  className="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow group"
+                >
+                  <div className="flex items-center gap-3 mb-3">
+                    <MapPin className="h-6 w-6 text-primary-500" />
+                    <h3 className="text-xl font-bold text-gray-900">Cały Śląsk</h3>
+                  </div>
+                  <p className="text-gray-600 mb-4">
+                    Strony internetowe dla firm z całego województwa śląskiego. Kompleksowa obsługa.
+                  </p>
+                  <span className="text-primary-500 font-semibold group-hover:underline">
+                    Zobacz ofertę regionalną →
+                  </span>
+                </Link>
+              </div>
+            </div>
+          </section>
         </main>
 
         <Footer />
